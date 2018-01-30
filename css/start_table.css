@@ -1,0 +1,494 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+/*设置比赛界面二的表格的共同部分*/
+.start_table{
+	border:1px medium #D4D4D4;
+}
+.start_table td{
+		border:1px solid #999;
+}
+.start_table1{
+	width:1000px;
+	height:453px;
+	margin-top:13px;
+	margin-left:20px;
+	}
+.start_viewOrder td{
+	width:165px;
+	height:29px;
+}
+.start_deliveryForm td,.start_view td{
+	width:100px;
+	height:28px;
+}
+.tr_first{
+	color:#666;
+}
+.start_bottom{
+	line-height:23px;
+	margin-top:25px;
+	text-align:center;
+}
+.start_bottom p a{
+	display:block;
+	float:left;
+	width:21px;
+	height:17px;
+	line-height:17px;
+	text-align:center;
+	margin-right:20px;
+	border:1px solid #ccc;
+}
+.start_bottom p a,.orderInfor a{
+	color:#000;
+}
+.start_bottom p a:hover,.orderInfor a:hover{
+	background:#B6B7BC;
+	}
+.start_deliveryForm table td input,.start_view_div input,.start_deliver_ads button{
+	
+	width:70px;
+	height:20px;
+	border:0px;
+	background:#355A86;
+    color:#fff;
+	cursor:pointer;	
+	}
+.start_deliveryForm_bottom,.start_viewOrder_bottom{
+	height:170px;
+}
+.start_view_bottom{
+	height:125px;
+}
+.start_view_div{
+	height:27px;
+	margin-top:11px;
+	margin-left:25px;
+}
+.start_view_div select,.common_select{
+	width:155px;
+	height:27px;
+	border:1px solid #ccc;
+	/*padding-left:5px;*/
+	text-indent:5px;
+}
+.start_view_div option,#search option{
+	text-indent:10px;
+}
+.start_view_div input{
+	height:28px;
+}
+/*设置查看订单搜索框*/
+
+.searchOrder{
+	line-height:35px;
+	height:40px;
+	margin-top:10px;
+}
+.searchOrder span{
+	color:#666;
+}
+.searchOrder input{
+	width:80px;
+	height:28px;
+	border:0px;
+	margin-left:20px;
+}
+#search{
+	width:140px;
+	height:30px;
+	text-indent:5px;
+	border:1px solid #ccc;
+}
+.orderInfor input{
+	width:69px;
+	border:0px;
+	background:#DBDAD6;
+	margin-right:10px;
+}
+.orderInfor a{
+	width:18px;
+	height:16px;
+	margin-right:7px;
+	border:1px solid #ccc;
+	display:inline-table;
+}
+#totalNumber,#presentPage,#totalPages{
+	border:0px;
+	color:#039;
+}
+.orderInfor{
+	margin-top:15px;
+}
+.orderInfor select{
+	width:30px;
+}
+/*设置比赛界面一的表格*/
+/*--设置左边的内容--*/
+.start_ads_content,.ads_left,.ads_selectOver{
+	margin-top:10px;
+}
+.start_ads_content_left{
+	min-width:808px;
+	margin-bottom:40px;
+}
+.ads_border{	border:1px solid #ccc;}
+.ads_left{
+	width:807px;
+	min-height:258px;/*设置最小高度426px*/
+	margin-bottom:40px;/*对底面距离进行设置*/
+}
+.ads_left_p{
+   height:34px;
+   line-height:34px;
+   padding-left:16px;
+   font-size:15px;
+	}
+.ads_left_p span{
+	padding-left:13px;
+	padding-right:15px;
+}
+.p_color{ background:#B6B7BC;}
+/*右边聊天室内容的开始*/
+.start_ads_content_right{
+    width:300px;
+	/*height:575px;
+	background:#E6EBEF;*/
+	position:absolute;
+	top:95px;
+	right:12px;
+	/*margin-top:-33px;	*/
+	}
+.ads_right_content{
+	 width:298px;height:540px;
+     background:#E6EBEF;
+	 border:1px solid #999;
+}
+.ads_right_top{
+	height:34px;
+	line-height:34px;
+	*height:30px;
+	word-spacing:3px;
+	*padding-top:5px;
+}
+.ads_right_top img{
+	margin-left:12px;}
+.ads_right_chartRoom{
+    width:280px;
+	height:448px;
+	margin-top:5px;
+	background:#FFF;
+	overflow-y:scroll;
+	word-break:break-all;
+	 font-size:13px;
+}
+.ads_right_chartRoom p{
+	padding:3px 5px;
+   	
+	} 
+.ads_right_send{
+	margin-top:5px;
+	width:282px;
+}
+.ads_color1{
+	color:#FECF0F;
+}
+.ads_color2{
+	color:#36F;}
+.ads_right_send textarea{
+	width:228px;
+	height:66px;
+	float:left;
+	padding:4px;
+}
+.ads_right_send input{
+	height:75px;
+	width:40px;
+	margin-left:4px;
+	border:0px;
+	padding-left:4px;
+	padding-right:10px;
+	word-wrap:break-word;
+	float:left;
+	
+}
+/*--等待大厅-*/
+.ads_wait_tab1 {
+	min-height: 370px;
+}
+.ads_wait_tab img{
+	width:125px;
+	height:125px;
+	cursor:pointer;
+	border:1px solid #DDDCD8;
+}
+.ads_wait_tab p{
+	line-height:22px;
+}
+.ads_wait_tab td{
+	padding-top:10px;
+	width:127px;
+	height:175px;
+	padding-left:28px;
+}
+/*--start_deliver_ads广告投放*/
+.search_orderForm option{
+    width:138px;
+	padding-left:0px;  /*不可去掉，否则会继承common里面的*/
+	text-indent:8px;
+}
+#btn1,#btn3,#btn4{
+	background:#DBDAD6; 
+	color:#000;
+ 	height:24px;
+	border:0px;
+	}/*#btn3在start_selectOrder.html里*/
+#btn2{
+	width:200px;
+    height:31px;
+	float:right;
+	margin-right:15px;
+	*margin-top:-30px;
+}
+#btn1:hover, #btn3:hover{
+    background:#d1ba74;
+	font-size:16px;
+}
+#deliver_ads button:hover, #btn2:hover,.affirm_btn2:hover{
+    font-size:16px;
+	color:#000;
+	cursor:pointer;
+}
+.deliver_ads_tab,.ads_affirm_div{
+	margin:auto;
+	margin-top:10px;
+}
+.deliver_ads_tab{
+	margin-bottom:10px;
+}/*对距底面的距离进行设置*/
+.deliver_ads_tab td{
+	width:193px;
+	height:35px;
+	}
+.deliver_ads_tab td input{
+	padding-left:5px;
+	width:100px;
+	height:25px;
+}
+.deliver_ads_tab td button{
+    width:100px;
+    height:28px;
+    background:#355A86;
+    border:0px;
+    color:#fff;
+	}
+/*-广告确认投放-*/
+/*位置不可随意调动，与前面有共用部分,有些重新覆盖了前面定义的,写JS时要重新加上ID，避免冲突*/
+.ads_affirm_left{min-height:450px;}/*位置不可随意调动，重新覆盖了前面定义的高度*/
+.ads_affirm_div{width:775px;}
+.ads_affirm_div input{width:200px;height:30px; border:0px;color:#FFF;}
+.affirm_btn1{padding-left:15px; text-align:left;}
+.affirm_btn1:hover{ background:#d1ba74; cursor:pointer; }
+.affirm_btn2{padding-right:15px; text-align:right;}
+.ads_affirm_bottom{padding-left:350px; margin-top:10px; margin-bottom:40px;}
+/*设置导航条的样式*/
+.start_ads_ul{
+    float: left;
+	height:35px; 
+	/*overflow: hidden;*/
+	width:809px;
+	background:url(../images/bg_over1.jpg) repeat-x;
+	} 
+.ads_ul_div{
+    width:808px;
+	overflow:hidden;	
+	}
+.start_ads_ul li { 
+	float:left;
+	cursor:context-menu;
+	line-height:35px; 
+	/*padding-left: 21px;*/
+	padding-left:15px;
+	padding-right:15px;
+	margin-left: -16px;
+	/*border:1px solid;*/
+} 
+.start_ads_ul .li_out {
+	background:url(../images/arrow_out1.png) no-repeat -4px center;
+}
+.start_ads_ul .div2{background: url(../images/bg_over.jpg) repeat-x;}
+.start_ads_ul .lli{background:url(../images/arrow_out.jpg) no-repeat -7px center;}
+.start_ads_ul li div {
+	width:147px;/*宽度不可随意改动，否则会被挤掉*/
+	height:36px;
+	float:left;
+	display: inline;
+	/*background:#9FF;*/
+	margin-left:0px;
+	text-align:center;
+	
+}
+.start_ads_ul .li_over {
+	background:url(../images/arrow_next_over.jpg) no-repeat -3px center;
+	color:white;
+}
+
+.start_ads_ul .li_next_over {
+	background:url(../images/arrow_over1.png) no-repeat 1px center;
+}
+.start_ads_ul .div_over {
+	background: url(../images/bg_out.jpg) repeat-x;}
+/*设置选择订单页面start_selectOrder.html*/
+.ads_selectOrder{
+  width:1120px;/*覆盖了前面ads_left对于宽度的定义*/	
+   margin-top:10px;
+   min-height:525px;
+  /*margin-bottom:30px;*/
+  float:left;
+	}
+#btn4{
+    width:90px; 
+	margin-right:25px;  /*315px*/
+	margin-top:5px;
+}
+#btn5{
+    width:180px;
+	margin-right:50px;
+	margin-top:5px;
+}
+.ads_selectOrder_top {
+	height:50px;
+	*height:35px;
+	line-height:50px;
+	*padding-top:15px;
+	text-align:left;
+	padding-left:50px;/*进行了修改*/
+	}
+#top_search{
+	width:1106px;
+	/*margin-top:10px;*/
+}
+.select_product_span{
+	margin-left:52px;
+	}
+#btn3{
+	width:70px;
+    margin-left:36px;
+}
+.selectOrder_div {
+	margin-left:25px;
+	*margin-left:10px;
+}
+.selectOrder_div div{
+  width:310px;
+  height:185px;
+  background:#FEFF99 url(../images/icon_circle.jpg) no-repeat left top;
+  margin:13px 23px;
+  float:left;
+  box-shadow:0px 0px 1px 2px #E9EACB;
+  display:inline-table;/*进行修改*/
+}
+.selectOrder_div div table{
+   	height:160px;
+	width:310px;
+	margin:auto;
+	}
+.selectOrder_div div table td{
+	height:20px;
+	padding-left:32px;
+}
+.first_tr{
+	height:30px;
+	line-height:30px;
+	
+}
+.first_tr td input,#btn4,#btn5{
+	color:#fff;
+	border:0px;
+	height:25px;
+	cursor:pointer;
+	float:right;
+	background:url(../images/warn_bg.jpg);
+	*margin-top:-30px;
+}
+.first_tr td input{background:#355A86; padding:0px 15px;}
+.hidden_p{
+	text-align:center;
+    background:#FFE54C;
+    line-height:25px;
+	height:25px;
+	display:none;	
+	}
+.checked{
+    opacity:0.4; 
+	filter:alpha(opacity=40);	
+	}
+#choseOrder:hover{
+    color:#000;
+}
+/*ads_selectOver.html结束选订单*/
+.ads_selectOver{
+	width:807px;
+	height:275px;
+}
+.selectOver_img{
+	display:block;
+	margin-top:53px;
+}
+.selectOver_p2{
+	font-weight:500;
+	line-height:45px;
+	font-size:17px;
+	}
+.selectOver_p3,.selectOver_p3 span{
+    color:#8C8C8C;
+	line-height:20px;	
+	}
+.selectOver_p3 span{
+	text-decoration:underline;
+	
+		}
+/*弹框查看订货会信息*/
+.checkOrder_tab thead, .checkAllOrder_tab thead{
+    background:#f4f4f4;
+}
+.checkAllOrder_tab table,.checkAllOrder_tab thead,.checkAllOrder_tab tbody,.checkAllOrder_tab tfoot{
+	width: 100%;
+}
+.checkOrder_tab td{
+    border:1px solid #ccc;
+	height:29px;
+	width:150px;
+	text-align:center;
+}
+.checkOrder_tab tbody button{
+    padding:0px 8px;
+    border:none;
+	background:#dbdad6;
+	/*word-spacing:5px;*/
+}
+.checkOrder_tab tbody button:hover{
+    background:#d1ba74;
+}
+.checkOrder_tab tfoot td, .checkAllOrder_tab tfoot td{
+    border:none;
+    height:39px;
+}
+.checkOrder_tab tfoot button, .checkAllOrder_tab tfoot button{
+    border:none;
+    padding:3px 10px;
+    background:#355a86;
+    color:#fff;
+}
+.checkOrder_tab tfoot button:hover, .checkAllOrder_tab tfoot button:hover{
+    color:#000;
+	font-size:15px;
+}
+/*弹框查看所有订货会信息*/
+.checkAllOrder_tab td{
+	border:1px solid #ccc;
+	height:29px;
+	width:100px;
+	text-align:center;
+}

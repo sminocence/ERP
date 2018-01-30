@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* 学生贡献度确认 */
+.box-table{
+	width: 100%;
+	text-align: center;
+}
+#box table{
+	width: 100%;
+	border: 1px solid #fff;
+	line-height: 30px;
+	text-align: center;
+}
+.table-contribute{
+	width: 100%; 
+	border: none;
+	text-align: center;
+	background-color: #fff;
+}
+.table-td-contribute{
+	 width: 50px; 
+}
+
+/*成绩比例设置*/
+.gameInfo{
+	float: left;
+	margin-top: 20px;
+}
+.setProp{
+	float: left;
+	margin-left: 50px;
+}
+.gameInfo p,.setProp p{
+	text-align: right;
+	margin-top: 10px;
+}
+.gameInfo p input,.setProp p input{
+	width: 120px;
+	text-align: center;
+}
+.setProp label{
+	margin-left: 60px;
+}
+
+/*一键确认*/
+.confirm{
+	font-weight: bold;
+
+}
+/*清除浮动*/
+.clear{
+	clear:both;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	font-size:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{
+	zoom:1;
+}

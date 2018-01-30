@@ -1,0 +1,58 @@
+@charset "utf-8";
+/*CSS Document*/
+.buyR{
+	text-align:center;
+}
+.buyR p{
+	margin-top:7px;
+}
+.buyR p input{
+	height:20px;
+	width:118px;
+}
+.buyR select{
+	width:118px;
+	}
+.detail{
+	background:#999999;
+	height:90px;
+	margin-left:101px;
+	padding-top:10px;
+	width:125px;
+}
+.main-content h2{
+	font-weight:lighter;
+	line-height:25px;
+	/*padding-right:26px;*/
+	/*text-align:right;*/
+}
+.main-content{
+	height:720px;
+	margin-left:93px;
+	width:580px;
+	_width:620px;
+}
+.mt{
+	margin-top:16px;
+	_margin-top:9px;
+	width:70px;
+	height:20px;
+	background:#355A86;
+	border:0px;
+	color:#fff;
+	cursor:pointer;
+}
+.r-content{
+	background:#dbdad6;
+	border:solid #dbdad6 3px;
+	height:203px;
+	float:left;
+	margin:20px 28px;
+	width:226px;
+}
+.r-content img{
+	float:left;
+}
+.text-center{
+	text-align:center;
+}

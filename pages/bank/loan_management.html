@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>贷款管理</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/finance/finance.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>贷款管理<span>&nbsp;&nbsp;Loan Management</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/loan.jpg" /></span>
+			<span><h4>贷款与融资</h4></span>
+			<span>></span>
+			<span><h4>贷款管理</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	
+	<!--选择贷款类型、状态开始-->
+	<div class="choose">
+	<div class="choose_loan">
+	    <div class="loan_type">
+	        <label>贷款类型：</label>
+		    <select name="loan_type">
+			    <option>长期贷款</option>
+			    <option>短期贷款</option>
+			    <option>高利贷</option>
+		        <option>全部</option>
+		    </select>
+		</div>
+		<div class="loan_status">
+	        <label>贷款状态：</label>
+		    <select name="loan_status">
+			    <option>未还贷款</option>
+		        <option>已还贷款</option>
+			    <option>全部</option>
+		    </select>
+		</div>
+		<input type="button" name="search" value="查询" class="search_btn"/>
+	</div>
+	</div>
+	<!--选择贷款类型、状态结束-->
+	
+	<div class="tab1">
+	<table class="loan_table">
+	<thead>
+		<tr class="first">
+		    <td>贷款编号</td><td>贷款类型</td><td>开始贷款时间</td><td>最后还款时间</td><td>贷款金额</td><td>处理</td>
+		</tr>
+	</thead>
+        <tr>
+		    <td>1464</td><td>长期贷款</td><td>1</td><td>20</td><td>20.0</td><td><a href="#" class="return">归还贷款</a></td>
+		</tr> 
+        <tr>
+		    <td>1465</td><td>短期贷款</td><td>1</td><td>20</td><td>20.0</td><td>已还款</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+    </table>
+	</div>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//设置表格的单双行的颜色不同
+	$(".loan_table tr:odd").css("background","#f4f4f4");
+	
+	//在表格加载数据
+	function jsonCallBack(data){
+		
+		 //如果data.loanList的数据大于表格行数，则补加行数
+	    var trLength=$(".loan_table tbody tr").length;
+		var dataLength = data.loanList.length;
+	    if(dataLength > trLength){
+		    var addTr=$("tbody tr:first").clone(true);
+		    for(var i=trLength; i<dataLength; i++){
+			    $(addTr).clone(true).appendTo(".loan_table tbody");
+			}
+		}
+	    
+		//清空表格内容
+		$(".loan_table tbody td").empty();
+
+	    $(data.loanList).each(function(index){
+		    var loanTr=$(".loan_table tbody tr").eq(index);
+			$(loanTr).find("td").eq(0).text(data.loanList[index].loanID);
+			$(loanTr).find("td").eq(1).text(data.loanList[index].loanTypeName);
+			$(loanTr).find("td").eq(2).text(data.loanList[index].beginTime);
+			$(loanTr).find("td").eq(3).text(data.loanList[index].endTime);
+			$(loanTr).find("td").eq(4).text(data.loanList[index].money);
+			if(data.loanList[index].status==0){  //判断是否还款，未还款就添加按钮，已还款就显示”已还款“
+			    $(loanTr).find("td").eq(5).append("<a href='#' class='return'>"+"归还贷款"+"</a>");
+			}
+			else{
+			    $(loanTr).find("td").eq(5).text("已还贷款");
+			}
+		});
+	  //还款操作
+		$(".return").on("click",function(){
+			var ok = confirm("是否要归还贷款?\n温馨提示:请注意你的现金小心变成负资产.");
+			if (ok) {
+			    var id=$(this).parents("tr").children("td:first").text();
+			    $.post("returnLoanAction!returnLoan.action",{"loanID":id});  //只传值，不重新刷新
+				$(this).parents("tr").remove();
+			}else {
+				return ;
+			}
+		});
+	}
+	
+	//一上来就加载
+    $.post("returnLoanAction!findLoan.action",{"loanType":"长期贷款","loanStatus":"未还贷款"},jsonCallBack,"json");
+	
+	
+	
+	//查询操作
+	$(".search_btn").click(function(){
+	    var type=$("select[name='loan_type'] option:selected").text();
+		var status=$("select[name='loan_status'] option:selected").text();
+	    $.post("returnLoanAction!findLoan.action",{"loanType":type,"loanStatus":status},jsonCallBack,"json");
+	});
+});
+</script>
+</body>
+</html>

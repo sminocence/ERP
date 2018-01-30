@@ -1,0 +1,170 @@
+@charset"utf-8";
+/*CSS Document*/
+.content{
+	height:720px;
+}
+.hasfourul li{
+	width:248px;
+	height:90px;
+	}
+.hassixli li{
+	width:150px;
+}
+.hr-bar{
+	margin-bottom:20px;
+	_margin-bottom:3px;
+	}	
+.hr-bar div{
+	padding-top:10px;
+	_padding-top:4px;
+}
+.hr-bar hr{
+	height:2px;
+	border:#989898;
+	background:#989898;
+	}
+.hr-bar span{	
+	float:left;
+	padding-right:20px;
+}
+.hr-bar img{
+	float:right;
+	_margin-top:-9px;
+	}
+.market{
+	clear:both;
+	margin-top:14px;
+}
+.market ul{
+	background:#f2f2f1;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:992px;
+}
+.market ul li{
+	float:left;
+	
+}
+.market h2{
+	font-weight:lighter;
+	font-size:18px;
+	z-index:-1000;
+}
+.market ul li h3{
+	color:#999999;
+	font-weight:lighter;
+	line-height:36px;
+}
+.market .state{
+	background:#dbdad6;
+	cursor:hand;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:123px;
+}
+.market .state h2{
+	line-height:90px;
+}
+.market-bar{
+	height:90px;
+	clear:both;
+	margin-top:12px;
+}
+.market-bar a{
+	color:#000;
+}
+.market-ul img{
+	float:left;
+}
+.page3_maincontent{
+	width:1115px;
+	}
+	
+.big_div{
+		width:500px;
+		height:190px; 
+		margin-left:90px;
+		/*border:5px solid black;*/
+		}
+.small_div{
+	width:206px;
+	height:190px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	/*border:5px solid red;*/
+	}
+.develop_ISO{
+	min-height:40px;
+	_height:expression((documentElement.clientHeight < 40) ? "40px" : "100%" );/*ie6*/
+	}
+.hassevenli li{
+	width:133px;
+	_width:133px;
+	margin-left:15px;
+	/*_z-index:-1000px;*/
+	}
+	
+.market-bar{
+	margin-top:30px;
+	}
+ul{ margin-bottom:30px;}	
+
+ul img{
+   margin-left:10px;
+   margin-top:-10px;
+   _z-index:2000;
+   _float:left;
+   _position:absolute;
+   _left:-3px;
+	
+	}
+	/*灰条定位*/
+.dingwei{
+	_float:left;
+	_position:absolute;
+	_left:70px;
+	}
+	
+	
+.img_s1, .img_s2, .img_m1, .img_m2{
+	cursor:pointer;
+ }
+ 
+/*悬浮框样式*/
+
+
+.suspension1{
+  background:#d7d6b6;
+  /*background:#6F9;*/
+  width:300px;
+  /*float:left;*/
+  position:absolute;
+  left:210px;
+  top:315px;
+  _z-index:4000;
+  padding:1px 10px 1px 10px;
+  _padding:0 5px 0 5px;
+  display:none;
+  
+}
+.suspension2{
+  background:#d7d6b6;
+  /*background:#6F9;*/
+  width:300px;
+  /*float:left;*/
+  position:absolute;
+  left:410px;
+  top:315px;
+  _z-index:4000;
+   padding:1px 10px 1px 10px;
+  _padding:0 5px 0 5px;
+  display:none;
+}
+ 
+.suspension1 hr,.suspension2 hr{
+	margin:10px 0 10px 0;
+    _margin:2px 0 2px 0;
+	}

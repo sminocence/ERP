@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>申请贷款</title>
+  <link rel="stylesheet" href="../../css/start_common.css">
+  <link rel="stylesheet" href="../../css/start_applyForLoan.css">
+</head>
+<body>
+  <div class="content">
+    <div class="trabecula">
+      <div class="trabecula-white">
+        <span><h2>申请贷款<span>&nbsp;&nbsp;Apply Loan</span></h2></span>
+      </div>
+      
+      <div class="gray-trabecula">
+        <span><img src="../../images/pic_loan.jpg"></span>
+        <span><h4>贷款与融资</h4></span>
+        <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+        <span><h4>申请贷款</h4></span>
+      </div>
+    </div>
+
+    <div class="applyForLoan common_margin">
+      <div class="chooseType common">
+        <span class="common_color2">货款类型：</span>
+        <select class="selectCommon" id="loanType">
+          <option selected="selected">长期贷款</option>
+          <option>短期贷款</option>
+          <option>高利贷</option>
+        </select>
+      </div>
+      
+      <div class="loanContent common_margin">
+        <div class="loanContent_left common_float_left">
+          <table>
+            <tr>
+              <td class="firstTd">贷款名称</td>
+              <td>:</td>
+              <td class="thirdTd">长期贷款</td>
+            </tr>
+            <tr>
+              <td class="firstTd">年利率</td>
+              <td>:</td>
+              <td class="thirdTd">10.0%</td>
+            </tr>
+            <tr>
+              <td class="firstTd">贷款金额</td>
+              <td>:</td>
+              <td class="thirdTd"><input type="text" class="selectCommon" id="loanMoney"/><span>万</span></td>
+            </tr>
+            <tr>
+              <td class="firstTd">贷款期限</td>
+              <td>:</td>
+              <td class="thirdTd">
+                <select class="selectCommon" id="selectPeriod"></select>
+                <span class="unit">期</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="loanContent_right common_float_left">
+          <p class="loanP1">当期不能申请长期贷款！</p>
+          <p class="loanP2"></p>
+          <p class="loanP3">说明：只有年初才能申请长期贷款。<br/>企业运营每期进行一次结算收取利息。</p>
+        </div>
+
+        <p class="common bottomP"><input type="button" value="申请" id="applyBtn" class="common_1 btn"/></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.min.js"></script>
+  <script src="../../js/start_applyForLoan.js"></script>
+</body>
+</html>

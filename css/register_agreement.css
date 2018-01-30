@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+body{font-size:14px;}
+
+.middle_content {
+	height: 554px;
+	text-align:center;
+}
+.content {
+    z-index:-1;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	height:514px;
+	width:815px;
+	margin:0px 0px 0px 5px;
+    word-wrap:break-word;
+}
+.content p {
+	text-align: left;
+	text-indent: 28px;
+    line-height:24px;
+	padding-left:66px;
+	padding-right:66px;
+
+}
+.title {
+    padding:35px;
+	font-size:18px;
+}
+
+.return{
+    height:40px;
+	width:820px;
+	z-index:1;
+}
+.return a{text-decoration:underline;}
+.return a:link,a:visited{color:#000;}
+.return a:hover,a:active{color:#369;}

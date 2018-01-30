@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<link type="text/css" rel="stylesheet" href="../../css/after_register.css">
+  <title>welcome</title>
+
+	<!--[if IE 6]>
+		<style>
+			html { overflow: scroll; }
+		</style>
+	<![endif]-->
+	<script src="../../js/jquery-1.9.1.min.js"></script>
+	<script src="../../js/dwr/util.js"></script>
+	<script src="../../js/dwr/engine.js"></script>
+	<script src="../../js/dwr/interface/loginService.js"></script>
+	<script src="../../js/after_register.js"></script>
+</head>
+<body onload="checkGameGroupRunning()">
+	<div class="header same_1 same_2">
+		<span class="header_span same">
+			<a id="name" href="javascript:void(0)" class="same_3 same_2">Username</a>，welcome&nbsp;!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+	</div>
+
+	<div class="main">
+		<div class="sidebar_left">
+			<ul class="sidebar_ull same same_3" id="left_ull">
+				<li id="li1"><a target="right_iframebody" href="userstatusEg.html">Audit status</a></li>
+				<li id="li2"><a target="right_iframebody" href="modifyuserinfoEg.html">Modify regist-info</a></li>
+				<li id="li3"><a target="right_iframebody" href="joingroupEg.html">Join group</a></li>
+				<li id="li4"><a target="right_iframebody" href="gameGroupAction!addGameGroupInput.action">Create a group</a></li>
+				<li class="last_li "><a  href="javascript:void(0)" onclick="{if(!confirm('Do you want to log out?'))return true; if(true) { window.location ='../../indexeg.html'}}"><span><img src="../../images/ico_exit.png" />Login out</span></a></li>
+			</ul>
+		</div>
+
+		<div class="sidebar_right">
+      		<iframe id="right_iframebody"  name="right_iframebody" width="1024" height="657" scrolling="no" frameborder="0" marginleft="0" marginright="0"
+      		></iframe>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p class="footer_p same same_1 same_2">Copyright © 2011 - 2016 Chongqing You Ni Weisi Technology Co., Ltd all rights reserved</p>
+	</div>
+
+	<script>
+	  // 判断游戏是否在进行中
+		function checkGameGroupRunning() {
+			// 若 data 为 true，说明游戏已经初始化成功，这个时候应该直接跳到 main.html
+			$.get('gameGroupAction!isGameGroupRunning.action?rnd=' + Math.random(), function (data) {
+				if (data === true) {
+					window.parent.location.href = '../mainframework/mainEg.html';
+				}
+			}, 'json');
+		}
+
+    // 后端确认游戏初始化成功的时候调用这个方法跳转到游戏界面
+		function startgame() {
+			window.parent.location.href = '../mainframework/loadingpageEg.html';
+		}
+
+		// 后端调用这个方法来判断用户应该在哪个界面
+		function displayMenuList() {
+			$.get('loginAction!showMenuList.action?rnd=' + Math.random(), function (list) {
+        var state = jQuery.parseJSON(list);
+
+			  if (state === 1) {
+					// 没有通过审批
+				  $('#right_iframebody').attr('src', 'userstatusEg.html');
+			  } else if (state === 2) {
+					// 通过审批但没有加入分组
+				  $('#right_iframebody').attr('src', 'joingroupEg.html');
+			  } else if (state === 3) {
+					// 创建分组界面
+				  $('#right_iframebody').attr('src', 'admingamegroupEg.html');
+			  } else if (state === 4) {
+					// 加入分组的用户的界面
+				  $('#right_iframebody').attr('src', 'membergamegroupEg.html');
+			  } else {
+				  alert(state);
+				  alert(list);
+			  }
+			}, 'json');
+		}
+
+		$(function () {
+			// 判断session 是否过期或者是否没有登录。
+			$.get('gameGroupAction!isLogin.action?rnd=' + Math.random(), function (data) {
+				if (data === false) {
+					alert('You have not logged in for too long. Please log in again.');
+					window.parent.location.href = '../../indexeg.html';
+				} else {
+					// 获取用户名，并将其写到右上方
+					$.get('registerInfoAction!getRegister.action?rnd=' + Math.random(), function (list) {
+				    var data = jQuery.parseJSON(list);
+			 	    $('#name').html(data.user.name);
+			    });
+
+					checkGameGroupRunning();
+					displayMenuList();
+				}
+			}, 'json');
+		});
+  </script>
+</body>
+</html>

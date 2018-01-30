@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css"rel="stylesheet" href="../../css/base.css" />
+<link type="text/css" rel="stylesheet" href="../../css/content.css" />
+<title>2</title>
+</head>
+
+<body>
+<div class="container container_2">
+<form action="registerInfoAction!modifyUser.action" method="post">
+  <table>
+   <tr><td class="space" style="word-spacing:3px" width="70px">用 户 名</td><td width="20px">：</td><td class="td_3"><input  type="text" name="userID" readonly="readonly"/><span></span></td></tr>
+   <tr><td>真实姓名</td><td>：</td><td class="td_3"><input type="text" name="name"  class="td_3" /><span></span></td></tr>
+   <tr><td class="space">学 号</td><td>：</td>
+       <td class="td_3"><input type="text" name="studentID"  /><span></span></td>
+   </tr>
+   <tr><td class="space">专 业</td><td>：</td>
+       <td class="td_3"><input type="text" name="major"  /><span></span></td>
+   </tr>
+   <tr><td class="space">班 级</td><td>：</td>
+       <td class="td_3"><input type="text" name="className"  /><span></span></td>
+   </tr>
+   <tr><td class="space">电子邮件</td><td>：</td>
+       <td class="td_3"><input type="text" name="email"/><span></span></td>
+   </tr>
+   <tr><td class="space">联系方式</td><td>：</td>
+       <td class="td_3"><input type="text" name="tel" /><span></span></td>
+   </tr>
+   <tr><td class="space">密 码</td><td>：</td>
+       <td class="td_3"><input type="password" name="password" /><span></span></td>
+   </tr>
+   <tr><td class="space">确认密码</td><td>：</td>
+       <td class="td_3"><input type="password" name="confirm"  /><span></span></td>
+   </tr>
+  </table>
+  <input type="checkbox" name="agree" checked="checked" />
+  <input type="hidden" name="identifyId" value=""/>
+  <input type="button" value="确认修改" name="register" class="btn common_1 common_2 common_btn"/>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script language="javascript" src="../../js/registerCheck.js"></script>
+<script type="text/javascript">
+$(function($) {
+  $('input[name="agree"]').hide();
+
+	//判断session 是否过期/是否没有登录。
+	$.get("gameGroupAction!isLogin.action?rnd="+Math.random(),function(data){
+		if(data == false){
+			alert("登录太久没有动作，请重新登录");
+			window.parent.location.href="../../index.html";
+		}
+	},"json");
+
+	$.get("registerInfoAction!getRegister.action?rnd="+Math.random(),
+		function(list) {
+			var data = jQuery.parseJSON(list);
+			$("input[name='userID']").attr("value", data.user.userID);
+			$("input[name='name']").attr("value", data.user.name);
+			$("input[name='major']").attr("value", data.user.major);
+			$("input[name='className']").attr("value", data.user.className);
+			$("input[name='email']").attr("value", data.user.email);
+			$("input[name='studentID']").attr("value", data.user.studentID);
+			$("input[name='identifyId']").attr("value", data.identifyId);
+			$("input[name='tel']").attr("value", data.user.tel);
+		})
+});
+</script>
+</body>
+</html>

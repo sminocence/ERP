@@ -1,0 +1,85 @@
+		body {
+		margin:0;
+		}
+		/*灰色大框*/
+		.fullbg {
+		background-color:gray;
+		left:0;
+		position:absolute;
+		top:0;
+		z-index:3;
+		filter:alpha(opacity=50);  /* IE私有属性，仅适用于IE*/
+		-moz-opacity:0.5; /* 支持一些老版本的Mozilla浏览器(火狐)*/
+		-khtml-opacity:0.5;/*支持一些老版本的Safari浏览器*/
+		opacity:0.5; /* 支持CSS3的浏览器（主流）,支持Firefox, Safari和 Opera.*/
+		}
+	 	
+		/*弹框*/
+		.dialog {
+		background-color:#fff;
+		border:1px solid #355a86;
+		position:fixed ;
+		z-index:5;
+		display:none;
+    	font-family:"微软雅黑";
+	    font-size:14px;
+	    _margin-left:50%;
+		min-width:420px;
+	    min-height:164px;
+	    _width:expression((documentElement.clientWidth < 300) ? "300px" : "100%" );/*ie6*/
+	    display:none;
+		}
+		
+	
+		/*弹框标题栏*/
+		.dialog .title{
+		height:30px;
+		line-height:24px;
+		/*background:#12385f;*/
+		position:relative;
+		width:100%;/*ie6*/
+		text-align:center;
+		float:left;
+		}
+	
+		
+		/*关闭符号*/	
+		.dialog .title .close {
+		text-align:right;
+		padding-top:3px;
+		height:20px;
+		width:20px;
+		float:left;
+		position:absolute;
+		right:5px;
+		cursor:pointer;
+		}
+       .close input {
+		   width:22px;
+		   border:0px;
+		   background:#325C86;
+	   }
+		/*弹框标题*/
+	     .dialog .title .center_title{
+		height:27px;
+		color:#FFF;
+		/*padding-top:3px;*/
+		float:left;
+		left:0;/*ie6*/
+		margin-left:0;
+		position:absolute;
+		left: auto;
+        right: auto;
+	    width:100%;
+	    _width:auto;
+			}
+	
+	 
+	  /*引入的table框*/
+	  .myDiv{	
+	  float:left;
+	 /* margin-top:20px;*/
+	  _margin-top:0;
+      }
+     
+		

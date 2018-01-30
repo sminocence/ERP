@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>产品研发管理</title>
+	<link href="../../css/ProductDevelopment.css" rel="stylesheet" />
+    <link href="../../css/start_common.css" rel="stylesheet"/>
+ 
+</head>
+<body>
+<!--页面最大的div-->
+ <div class="content">
+	<!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>产品研发管理<span>&nbsp;&nbsp;Product Research</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/Product_Development.gif" /></span>
+			<span><h4>产品研发&amp;认证</h4></span>
+			<span>&nbsp;>&nbsp;</span>
+			<span><h4>产品研发管理</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	<!--主要部分-->
+	<div class="page3_maincontent">
+		<!--研发完成的产品开始-->
+		<div class="market">
+        	<div class="hr-bar">
+				<span>研发完成的产品</span><div><hr /></div><img src="../../images/hrfoot.gif"/>
+            </div>
+           <!-- 装图的大框开始-->
+			 <div class="big_div">
+            <div class="small_div"><img class="img_f1" src="../../images/p1_f.gif"/><img class="img_s1" src="../../images/p1_s.gif"/></div>
+             <div class="small_div"><img class="img_f2" src="../../images/p2_f.gif"/><img class="img_s2" src="../../images/p2_s.gif"/></div>
+            <div class="small_div"><img class="img_f3" src="../../images/p3_f.gif"/><img class="img_s3" src="../../images/p3_s.gif"/></div>
+            <div class="small_div"><img class="img_f4" src="../../images/p4_f.gif"/><img class="img_s4" src="../../images/p4_s.gif"/></div>
+           <!-- 装图的大框结束--> 
+             </div>
+			
+			<!--研发完成的产品结束-->
+		</div>
+		<!--研发中的产品开始-->
+		<div class="market">
+			<div class="hr-bar">
+				<span>研发中的产品</span><div><hr /></div><img src="../../images/hrfoot.gif"/>
+            </div>
+			<!--研发中的产品开始点-->
+            <div class="develop_P">
+            <!--研发中的产品开始-->
+              <div class="market-bar Ping" id="hidden_Ping">
+				<ul class="market-ul hassixli">
+					<span class="img_Ping"></span>
+					<li><h3>产品名称</h3><h2></h2></li>
+					<li><h3>研发产品需要周期</h3><h2></h2></li>
+					<li><h3>每期研发费用</h3><h2></h2></li>
+					<li><h3>已完成研发周期</h3><h2></h2></li>
+					<li><h3>开始研发时间</h3><h2></h2></li>
+					<li><h3>当前状态</h3><h2 id="current">正在研发</h2></li>
+				</ul>
+				<a href="javascript:void(0);">
+					<div class="state current_btn begin" id="state">
+						<h2>暂停研发</h2>
+					</div>
+				</a>
+             <!--研发中的产品结束-->
+			</div>
+            
+            <!--研发中的产品结束点-->
+            </div>
+    
+			<!--研发中的产品结束-->
+		</div>
+        
+        
+		<!--研发新的产品开始-->
+		<div class="market">
+			<div class="hr-bar">
+				<span>研发新的产品</span><div><hr /></div>
+				<img src="../../images/hrfoot.gif"/>
+            </div>
+            <div class="undevelop_p"></div>
+			   <!--研发新的产品P1开始-->
+			<div class="market-bar P clear1" id="hidden_P">
+				<ul class="market-ul hassixli">
+					<span class="img_P"></span>
+					<li><h3>产品名称</h3><h2></h2></li>
+					<li><h3>研发产品需要周期</h3><h2></h2></li>
+					<li><h3>每期研发费用</h3><h2></h2></li>
+				</ul>
+				<a href="javascript:void(0);">
+					<div class="state start1" id="un_state">
+						<h2>开始研发</h2>
+					</div>
+				</a>
+				<!--研发新的产品P1结束-->
+             </div>
+                
+  
+			</div>
+			<!--研发新的产品结束-->
+		</div>
+	<!--主要部分结束-->
+	</div>
+ <!--页面最大的div结束-->
+ </div>
+ <script src="../../js/jquery-1.9.1.min.js"></script>
+ <script src="../../js/productdevelopment.js"></script>
+ <script>
+	var oState=$(".state");
+	for(var i=0;i<oState.length;i++){
+		oState[i].onmouseover=function(){
+			this.style.background="#d1ba74";
+		};
+		oState[i].onmouseout=function(){
+			this.style.background="#dbdad6";
+		};
+	}
+ </script>
+ </body>
+</html>

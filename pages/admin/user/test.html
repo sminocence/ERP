@@ -1,0 +1,111 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+<title>Online View PDF</title>  
+ <style>
+ body,html{
+ 	margin:0;
+ 	padding:0;
+ 	width:100%;
+ 	height:100%;
+ }
+ a {
+ 	display:inline-block;
+ 	height:2%;
+ }
+.pdfobject-container {
+	height: 95%;
+	margin:1% 0 0 0;
+}
+</style> 
+</head>  
+<body>  
+<a href="">下载实验报告</a>
+<div id="example1"></div>
+<script src="js/pdfobject.js"></script>
+<script>
+var path =decodeURIComponent(localStorage.getItem("path"));
+console.log(path,1)
+var pdf = decodeURIComponent(encodeURI(encodeURI(path+'.pdf')));
+console.log(pdf)
+PDFObject.embed(path + '.pdf', "#example1");
+document.getElementsByTagName("a")[0].href=path+ '.doc';
+</script>
+</body>  
+</html>  
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+<title>Online View PDF</title>  
+ <style>
+ body,html{
+ 	margin:0;
+ 	padding:0;
+ 	width:100%;
+ 	height:100%;
+ }
+ a {
+ 	display:inline-block;
+ 	height:2%;
+ }
+.pdfobject-container {
+	height: 95%;
+	margin:1% 0 0 0;
+}
+</style> 
+</head>  
+<body>  
+<a href="">下载实验报告</a>
+<div id="example1"></div>
+<script src="js/pdfobject.js"></script>
+<script>
+var path =decodeURIComponent(localStorage.getItem("path"));
+console.log(path,1)
+var pdf = decodeURIComponent(encodeURI(encodeURI(path+'.pdf')));
+console.log(pdf)
+PDFObject.embed(path + '.pdf', "#example1");
+document.getElementsByTagName("a")[0].href=path+ '.doc';
+</script>
+</body>  
+</html>  
+>>>>>>> origin/english
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+<title>Online View PDF</title>  
+ <style>
+ body,html{
+ 	margin:0;
+ 	padding:0;
+ 	width:100%;
+ 	height:100%;
+ }
+ a {
+ 	display:inline-block;
+ 	height:2%;
+ }
+.pdfobject-container {
+	height: 95%;
+	margin:1% 0 0 0;
+}
+</style> 
+</head>  
+<body>  
+<a href="">下载实验报告</a>
+<div id="example1"></div>
+<script src="js/pdfobject.js"></script>
+<script>
+var path =decodeURIComponent(localStorage.getItem("path"));
+console.log(path,1)
+var pdf = decodeURIComponent(encodeURI(encodeURI(path+'.pdf')));
+console.log(pdf)
+PDFObject.embed(path + '.pdf', "#example1");
+document.getElementsByTagName("a")[0].href=path+ '.doc';
+</script>
+</body>  
+</html>  
+>>>>>>> d68c673aab6863149f47c1fdc1753b5030acc173

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="zh-CN">
+<![endif]-->
+<html class="no-js" lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ERP system background management</title>
+  <link rel="stylesheet" type="text/css" href="./css/base.css">
+  <style type="text/css">
+    .tableStyle td a .icon-edit {
+      vertical-align: text-top;
+    }
+  </style>
+</head>
+<body>
+<!--[if lt IE 9]>
+<div class="warn-brower">
+  您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+  <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+  谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+  <div class="header clear-fix">
+    <div class="logo-area">
+      <a class="logo" title="Virtual operating system" href="#"></a>
+    </div>
+
+    <ul class="operate">
+      <li><a href="#" title="Create a new administrator" class="s_create"><span class="icon-edit"></span>new Build administrator</a></li>
+      <li><a href="#" title="Refresh" class="s_refresh"><span class="icon-cw"></span>Refresh</a></li>
+      <li><a href="#" title="sign out" class="s_exit"><span class="icon-off"></span>sign out</a></li>
+      <li class="user-info">
+        <img src="./img/pic_meb3.jpg" title="Avatar" class="photo">
+        <span class="username">Hello!</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="siderbar">
+      <ul class="siderbar-ul">
+<!-- <<<<<<< HEAD -->
+        <!-- <li><a href="super.html" class="active">Administrator user list</a></li> -->
+<!-- ======= -->
+<!-- <<<<<<< HEAD -->
+        <li><a href="superEg.html" class="active">Administrator user list</a></li>
+<!-- ======= -->
+        <!-- <li><a href="super.html" class="active">Administrator user list</a></li> -->
+<!-- >>>>>>> origin/erp01 -->
+<!-- >>>>>>> f43aff42123675570b35719bc0a06ae284306d3d -->
+      </ul>
+    </div>
+
+    <div class="main-wrapper">
+      <div class="main">
+        <h1 class="content-title-style1">
+          <span class="icons-header2"></span>&nbsp;user list
+          <form name="search_form" id="search_form">
+            <input type="text" id="search_user" placeholder="Find user: By user name ID">
+          </form>
+        </h1>
+      
+      <div id="table-area" class="clear-fix">
+        <table class="tableStyle" id="table">
+          <tr id="theader">
+            <th>Admin strator user nameID</th>
+            <th>name</th>
+            <th>operating</th>
+          </tr>
+          <tr>
+            <td colspan="7"><span class="icon-spin5">Please wait, data loading ...</span></td>
+          </tr>
+        </table>
+        
+        <div class="page-wrapper clear-fix"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/jquery-1.9.1.min.js"></script>
+  <script src="./js/jquery.form-validator.js"></script>
+  <script src="./js/jquery-table.js"></script>
+  <script src="./js/commonEg.js"></script>
+  <script src="./js/superEg.js"></script>
+</body>
+</html>

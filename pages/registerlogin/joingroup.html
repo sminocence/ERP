@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>4</title>
+<link type="text/css" rel="stylesheet" href="../../css/base.css" />
+<link type="text/css" rel="stylesheet" href="../../css/content.css" />
+</head>
+
+<body>
+<div class="container_4 container" >
+  <table class="tab container common_1" id="page_4_tab">
+    <tr>
+        <td><span class="tab_span1"></span>
+        	    <input type="button" name="add" /></td>
+        <td><span class="tab_span1"></span>
+        	    <input type="button" name="add" /></td>
+        <td><span class="tab_span1"></span>
+        	     <input type="button" name="add" /></td>
+    </tr>
+    <tr>
+       <td><span class="tab_span1"></span>
+       	       <input type="button" name="add" /></td>
+        <td><span class="tab_span1"></span>
+        	    <input type="button" name="add" /></td>
+       <td><span class="tab_span1"></span>
+       	       <input type="button" name="add" /></td>
+     </tr>
+    <tr>
+       <td><span class="tab_span1"></span>
+       	       <input type="button" name="add" /></td>
+       <td><span class="tab_span1"></span>
+       	        <input type="button" name="add"/></td>
+       <td><span class="tab_span1"></span>
+       	       <input type="button" name="add"/></td>
+    </tr>
+  </table>
+ <p class="p_page common"><a href="#">[1]</a><a href="#">[2]</a><a href="#">[3]</a><a href="#">[4]</a><a href="#">[5]</a><a href="#">[6]</a></p>
+</div>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/dwr/util.js"></script>
+<script type="text/javascript" src="../../js/dwr/engine.js"></script>
+<script type="text/javascript" src="../../js/dwr/interface/gameGroupService.js"></script>
+<script src='../../js/joingroup.js'></script>
+<script type="text/javascript">
+//这个方法用来启动该页面的ReverseAjax功能
+dwr.engine.setActiveReverseAjax(true);
+//设置在页面关闭时，通知服务端销毁会话
+dwr.engine.setNotifyServerOnPageUnload(true);
+//不弹窗
+dwr.engine.setErrorHandler(function(){});
+
+function refresh(){
+	$.get("gameGroupAction!showGameGroupList.action?rnd="+Math.random(),displayGameGroupList,"json");
+	//gameGroupService.showGameGroupList();
+}
+function displayGameGroupList(list) {
+	var data = list;
+	//$('.tab td span').empty();
+    $('td').find('input').prev().removeClass("tab_span2").empty();
+	//我就说怎么和我昨晚的效果不对,上一行代码最后原来是有.empty()的啊.
+    //html和css都有改动,已经可以了,再有问题再说.
+    $('input[name="add"]').attr("disabled","disabled");
+    for(var key in data){
+	    var size=data.length;
+        if(key<size) {
+        	var tar=$('td').eq(key).find('input');
+
+    	    $(tar).prev().empty();
+            $(tar).prev().addClass("tab_span1 tab_span2");
+            $(tar).removeAttr("disabled").css("cursor","pointer");
+            var sp1='<p class="common tab_p1">'+data[key].groupName+'</p>';
+            var sp2='<p class="common tab_p2">'+"未开始比赛"+'</p>';
+            var sp3='<p class="common tab_p3">'+'<span id="joined">'+(data[key].userNumbers-data[key].remandNumber)+'</span>';
+            sp3+="/";
+            sp3+='<span id="totalNum">'+data[key].userNumbers+'</span>'+'</p>';
+            $(tar).prev().append(sp1,sp2,sp3);
+        }
+    }
+    // 实现4页面的添加按钮背景改变
+	$("#page_4_tab input").mouseover(function() {
+		$(this).css("background", "url(../../images/ico_add.jpg)");
+	}).mouseout(function() {
+		$(this).css("background", "url(../../images/ico_add.png)");
+	});
+
+}
+$(function(){
+	//判断session 是否过期/是否没有登录。
+	$.get("gameGroupAction!isLogin.action?rnd="+Math.random(),function(data){
+		if(data == false){
+			alert("登录太久没有动作，请重新登录");
+			window.parent.location.href="../../index.html";
+		}
+	},"json");
+
+	//gameGroupService.showGameGroupList();
+	$.get("gameGroupAction!showGameGroupList.action?rnd="+Math.random(),displayGameGroupList,"json");
+
+	// 这个玩意只能绑定一次, 如果绑定太多会出现加入n多次的情况.
+	$('input[name="add"]').click(function () {
+		var str = $(this).prev().find(".tab_p1").text();
+		
+    $.post('gameGroupMemberAction!joinGroup.action?rnd=' + Math.random(), {
+      'gameGroupName': str
+    },function (status) {
+			if (status == 'true') {
+				window.parent.location.assign('useroperate.html');
+			} else {
+				alert('你已经加入了另外一个分组了');
+				window.parent.location.assign('useroperate.html');
+			}
+		});
+  });
+
+
+	//获取到父页面的信息
+	var parent = $(window.parent.document).contents();
+    parent.find("#li2,#li3,#li4").css('display','block');
+  	parent.find("#li1").css('display','none');
+  	//这里需要去点击某个li
+    parent.find("#li3").attr('class','first_li');
+});
+
+</script>
+</body>
+</html>

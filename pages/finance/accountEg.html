@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>accounting entries</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/finance/finance.css" />
+</head>
+
+<body>
+<div class="content divn">
+    <!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>View the accounting entries<span>&nbsp;&nbsp;Check Journal Entry</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/financial.jpg" /></span>
+			<span><h4>Financial Management</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>View the accounting entries</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	
+	<!--选择起始、结束年期开始-->
+	<div class="choose">
+	<div class="choose_common choose_accounting">
+	    <div class="start_year">
+	        <label style="margin-left: -110px;">startTime：</label>
+		    <select name="start_year">
+		        <!--option动态加载-->
+		    </select><span>year</span>
+		    <select name="start_period">
+		        <!--option动态加载-->
+		    </select><span>period</span>
+		</div>
+		<div class="end_year">
+	        <label style="margin-left: -50px;">endTime：</label>
+		    <select name="end_year">
+		        <!--option动态加载-->
+		    </select><span>year</span>
+		    <select name="end_period">
+		        <!--option动态加载-->
+		    </select><span>period</span>
+		</div>
+		<input type="button" name="search" value="Inquire" class="search_btn"/>
+	</div>
+	</div>
+	<!--选择起始、结束年期结束-->
+	
+	<!--会计分录开始-->
+	<div class="tab">
+	<table class="accounting_table">
+	    <thead>
+        <tr class="first_tr">
+		    <td>Receipts</td><td>Time of occurrence</td><td>Transaction summary</td><td>subject</td><td>Types</td><td>Amount of money</td>
+		</tr>
+		</thead>
+		<tr>
+		    <td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</table>
+	<!--分页页码开始-->
+	<div class="pages">
+	    <p>There are<span id="totalRecord">xx</span>records，there are<span id="totalPage">xx</span>pages，Is currently the<span id="currentPage">xx</span>page</p>
+		<p class="page_click">
+			<span class="pageTop"><a href="#">before</a></span>
+			<span class="pageBody">
+				<a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a>
+				<a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a>
+			</span>
+			<span class="pageBottom"><a href="#">next</a></span>
+		</p>
+	</div>
+	<!--分页页码结束-->
+	</div>
+	<!--会计分录结束-->
+</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/accountEg.js"></script>
+</body>
+</html>

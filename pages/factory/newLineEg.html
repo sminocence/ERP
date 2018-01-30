@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New production line</title>
+
+</head>
+<body>
+	<div class="add">
+		<table>
+		    <tr>
+			    <td class="label commonInput">Production line type：</td>
+				<td>
+				    <select name="lineType">
+					<option class="chooseLine">Please select the type of production line</option>
+	                <option class="opt">Manual production line</option>
+		            <option class="opt">Semi - automatic production line</option>
+					<option class="opt">Automatic production line</option>
+					<option class="opt">Flexible production line</option>
+	                </select>
+				</td>
+			</tr>
+			<tr>
+				<td class="label commonInput">product：</td>
+				<td>
+					<select name="linePro">
+					<!-- option内容动态加载 -->
+					</select>
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Installation cycle：</td>
+				<td>
+				    <input type="text" name="installPeriod" class="installPeriod" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Cost per installment：</td>
+				<td>
+				    <input type="text" name="periodInstallFee" class="periodInstallFee" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Conversion cycle：</td>
+				<td>
+				    <input type="text" name="changePeriod" class="changePeriod" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Cost per conversion：</td>
+				<td>
+				    <input type="text" name="changeFee" class="changeFee" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Productivity：</td>
+				<td>
+				    <input type="text" name="efficiency" class="efficiency" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Each maintenance fee：</td>
+				<td>
+				    <input type="text" name="keepFee" class="keepFee" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Depreciation expense per period：</td>
+				<td>
+				    <input type="text" name="discountFee" class="discountFee" value="" />
+				</td>
+			</tr>
+			<tr>
+			    <td class="label commonInput">Residual value：</td>
+				<td>
+				    <input type="text" name="restValue" class="restValue" value="" />
+				</td>
+			</tr>
+			<tr align="center">
+			    <td colspan="2"><button>Confirm new</button></td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

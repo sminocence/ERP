@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ERP system background management</title>
+    <link rel="stylesheet" href="../common/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .form-div{
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .form-div label{
+            margin-right: 14px;
+        }
+        .form-div select option{
+            color: #000;
+        }
+        #chart{
+            margin-top: 10px;
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<div class="warn-brower">
+    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+    <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+        升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+    谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+<!--header-->
+<div class="header clear-fix">
+    <div class="logo-area">
+        <a class="logo" title="virtual operation system" href="#"></a>
+    </div>
+
+    <ul class="operate">
+      <li><i class="iconfont">&#xe665;</i><a href="#" title="Refresh" class="j_refresh">Refresh</a></li>
+      <li><i class="iconfont">&#xe61b;</i><a href="#" title="change Password" class="j_modifypass">change Password</a></li>
+      <li><i class="iconfont">&#xe600;</i><a href="#" title="sign out" class="exit">sign out</a></li>
+      <li class="user-info">
+        <img src="../common/img/pic_meb3.jpg" title="Avatar" class="photo">
+        <span class="username">hello!</span>
+      </li>
+    </ul>
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content">
+    <div class="siderbar">
+      <ul class="siderbar-ul">
+        <li class="has-more">
+          <a href="#"><i class="iconfont">&#xe624;</i>User Management</a>
+            <ul>
+              <li><a href="../user/userEg.html" class="active">user list</a></li>
+              <li><a href="../user/approvalEg.html">Approve the user</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="../group/grouplistEg.html"><i class="iconfont">&#xe832;</i>Management grouping</a>
+        </li>
+        <li>
+          <a href="assessEg.html" class="active"><i class="iconfont">&#xe60b;</i>Enterprise evaluation</a>
+        </li>
+        <li class="has-more">
+          <a href="his_assessEg.html"><i class="iconfont">&#xe60a;</i>View historical data</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--main-wrapper-->
+    <div class="main-wrapper">
+        <div class="main">
+            <h1 class="content-title-style1">
+                <span class="icons-header2"></span>
+                Enterprise evaluation
+            </h1>
+            <form class="form-div" id="chooseItem">
+                <div style="display: inline-block" class="select-wrapper">
+                    <label>
+                        <select  class="form-control selete-item" name="item">
+                            <option value="null">Please select the analysis module</option>
+                            <option value="1">Advertising input - output analysis</option>
+                            <option value="2">Analysis of Comprehensive Market Share</option>
+                            <option value="3">Product market share analysis</option>
+                            <option value="4">Costs Proportion of Sales</option>
+                            <option value="5">Cost Analysis of Sales Cost Proportion</option>
+                            <option value="6">Product Contribution Profit Analysis</option>
+                            <option value="7">Production capacity analysis</option>
+                            <option value="8">Owners' equity</option>
+                        </select>
+                    </label>
+                    <label>
+                      <select class="form-control search-type" name="searchType">
+                        <option value="null">Please select the viewing method</option>
+                        <option value="View by business">View by business</option>
+                        <option value="View by group">View by group</option>
+                      </select>
+                    </label>
+                    <label>
+                        <select class="form-control selete-group" name="group">
+                            <option value="null">Please select grouping</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-groupitem" name="groupitem">
+                            <option value="null">Please choose your business</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-year" name="year">
+                            <option value="null">Please select the year</option>
+                        </select>
+                    </label>
+                    <label>
+                      <select class="form-control search-period" name="period">
+                        <option value="null">Please select the cycle</option>
+                      </select>
+                    </label>
+                </div>
+                <button type="button" class="form-control btn search">To view</button>
+            </form>
+            <div id="chart"></div>
+        </div>
+    </div>
+    <!--main-wrapper end-->
+</div>
+<!--content end-->
+<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../common/js/jquery.form-validator.js"></script>
+<script type="text/javascript" src="../common/js/commonEg.js"></script>
+<script type="text/javascript" src="../common/js/echarts.js"></script>
+<script type="text/javascript" src="js/assessEg.js"></script>
+</body>
+</html>

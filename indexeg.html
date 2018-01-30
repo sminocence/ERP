@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <title>Virtual operation system of ERP</title>
+  <link type="text/css" rel="stylesheet" href="css/base.css" />
+  <link type="text/css" rel="stylesheet" href="css/welcome_login.css" />
+  <style> 
+    .tips {
+      text-align: right;
+      color: grey;
+    }
+  </style>
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/index01.js"></script>
+  <script>
+    $.ajaxSetup({ cache: false });
+  </script>
+</head>
+<body >
+  <div class="header"></div>
+
+  <div class="middle">
+    <div class="middle_center same same_2"><span class="middle_welcome">Welcome to login</span></div>
+    
+    <div class="middle_content login_content">
+      <div class="left" id="page_index">
+        <input type="text" name="username" class="left_username left_input" placeholder="username"><br>
+        <input type="password" name="password" class="left_password left_input" placeholder="password"><br>
+        <table class="left_tab">
+          <tr>
+          <td class="left_p">Login&nbsp;identity</td>
+          <td class="student">student <input type="checkbox" name="identify" value="student" checked="checked"></td>
+          <td>teacher <input type="checkbox" name="identify" value="teacher"></td>
+          </tr>
+          <tr>
+          <td class="left_testcode">Verification&nbsp;code</td>
+          <td><input type="text" class="left_txt left_input" name="checkcode"></td>
+          <td id="sec">
+              <script>
+              $(function () {
+                  $.get('loginAction!clean.action?rnd=' + Math.random(), function () {
+                  $('#sec')[0].innerHTML = '<img id="Verify" class="left_img" style="cursor: hand;" alt="Can not see, change one" >';
+                  
+                  $('#Verify').attr('src', 'securityCodeImageAction.action?timestamp=' + new Date().getTime());
+
+                  $('#Verify').on('click', function () {
+                      $(this).attr('src', 'securityCodeImageAction.action?timestamp=' + new Date().getTime());
+                  });
+                  });
+              });
+              </script>
+          </td>
+          </tr>
+        </table>
+
+        <input type="button" value="log&nbsp;in" class="left_login same" name="login">
+        <a class="admin-index" href="adminEg.html">Administrator login >></a>
+        <p class="errorInfo"></p>
+      </div>
+
+      <div class="right">
+        <img src="images/universe.jpg">
+        <p class="right_p1">No&nbsp;ERP&nbsp;virtual&nbsp;account？</p>
+        <p class="right_p2"><a href="pages/registerlogin/welcome_registerEg.html" class="right_register">register</a>!</p>
+      </div>
+       <!-- 进入中文版本按钮 -->
+      <input type="button" value="进入中文版" class="ChineseButton" name="jump02">
+    </div>
+
+    <div class="bottom_shadow"></div>
+    
+    <p class="tips">The system under the Chrome browser experience better,<a href="chrome.exe">download</a></p>
+  </div>
+
+  <div class="blank_div">
+      <table>
+      <tr>
+          <td><img src="images/pic_user.png"></td>
+          <td><img src="images/pic_accurate.png"></td>
+          <td><img src="images/pic_fast.png"></td>
+      </tr>
+      <tr class="blank_tr2">
+          <td>competition</td>
+          <td>comprehensive</td>
+          <td>interesting</td>
+      </tr>
+      <tr class="blank_tr3">
+          <td>To the game group for the game unit<br>enhance strength in competition</td>
+          <td>All-round show business management<br>Fully covering the operational process</td>
+          <td>Exposure to the complex environment of simulated reality<br>Fun and fun, fresh and interesting</td>
+      </tr>
+      </table>
+  </div>
+
+  <p class="footer_p1 same">Copyright © 2011 - 2016  Chongqing You Ni Weisi Technology Limited company &nbsp;&nbsp;All rights reserved</p>
+  <hr class="footer_p2" />
+  <script type="text/javascript" src="js/indexCheckEg.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Annual planning meeting</title>
+	<link href="../../css/start_common.css" rel="stylesheet" />
+	<link href="../../css/meeting.css" rel="stylesheet" />
+    <script src="../../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!--页面最大的div-->
+    <div class="content">
+        <!--包含白色标题和灰色小横条部分-->
+    	<div class="trabecula">
+    	    <!--白色写标题的部分-->
+    		<div class="trabecula-white">
+    			<span><h2>Annual planning meeting<span>&nbsp;&nbsp;Annual Planning Meeting</span></h2></span>
+    		<!--白色写标题的部分结束-->
+    		</div>
+    		<!--灰色的小横条-->
+    		<div class="gray-trabecula">
+    			<!--小图标大小30px,33px-->
+    			<span><img src="../../images/icon_home.gif" /></span>
+    			<span><h4>home page</h4></span>
+    			<span>></span>
+    			<span><h4>Annual planning meeting</h4></span>
+    		<!--灰色的小横条结束-->
+    		</div>
+    	<!--包含白色标题和灰色小横条部分结束-->
+    	</div>
+    	<!--主要部分-->
+    	<div class="page1-maincontent">
+    		<p>Hello classmates, because of the instantaneous change of the market, the Board unanimously decided by your team in the next few years as the company's operating management of this enterprise, but in the hope that you can receive before the first full understanding of this enterprise, including shareholder expectations, the current financial situation of enterprises, the market share. Products, production facilities, such as profitability, in order to prepare for future business.</p>
+    		<br/>
+    		<h3>Current business conditions</h3>
+    		<p>This is a typical discrete manufacturing company, founded 3 years ago, has long been focused on the production and operation of P products in an industry. At present, the company has an independent factory building - a large workshop, with three manual production lines and a semi-automatic production line, and the operation is in good condition. All production equipment temporarily only produces P1 products, and also only in the local market for sale, has a certain reputation.</p>
+    		<br/>
+    		<h3>Tips for business</h3>
+    		<p>The business is carried out according to the annual board of directors, hope you can in the management of each year (season) degree before starting the business, obtain accurate market forecast data, to effectively predict the overall demand for each product in each market volume, price and development trend, discusses the enterprise strategy and business strategy on the basis of this, to form their own <a id="intro" href="javascript:void(0);">marketing planning, product development planning, planning ISO certification</a>, and a series of management measures for financing, production, production line management, inventory management, financial management, according to the plan, I hope you can adopt.</p>
+    		<br/>
+    		<!--提示信息的div-->
+    		<div id="intro-content" class="prompt-info">
+    			<img style="width:26px; height:20px;margin-top:125px;margin-left:-420px;" src="../../images/trangle.gif" />
+    			<div style="width:500px;height:400px;background-color:#EDECE9;margin-top:0px;left:-300px;">
+    				<a href="javascript:void(0);">Market development plan:</a>Determine the enterprise need to develop the market, such as the regional market, the domestic market, the Asian market and the international market, sales development can have access to only after the market; the function can be found in the market management directory.
+    				<br/>
+    				<a href="javascript:void(0);">Product development planning:</a>Determine what businesses need to develop products that can be selected P2 products, P3 products and P4 products, only the product development to have the right to produce the product, the function can be found in the product development directory.
+    				<br/>
+    				<a href="javascript:void(0);">ISO certification program:</a>Determine the enterprise needs to obtain those international certification, including ISO90000 quality certification and ISO14000 environment, if the customer orders are labelled ISO90000 quality certification and ISO14000 environment, so the production unit must also obtain the corresponding certification and advertising fees, this function can be found in the ISO certification directory.
+    			</div>
+    		<!--提示信息的div结束-->
+    		</div>
+    		<h3>Market planning</h3>
+    		<ul class="pad-left35">
+    		   <li>(1)Market segmentation and market</li>
+    		   <li>(2)Sales conference and order - order meeting</li>
+    		   <li>(3)Purchase, sale and lease of premises</li>
+    		   <li>(4)Line purchase, transfer, maintenance, sale</li>
+    		   <li>(5)Product production</li>
+    		   <li>(6)Raw material purchasing</li>
+    		   <li>(7)Product research and development and ISO certification</li>
+    		   <li>(8)Financing, loans and discounts</li>
+    		</ul>
+    	</div>
+     <!--页面最大的div结束-->
+     </div>
+
+    <script>
+    var stime = 0;
+    $("#intro").mouseover(function () {
+        clearTimeout(stime);
+	    $("#intro-content").stop(true).animate({ height: "+400px" }, 500);
+    });
+
+    $('#intro').mouseout(function () {
+	    stime = setTimeout("delay()", 1000);
+    });
+
+    function delay() {
+	    $('#intro-content').stop().animate({ height: '+0px'}, 500);
+    }
+    </script>
+</body>
+</html>

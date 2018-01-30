@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>viewOrder</title>
+<link href="../../css/start_common.css" rel="stylesheet"/>
+<link href="../../css/start_table.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!--页面最大的div-->
+ <div class="content start_viewOrder">
+	<!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>查看原料采购单&nbsp;&nbsp;&nbsp;<font>Check  Purchase Orders</font></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/icon_car.gif" /></span>
+			<span><h4>采购管理</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>查看原料采购单（未到货）</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+    </div>
+    <!-- 暂时不能查看已到货的原料 -->
+    <!--<p class="searchOrder"><span>请选择订单状态：</span>
+       <select id="search">
+       <option selected="selected">全部订单</option>
+       <option>已到货订单</option>
+       <option>未到货订单</option>
+       </select>
+      <input type="button" value="查询" name="search" class="common_1" />
+    </p>-->
+    <!--对表格进行设置-->
+     <table class="common start_table start_table1" id="orderInforTab">
+  <tr class="tr_first">
+    <td>订单编号</td><td>原材料名字</td><td>订购数量</td><td>所在仓库</td><td>采购时间</td><td>到货时间</td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  </tr>
+  </table>
+  <div class="start_viewOrder_bottom start_bottom">
+    <div>共有&nbsp;&nbsp;<a id="totalNumber">0</a>&nbsp;条记录，当前是第&nbsp;<a id="presentPage">1</a>&nbsp;页，共有<a id="totalPages">0</a>&nbsp;页</div>
+      <div  class="orderInfor"><span><input type="button" value="上一页" id="prePage"/><!-- <a href="#">1</a><a href="#">2</a><a href="#">3</a> --><input type="button" value="下一页" id="nextPage"/></span></div>
+   </div>
+ <!--页面最大的div结束-->
+ </div>
+ <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/purchase_viewOrder.js"></script>
+ </body>
+</html>

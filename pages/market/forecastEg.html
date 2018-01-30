@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Market forecasting information</title>
+  <link href="../../css/start_common.css" rel="stylesheet"/>
+  <link href="../../css/forecast.css" rel="stylesheet" />
+   <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../../js/highcharts.js"></script>
+ </head>
+ <body>
+ <!--页面最大的div-->
+ <div class="content divn">
+	<!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>Market forecasting information<span>&nbsp;&nbsp;Market Forecast</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/locator.gif" /></span>
+			<span><h4>Market management</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>Market forecasting information</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	<!--主要部分-->
+	<div class="miancontent">
+		<p class="marketChose">
+          <span>Please choose the market：</span>
+          <select>
+            <option value="local" selected="selected">Local market</option>
+            <option value="region">Regional market</option>
+            <option value="domestic">Domestic market</option>
+            <option value="Asia">Asia market</option>
+            <option value="international">international market</option>
+          </select>
+          <input type="button" value="Inquire" id="marketSearch" class="common_bgcolor common_color" />
+        </p>
+		<div class="img-content">
+			<!--本地市场需求量预测图-->
+			<div><div id="container1" style="min-width:800px;height:400px;"></div></div>
+			<!--本地市场销售价格预测图-->
+			<div class="marleft13"><div id="container2" style="min-width:800px;height:400px;"></div></div>
+		</div>
+	<!--主要部分结束-->
+	</div>
+ <!--页面最大的div结束-->
+ </div>
+ <script type="text/javascript" src="../../js/highchartscolumnEg.js"></script> 
+ </body>
+</html>

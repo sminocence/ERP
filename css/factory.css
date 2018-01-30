@@ -1,0 +1,307 @@
+@charset "utf-8";
+/* CSS Document */
+.font1{
+    color:#000;
+	font-size:14px;
+}
+.font2{
+    color:#999;
+	font-size:14px;
+}
+.font3{
+    color:#000;
+	font-size:18px;
+}
+/*头部背景条，出售、查看生产线按钮背景*/
+.bg1{
+    background:#dbdad6;
+}
+/*出售、停止修建、继续修建等按钮背景*/
+.bg2{
+    background:#d1ba74;
+}
+/*厂房背景条*/
+.bg3{
+    background:#f2f2f1;
+}
+/*查看生产线等悬浮框背景*/
+.bg4{
+    background:#d7d6b6;
+    filter:alpha(opacity=90);  /*IE*/
+    -moz-opacity:0.9;   /*FF*/
+    opacity: 0.9;
+}
+body{
+    margin:0px; padding:0px;
+}
+
+.content{
+    width:1135px;
+	/*min-width:1366px;*/
+}
+/*选择状态、市场*/
+.content .choose{
+    height:34px;
+    margin-top:16px;
+	margin-bottom:35px;
+	padding-left:6px;
+	/*兼容IE6*/
+	*margin-top:16px;
+	*margin-bottom:16px;
+}
+.choose_status, .choose_market{
+    border:none;
+    width:318px;
+	height:32px;
+	padding-left:14px;
+	float:left;
+	line-height:32px;
+}
+.choose_status select, .choose_market select{
+    width:224px;
+	height:29px;
+	text-indent:5px;
+	vertical-align:middle;
+	_font-size:19px;
+}
+.choose_status option, .choose_market option{
+    height:30px;
+    line-height:29px;
+	text-indent:10px;
+	_font-size:19px;
+}
+.choose .btn{
+    padding-left:13px;
+	line-height:32px;
+	vertical-align:middle;
+	float:left;
+}
+.choose .search_btn{
+    border:none;
+    width:73px;
+	height:28px;
+	cursor:pointer;
+	vertical-align:middle;
+}
+.choose .create_btn, .rent_btn{
+    color:#fff;
+	border:none;
+    width:83px;
+	height:32px;
+	background:#355a86;
+	cursor:pointer;
+}
+#hidestatus, #hidemarket{
+	display:none;
+}
+.space1{ margin-left:148px; *margin-left:148px; }
+.space2{ margin-left:17px; *margin-left:17px; }
+/*厂房*/
+.workshop_info .bg3{
+    width:1115px;
+	height:73px;
+	margin-top:15px;
+	*margin-top:15px;
+}
+/*.workshop_info .bg3:first-child dt:first-child{
+    background:#fff;
+} IE6不兼容，写入jquery*/
+.workshop_info .down_btn{
+    width:10px;
+	height:10px;
+	float:left;
+	cursor:pointer;
+	display:block;
+}
+.workshop_info .shop{
+    cursor:pointer;
+}
+.workshop_info .shop{
+    width:70px;
+	height:70px;
+	padding-left:2px;
+}
+.workshop_info dt{
+	height:73px;
+	text-align:center;
+	float:left;
+}
+.workshop_info .status{
+    width:72px;
+}
+.workshop_info .workshop_type{
+    width:82px;
+}
+.workshop_info .workshop_id, .market_area, .builttime{
+    width:110px;
+}
+.workshop_info .buildtime{
+    width:80px;
+}
+.workshop_info .restvalue, .paytype{
+    width:180px;
+}
+.workshop_info .workline_num{
+    width:206px;
+}
+.workline_num .buildPerioud{
+    width:94px;
+	float:left;
+}
+.workline_num .lines{
+    width:102px;
+	float:left;
+}
+.workshop_info p{
+    color:#999;
+	font-size:14px;
+	padding-top:6px;
+	padding-bottom: 5px;
+}
+.workshop_info span{
+    color:#000;
+	font-size:18px;
+	padding-top:5px;
+}
+.workline_num span{
+	padding-top:0px;
+}
+.workshop_info .add_line{
+	width:16px;
+	height:16px;
+	border:none;
+	cursor:pointer;
+	background:url("../images/factory/addLine.jpg") no-repeat;
+}
+.workshop_info .operateFactory input{
+    font-size:18px;
+	width:83px;
+	height:73px;
+	border:none;
+	padding-top:2px;
+	cursor:pointer;
+}
+.workline{
+    width: 1024px;
+	height:37px;
+	padding-top:5px;
+	margin-left:82px;
+	margin-bottom:8px;
+	*margin-left:82px;
+	border-bottom:1px solid #dbdad6;
+}
+.workline span{
+	font-size:15px;
+}
+.workline .lineType{
+	width:170px;
+}
+.workline .lineStatus{
+    width:130px;
+	text-align:left;
+	padding-left:28px;
+}
+.workline .workingPro{
+    width:135px;
+	text-align:left;
+}
+.workline .finishedPeriod{
+    width:145px;
+	text-align:left;
+}
+.workline .operateLine{
+    padding-left:20px;
+}
+.workline input{
+	font-size:15px;
+    width:63px;
+	height:28px;
+	border:none;
+	margin-left:10px;
+	cursor:pointer;
+}
+.workline configuration{
+	font-size:15px;
+	width:95px;
+	height:28px;
+	border:none;
+	margin-left:10px;
+	cursor:pointer;
+}
+.workline img{
+    width:30px;
+	height:30px;
+	padding-left:12px;
+	padding-right:20px;
+}
+.workline div{
+    float:left;
+	height:30px;
+	line-height:30px;
+}
+/*悬浮框*/
+.line_common{
+    position:absolute;
+    top:262px;  /*313*/
+	display:none;
+}
+.line_common p{
+	padding-bottom:3px;
+}
+.examine{
+    width:290px;
+	/* height:330px; */
+	/*left:661px; 879*/
+}
+.changePro{
+    width:294px;
+	height:111px;
+	/*left:949px;*/
+}
+.choosePro{
+	margin:17px 20px;
+    *margin:17px 20px;
+}
+.changePro select{
+	width:173px;
+	height:33px;
+	line-height:33px;
+	text-indent:2px;
+}
+.changePro option{
+	/*height:30px;*/
+	text-indent:5px;
+	display: block;
+}
+.changePro input{
+	width:133px;
+	height:33px;
+	border:none;
+	margin:0px 80px;
+}
+.configure{
+    width:217px;
+    /* height:276px; */
+	/*left:1021px;*/
+}
+.configure .btns{
+	padding-top:6px;
+	padding-bottom:4px;
+}
+.configure input{
+	width:133px;
+	height:33px;
+	border:none;
+	margin:1px 37px;
+}
+.lineInfo1{
+	border-top:1px solid #666;
+	border-bottom:1px solid #666;
+	margin:7px;
+	padding:10px;
+}
+.lineInfo2{
+	border-bottom:1px solid #666;
+	margin:7px;
+	padding:10px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>厂房管理</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/factory.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>厂房管理<span>&nbsp;&nbsp;Workshop Management</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/factory/factory.jpg" /></span>
+			<span><h4>生产管理</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>厂房管理</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	<!--选择市场、选择状态-->
+    <div class="choose font2">
+	    <div class="choose_status">
+        <span>请选择状态：</span>
+	   <select name="workshopStatus">
+		    <option class="haha" value="allStatus" selected="selected">全部</option>
+		    <option class="haha" value="building">在建</option>
+		    <option class="haha" value="rent">租用</option>
+		    <option class="haha" value="built">建成</option>
+	    </select>
+		</div>
+		<div class="choose_market">
+	    <span>请选择市场：</span>
+	    <select name="marketArea">
+	    	<option class="haha" value="allStatus" selected="selected">全部</option>
+		    <option class="haha" value="local">本地市场</option>
+		    <option class="haha" value="region">区域市场</option>
+		    <option class="haha" value="country">国内市场</option>
+		    <option class="haha" value="asia">亚洲市场</option>
+		    <option class="haha" value="globe">国际市场</option>
+        </select>
+		</div>
+		<div class="btn">
+	    <input type="button" name="search" value="查询" class="search_btn bg1"/>
+		<input type="button" name="createWorkshop" value="新建厂房" class="create_btn space1 main_a table" />
+		<input type="button" name="rentWorkshop" value="租用厂房" class="rent_btn space2 main_a table1" />
+		</div>
+    </div>
+    <!--厂房-->
+    <div class="workshop">
+    	<!--已建成厂房-->
+	    <dl class="workshop_info" id="hidden1">
+	        <div class="bg3">
+	        <dt class="down"><img src="../../images/factory/down_btn2.gif" class="down_btn"/>
+		        <img src="../../images/factory/made.jpg" class="shop"/></dt>
+		    <dt class="status"><p>状态</p><span>已建成</span></dt>
+		    <dt class="workshop_id"><p>厂房编号</p><span>MAK009</span></dt>
+		    <dt class="market_area"><p>所在市场</p><span class="market">本地市场</span></dt>
+		    <dt class="workshop_type"><p>厂房类型</p><span>大厂房</span></dt>
+		    <dt class="restvalue"><p>残值</p><span>0.0</span></dt>
+		    <dt class="buildtime"><p>开工时间</p><span>1</span></dt>
+		    <dt class="builttime"><p>完工时间</p><span class="finished">1</span></dt>
+		    <dt class="workline_num"><p>生产线数量</p>
+		        <div><span class="currentLine">4</span>/<span class="totalLine">6</span>
+			    <input type="button" name="add" class="add_line" /></div></dt>
+		    <dt class="operateFactory">
+				<input type="button" value="出售" class="bg1 sell" />
+			</dt>
+		    </div>
+		    <!--产房中的生产线-->
+	        <dd class="workline" id="hiddenLine">
+	            <div class="lineType manuLine"><img src="../../images/factory/131765.jpg" /><span>手工生产线</span></div>
+		        <div class="lineStatus font2">状态：<span>生产中</span></div>
+				<div class="finishedPeriod font2">已完成的周期：<span>1</span></div>
+		        <div class="workingPro font2">正在生产产品：<span>P1</span></div>
+		        <div class="operateLine"><input type="button" name="examine" class="bg1" value="查看" />
+		        <input type="button" name="changePro" class="bg1" value="转产" disabled="disabled"/>
+		        <input type="button" name="configure" class="bg1" value="配置" />
+		        <input type="button" name="sell" class="bg1" value="出售" disabled="disabled"/>
+				<input type="hidden" name="hidden" value="" />
+				<input type="hidden" name="hiddenStatus" value="" />
+				</div>
+	        </dd>
+	    </dl>
+	    <!--修建中的厂房-->    
+	    <dl class="workshop_info" id="hidden2">
+	        <div class="bg3">
+	        <dt class="down"><img src="../../images/factory/down_btn2.gif" class="down_btn"/>
+		        <img src="../../images/factory/making.jpg" class="shop"/></dt>
+		    <dt class="status"><p>状态</p><span>修建中</span></dt>
+		    <dt class="workshop_id"><p>厂房编号</p><span>MAK009</span></dt>
+		    <dt class="market_area"><p>所在市场</p><span class="market">本地市场</span></dt>
+		    <dt class="workshop_type"><p>厂房类型</p><span>大厂房</span></dt>
+		    <dt class="paytype"><p>建造厂房的付款方式</p><span>按期支付建造资金</span></dt>
+		    <dt class="buildtime"><p>开工时间</p><span>1</span></dt>
+		    <dt class="builttime"><p>已完成建造周期</p><span class="finishedPeriod">3</span></dt>
+		    <dt class="workline_num">
+			    <div  class="buildPerioud"><p>总建造周期</p><span>4</span></div>
+				<div  class="lines"><p>能容纳生产线</p><span class="totalLine">6</span></div></dt>
+		    <dt class="operateFactory"><input type="button" value="暂停修建" name="building" class="building bg1" /></dt>
+		    </div>
+		</dl>
+    </div>
+    <!--查看、转产、配置的悬浮框-->
+	<div class="line_common examine bg4">
+	    <div class="lineInfo1">
+		<p class="p1">在制品已经完成的生产周期：<span>1</span></p>
+		<p class="p2">生产线当前价值：<span>2.5</span></p>
+		<p class="p3">残值数额：<span>1.0</span></p>
+	    </div>
+	    <div class="lineInfo2">
+		<p class="p1">安装周期：<span>1</span></p>
+		<p class="p2">安装每期所需费用：<span>5.0</span></p>
+		<p class="p3">转产周期：<span>0</span></p>
+		<p class="p4">转产每期所需费用：<span>0.0</span></p>
+		<p class="p5">生产效率：<span>3</span></p>
+		<p class="p6">生产线开始使用后每期所需维护费用：<span>0.25</span></p>
+		<p class="p7">生产线开始使用后每期的折旧费用：<span>0.25</span></p>
+		<p class="p8">出售生产线后资金到账的账期：<span>1</span></p>
+	    </div>
+	</div>
+	<div class="line_common changePro bg4">
+		<div class="choosePro">
+		    <span>转产产品：</span>
+	        <select name="choosePro">
+	        </select>
+	    </div>
+	    <input type="button" name="confirmChange" value="确认转产" class="confirmChange bg2" />
+	</div>
+	<div class="line_common configure bg4">
+		<div class="btns">
+		<p><input type="button" name="stopInstall" value="暂停安装" class="bg2"/></p>
+	    <p><input type="button" name="restartInstall" value="恢复安装" class="bg2"/></p>
+		<p><input type="button" name="stopWork" value="暂停生产" class="bg2"/></p>
+	    <p><input type="button" name="restartWork" value="恢复生产" class="bg2"/></p>
+	    <p><input type="button" name="startWork" value="开始生产" class="bg2"/></p>
+	    <p><input type="button" name="stopChange" value="暂停转产" class="bg2"/></p>
+	    <p><input type="button" name="restartChange" value="恢复转产" class="bg2"/></p>
+	    </div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/factory.js"></script>
+<script type="text/javascript" src="../../js/commonPop.js"></script>
+</body>
+</html>

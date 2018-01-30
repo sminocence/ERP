@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ERP虚拟运营系统后台管理</title>
+    <link rel="stylesheet" href="../common/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .toggle span{
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<div class="warn-brower">
+    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+    <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+        升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+    谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+<!--header-->
+<div class="header clear-fix">
+    <div class="logo-area">
+        <a class="logo" title="虚拟运营系统" href="#"></a>
+    </div>
+
+    <ul class="operate">
+      <li><i class="iconfont">&#xe665;</i><a href="#" title="刷新" class="j_refresh">刷新</a></li>
+      <li><i class="iconfont">&#xe61b;</i><a href="#" title="修改密码" class="j_modifypass">修改密码</a></li>
+      <li><i class="iconfont">&#xe600;</i><a href="#" title="退出登录" class="exit">退出登录</a></li>
+      <li class="user-info">
+        <img src="../common/img/pic_meb3.jpg" title="头像" class="photo">
+        <span class="username">你好!</span>
+      </li>
+    </ul>
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content">
+    <div class="siderbar">
+      <ul class="siderbar-ul">
+        <li class="has-more">
+          <a href="#"><i class="iconfont">&#xe624;</i>用户管理</a>
+            <ul>
+              <li><a href="../user/user.html">用户列表</a></li>
+              <li><a href="../user/approval.html">审批用户</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="grouplist.html" class="active"><i class="iconfont">&#xe832;</i>管理分组</a>
+        </li>
+        <li>
+          <a href="../assess/assess.html"><i class="iconfont">&#xe60b;</i>企业评价</a>
+        </li>
+        <li class="has-more">
+          <a href="../assess/his_assess.html"><i class="iconfont">&#xe60a;</i>查看历史数据</a>
+        </li>
+
+          <li class="has-more">
+              <a href="../user/output.html"><i class="iconfont">&#xe60a;</i>创建历史数据</a>
+          </li>
+
+      </ul>
+    </div>
+
+    <!--main-wrapper-->
+    <div class="main-wrapper">
+        <div class="main">
+            <h1 class="content-title-style1">
+                <span class="icons-header2"></span>
+                游戏组列表
+
+                <form action="" name="search_form" id="search_form">
+                    <input type="text" id="search_group" placeholder="查找游戏组:按组名">
+                </form>
+            </h1>
+            <div id="table-area" class="clear-fix">
+                <table class="tableStyle" id="table">
+                    <tr id="theader">
+                        <th></th>
+                        <th>组名</th>
+                        <th>组长</th>
+                        <th>组员数</th>
+                        <th>年数</th>
+                        <th>季度数</th>
+                        <th>当前时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                        <td colspan="8"><span class="icon-spin5">请稍候，数据加载中...</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--main-wrapper end-->
+</div>
+<!--content end-->
+<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../common/js/jquery.form-validator.js"></script>
+<script type="text/javascript" src="../common/js/common.js"></script>
+<script type="text/javascript" src="../common/js/jquery-table.js"></script>
+<script type="text/javascript" src="js/grouplist.js"></script>
+</body>
+</html>

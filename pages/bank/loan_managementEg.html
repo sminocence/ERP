@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loan management</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/finance/finance.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--Contains white headers and gray bars-->
+	<div class="trabecula">
+		<!--White write part of the title-->
+		<div class="trabecula-white">
+			<span><h2>Loan Management<span>&nbsp;&nbsp;Loan Management</span></h2></span>
+		<!--The part of the white writing header ends-->
+		</div>
+		<!--Gray little bar-->
+		<div class="gray-trabecula">
+			<!--Small icon size,30px,33px-->
+			<span><img src="../../images/loan.jpg" /></span>
+			<span><h4>Loans and Financing</h4></span>
+			<span>></span>
+			<span><h4>Loan management</h4></span>
+		<!--Gray little bar ends-->		
+		</div>
+	<!--Contains white title and gray small bar section ends-->
+	</div>
+	
+	<!--Select the type of loan, the state starts-->
+	<div class="choose">
+	<div class="choose_loan">
+	    <div class="loan_type">
+	        <label>Type of loan：</label>
+		    <select name="loan_type">
+			    <option>Long term loan</option>
+			    <option>Short-term loans</option>
+			    <option>usury</option>
+		        <option>all</option>
+		    </select>
+		</div>
+		<div class="loan_status">
+	        <label>Loan status：</label>
+		    <select name="loan_status">
+			    <option>Not repayment</option>
+		        <option>Already repayment</option>
+			    <option>all</option>
+		    </select>
+		</div>
+		<input type="button" name="search" value="inquire" class="search_btn"/>
+	</div>
+	</div>
+	<!--Select the type of loan, the status of the end-->
+	
+	<div class="tab1">
+	<table class="loan_table">
+	<thead>
+		<tr class="first">
+		    <td>Loan number</td><td>Type of loan</td><td>Start the loan time</td><td>Final repayment time</td><td>loan amount</td><td>Action</td>
+		</tr>
+	</thead>
+        <tr>
+		    <td>1464</td><td>Long term loan</td><td>1</td><td>20</td><td>20.0</td><td><a href="#" class="return">Return the loan</a></td>
+		</tr> 
+        <tr>
+		    <td>1465</td><td>Short-term loans</td><td>1</td><td>20</td><td>20.0</td><td>Repaid</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+		<tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr> 
+        <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+    </table>
+	</div>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//Set the color of the single and double lines of the table differently
+	$(".loan_table tr:odd").css("background","#f4f4f4");
+	
+	//Load the data in the table
+	function jsonCallBack(data){
+		
+		 //If the data for data.loanList is greater than the number of rows in the table, add the number of rows
+	    var trLength=$(".loan_table tbody tr").length;
+		var dataLength = data.loanList.length;
+	    if(dataLength > trLength){
+		    var addTr=$("tbody tr:first").clone(true);
+		    for(var i=trLength; i<dataLength; i++){
+			    $(addTr).clone(true).appendTo(".loan_table tbody");
+			}
+		}
+	    
+		//Clear the contents of the table
+		$(".loan_table tbody td").empty();
+		
+	    $(data.loanList).each(function(index){
+		    var loanTr=$(".loan_table tbody tr").eq(index);
+			$(loanTr).find("td").eq(0).text(data.loanList[index].loanID);
+			$(loanTr).find("td").eq(1).text(toEnglish(data.loanList[index].loanTypeName));
+			$(loanTr).find("td").eq(2).text(data.loanList[index].beginTime);
+			$(loanTr).find("td").eq(3).text(data.loanList[index].endTime);
+			$(loanTr).find("td").eq(4).text(data.loanList[index].money);
+			if(data.loanList[index].status==0){  //To determine whether the repayment, no repayment to add a button, the repayment shows "repayment"
+			    $(loanTr).find("td").eq(5).append("<a href='#' class='return'>"+"Return the loan"+"</a>");
+			}
+			else{
+			    $(loanTr).find("td").eq(5).text("Already repayment");
+			}
+		});
+	  //Repayment operation
+		$(".return").on("click",function(){
+			var ok = confirm("Do you want to return the loan?\nTips: Please note that your cash is turned into a negative asset.");
+			if (ok) {
+			    var id=$(this).parents("tr").children("td:first").text();
+			    $.post("returnLoanAction!returnLoan.action",{"loanID":id});  //Only pass the value, do not re-refresh
+				$(this).parents("tr").remove();
+			}else {
+				return ;
+			}
+		});
+	}
+	
+	//One up to load
+	//请求参数要为中文，不要修改 hyx
+    $.post("returnLoanAction!findLoan.action",{"loanType":"长期贷款","loanStatus":"未还贷款"},jsonCallBack,"json");
+	
+	
+	
+	//Query operation
+	$(".search_btn").click(function(){
+	    var type=$("select[name='loan_type'] option:selected").text();
+	    //切换成中文请求参数
+	    var type_java = '长期贷款';
+	    switch (type){
+			case 'Long term loan':
+			    type_java = '长期贷款';break;
+			case 'Short-term loans':
+			    type_java = '短期贷款';break;
+			case 'usury':
+			    type_java = '高利贷';break;
+			case 'all':
+			    type_java = '全部';break;
+		}
+		var status=$("select[name='loan_status'] option:selected").text();
+	    var status_java;
+		switch (status){
+			case 'Not repayment':
+			    status_java = '未还贷款';break;
+			case 'Already repayment':
+			    status_java = '已还贷款';break;
+			case 'all':
+			    status_java = '全部';break;
+		}
+	    $.post("returnLoanAction!findLoan.action",{"loanType":type_java,"loanStatus":status_java},jsonCallBack,"json");
+	});
+});
+
+
+
+function toEnglish(loanType_chinese) {
+    switch (loanType_chinese){
+        case '长期贷款' :
+            return 'Long term loan';
+        case '短期贷款' :
+            return 'Short-term loans';
+        case '高利贷' :
+            return 'usury';
+    }
+
+}
+</script>
+</body>
+</html>

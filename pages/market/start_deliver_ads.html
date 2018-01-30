@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>投放广告</title>
+	<link href="../../css/start_common.css" rel="stylesheet">
+	<link href="../../css/start_table.css" rel="stylesheet">
+</head>
+<body id="deliver_ads">
+	<div class="content start_deliver_ads">
+		<div class="trabecula">
+			<div class="trabecula-white">
+				<span><h2>广告投放&amp;订单<span>&nbsp;&nbsp;Advertisement&amp;Order</span><span>（注：若页面长时间没反应的时候请手动刷新一下页面）</span></h2></span>
+			</div>
+			<div class="gray-trabecula">
+				<span><img src="../../images/icon_map.gif"></span>
+				<span><h4>市场管理</h4></span>
+				<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+				<span><h4>广告投放订单</h4></span>
+			</div>
+		</div>
+		
+		<div class="start_ads_content">
+			<div class="ads_ul_div">
+				<ul class="start_ads_ul">
+					<li class="li_out"><div>1. 投放广告</div></li>
+					<li class="li_out"><div>2. 广告投放确认</div></li>
+					<li class="li_out"><div>3. 等待大厅</div></li>
+					<li class="li_out"><div>4. 订单选取</div></li>
+					<li class="li_out"><div>5. 结束选订单</div></li> 
+				</ul>
+			</div>
+			
+			<div class="start_ads_content_left common_float_left"></div>
+			
+			<div class="start_ads_content_right">
+				<p class="ads_right_top common_bgcolor common_color common" id="ads_div1" ><span>聊&nbsp;天&nbsp;室</span><img src="../../images/ico_right_news.gif"></p>
+				<div id="ads_div2" class="ads_right_content">
+					<div class="ads_right_chartRoom ads_border common_margin" id="chartRoom"></div>
+					<div class="ads_right_send common_margin">
+						<textarea class="ads_border"></textarea>
+						<input type="button" name="send" value="发送" class="common_color common_bgcolor common_1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../../js/jquery-1.9.1.min.js"></script>
+	<script src="../../js/dwr/util.js"></script>
+	<script src="../../js/dwr/engine.js"></script>
+  <script src="../../js/dwr/interface/adAndOrderRefreshService.js"></script>
+	<script src='../../js/start_table.js'></script>
+	<script src="../../js/scrollChat.js"></script>
+	<script src="../../js/commonPop.js"></script>
+	<script>
+    // 通知用户跳转到选单页面
+	  function forwardToChooseOrder() {
+		  changeMenu(3);
+		  loadPage("start_choseOrder.html");
+	  }
+
+		// 通知用户订单已经发生改变
+		function changeOrder() {
+			load('chooseOrderAction!chooseOrderList.action?rnd=' + Math.random(), null, orderCallBack);
+		}
+		
+		function apendDialog(list) {
+			var _div2 = $('.ads_right_chartRoom');
+			addDialog(_div2, list);
+		}
+
+		$(function () {
+      $.get('advertisementAction!userStatusOfAdvertisement.action?rnd=' + Math.random()
+      , function (data) {
+        // 启动 ReverseAjax 功能  
+        dwr.engine.setActiveReverseAjax(true);
+        
+        // 在页面关闭时，通知服务端销毁会话  
+        dwr.engine.setNotifyServerOnPageUnload(true);
+        
+        // 隐藏错误提示
+        dwr.engine.setErrorHandler(function () {});
+
+        // 重写 dwr 的 stateChange 方法
+        dwr.engine.transport.xhr.stateChange = function (batch) {
+          var toEval;
+
+          if (batch.completed) {
+            dwr.engine._debug('Error: _stateChange() with batch.completed');
+            location.reload();
+            return;
+          }
+
+          var req = batch.req;
+
+          try {
+            var readyState = req.readyState;
+            var notReady = (req.readyState != 4);
+
+            if (notReady) {
+              return;
+            }
+          } catch (ex) {
+            dwr.engine._handleWarning(batch, ex);
+            // It's broken - clear up and forget this call
+            dwr.engine.batch.remove(batch);
+            return;
+          }
+
+          if (dwr.engine._unloading && !dwr.engine.isJaxerServer) {
+            dwr.engine._debug('Ignoring reply from server as page is unloading.');
+            return;
+          }
+
+          try {
+            var reply = req.responseText;
+            reply = dwr.engine._replyRewriteHandler(reply);
+            var status = req.status; // causes Mozilla to except on page moves
+
+            if (reply == null || reply == '') {
+              dwr.engine._handleWarning(batch, { name: 'dwr.engine.missingData', message: 'No data received from server' });
+            } else if (status != 200) {
+              dwr.engine._handleError(batch, { name: 'dwr.engine.http.' + status, message: req.statusText });
+            } else {
+              var contentType = req.getResponseHeader('Content-Type');
+              if (dwr.engine.isJaxerServer) {
+                // HACK! Jaxer does something b0rken with Content-Type
+                contentType = 'text/javascript';
+              }
+              if (!contentType.match(/^text\/plain/) && !contentType.match(/^text\/javascript/)) {
+                if (contentType.match(/^text\/html/) && typeof batch.textHtmlHandler === 'function'){
+                  batch.textHtmlHandler({ status: status, responseText: reply, contentType: contentType });
+                }
+                else
+                {
+                  dwr.engine._handleWarning(batch, { name: 'dwr.engine.invalidMimeType', message: 'Invalid content type: \'' + contentType + '\'' });
+                }
+              } else {
+                // Comet replies might have already partially executed
+                if (batch.isPoll && batch.map.partialResponse == dwr.engine._partialResponseYes) {
+                  dwr.engine.transport.xhr.processCometResponse(reply, batch);
+                } else if (reply.search("//#DWR") == -1) {
+                  dwr.engine._handleWarning(batch, { name:"dwr.engine.invalidReply", message:"Invalid reply from server" });
+                } else {
+                  toEval = reply;
+                }
+              }
+            }
+          } catch (ex) {
+            dwr.engine._handleWarning(batch, ex);
+          }
+
+          dwr.engine._callPostHooks(batch);
+
+          // Outside of the try/catch so errors propagate normally:
+          dwr.engine._receivedBatch = batch;
+          if (toEval != null) toEval = toEval.replace(dwr.engine._scriptTagProtection, '');
+          
+          dwr.engine._eval(toEval);
+          dwr.engine._receivedBatch = null;
+          dwr.engine.batch.validate(batch);
+          if (!batch.completed) dwr.engine.batch.remove(batch);
+        }
+
+        // 获得标记
+        adAndOrderRefreshService.getAdAndOrderFlag();
+
+        var status = parseInt(data);
+        
+        if (status === 1) {
+          loadPage('start_selectOrder.html');
+          changeMenu(0);
+        } else if (status === 3) {
+          loadPage('start_deliver_ads_wait.html');
+          changeMenu(2);
+        } else if (status === 4) {
+          loadPage('start_choseOrder.html');
+          changeMenu(3);
+        } else {
+          loadPage('start_selectOver.html');
+          changeMenu(4);
+        }
+      });
+
+			var _div2 = $('.ads_right_chartRoom');
+			loadDialog(_div2);
+			sendDialog();
+		});
+	</script>
+</body>
+</html>

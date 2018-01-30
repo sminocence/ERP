@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>游戏已结束</title>
+<link rel="stylesheet" href="../css/start_year_meeting.css" />
+<link rel="stylesheet" href="../css/start_common.css" />
+<link rel="stylesheet" href="../css/newFactory.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../../css/component.css" /> -->
+<!--[if IE 6]>
+  <style type="text/css">
+     html{overflow:scroll;}
+  </style>
+    <script src="../js/common.js"/>
+<![endif]-->
+</head>
+<style>
+  .extra:last-child:hover {
+    background: #12385F;
+  }
+</style>
+<body class="body_all"><!--里面的class不可去掉-->
+<!--header-->
+	<div class="header common_color">
+	</div>
+	<!--content-->
+<div class="year_content">
+    <!--content_left-->
+    <div class="content_left common_float_left" id="mainLeft">
+        <div class="content_left_dl">
+
+            <dl>
+                <dt><div></div><img src="../images/ico_left_8.png" />
+                    <a href="javascript:void(0)" target="iframebody"><span>财务管理</span></a></dt>
+                <dd><a href="finance/account.html" target="iframebody"><span>查看会计分录</span></a></dd>
+                <dd><a href="finance/balancesheet.html" target="iframebody"><span>查看资产负债表</span></a></dd>
+                <dd><a href="finance/profit_sheet.html" target="iframebody"><span>查看利润表</span></a></dd>
+                <dd><a href="finance/check_cash.html" target="iframebody"><span>盘点现金</span></a></dd>
+            </dl>
+
+            <dl>
+                <dt><div></div><img src="../images/ico_word.png" />
+                    <a href="javascript:void(0)" target="iframebody"><span>实验报告</span></a></dt>
+                <dd><a class="preview" target="iframebody"><span>预览实验报告</span></a></dd>
+                <dd><a href="#" class="down" target="iframebody"><span>下载实验报告</span></a></dd>
+            </dl>
+
+            <dt class="extra">
+                <a href="mainframework/summary.html" target="iframebody">
+                    <img src="../images/ico_summary.png"/>
+                    <span>填写实验心得</span>
+                </a>
+            </dt>
+
+            <dt class="extra">
+                <a href="mainframework/memberchange.html" target="iframebody">
+                    <img src="../images/ico_change.jpg"/>
+                    <span>小组成员设置</span>
+                </a>
+            </dt>
+
+            <dt class="extra">
+                <a href="javascript:void(0)" onclick="replay()">
+                    <img src="../images/refresh.png">
+                    <span>重新开始</span>
+                </a>
+            </dt>
+
+            <dt class="extra">
+                <a href="javascript:void(0)" onclick="exit()">
+                    <div></div><img src="../images/ico_left_12.png" />
+                    <span>退出游戏</span>
+                </a>
+            </dt>
+            </dl>
+
+        </div>
+    </div>
+	<!--content_right-->
+	<div class="content_right common_float_left">
+		<iframe name="iframebody"  scrolling="no" id="frame_content" frameborder="0"></iframe>
+	</div>
+</div>
+ <div class="year_footer common common_margin"><p>Copyright &copy 2014 MIS. All rights reserved.</p></div>
+ <!--遮罩层-->
+<div class="fullbg"></div>
+  <!--弹框开始-->
+<div class="dialog">
+    <!--蓝色标题栏开始-->
+    <div class="title">
+       <div class="center_title"></div>
+       <div class="close">
+       <input type="button" value="X" class="exit" />
+       </div>
+    </div>
+ <!--蓝色标题栏结束-->
+ <!--弹框内容开始-->
+    <div>
+		<div class="myDiv" ></div>
+    </div>
+     <!--弹框内容结束-->
+</div>
+<!--弹框结束-->
+<!--设置右下角弹出悬浮框-->
+<div id="popupBox">
+  <p><img src="" />
+    <span class="font_color common"></span>
+  </p>
+</div>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+
+<script type="text/javascript">
+function replay(){
+	//重新做人
+	var ok=confirm("若选择重新游戏，你将丢失所有数据，请注意做好备份。\n是否确定重新开始？");
+	if(ok){
+	    $.ajaxSetup({cache: false});
+	    $.get("gameGroupMemberAction!replay.action?rnd="+Math.random(),function(){
+			  location.href="../index.html";
+	    });
+	}
+	else{ return false; }
+}
+
+function exit() {
+  if (confirm('确定退出游戏吗？')) {
+    $.get('loginAction!signout.action', function (res) {
+      var resp = JSON.parse(res);
+  
+      if (!resp.status) {
+        location.assign('../index.html');
+      }
+    });
+  }
+}
+
+
+/*--使iframe--高度自适应*/
+function reinitIframe(){
+var iframe = document.getElementById("frame_content");
+try{
+var bHeight = iframe.contentWindow.document.body.scrollHeight;
+var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+var height = Math.min(bHeight, dHeight);
+iframe.height =  height;
+}catch (ex){}
+}
+window.setInterval("reinitIframe()", 200);
+</script>
+
+</body>
+</html>

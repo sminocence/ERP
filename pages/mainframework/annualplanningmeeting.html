@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>年度规划会议</title>
+	<link href="../../css/start_common.css" rel="stylesheet" />
+	<link href="../../css/meeting.css" rel="stylesheet" />
+    <script src="../../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!--页面最大的div-->
+    <div class="content">
+        <!--包含白色标题和灰色小横条部分-->
+    	<div class="trabecula">
+    	    <!--白色写标题的部分-->
+    		<div class="trabecula-white">
+    			<span><h2>年度规划会议<span>&nbsp;&nbsp;Annual Planning Meeting</span></h2></span>
+    		<!--白色写标题的部分结束-->
+    		</div>
+    		<!--灰色的小横条-->
+    		<div class="gray-trabecula">
+    			<!--小图标大小30px,33px-->
+    			<span><img src="../../images/icon_home.gif" /></span>
+    			<span><h4>主页</h4></span>
+    			<span>></span>
+    			<span><h4>年度规划会议</h4></span>
+    		<!--灰色的小横条结束-->
+    		</div>
+    	<!--包含白色标题和灰色小横条部分结束-->
+    	</div>
+    	<!--主要部分-->
+    	<div class="page1-maincontent">
+    		<p>同学你好，由于市场的瞬时变化，董事会一致决定由你们团队在接下来的几年里作为公司的管理层经营这家企业，不过在接收之前希望你们能够先对这家企业进行充分的了解，包括股东期望，企业当前的财务状况，市场占有率，产品，生产设施，盈利能力等，以便为以后的经营做准备。</p>
+    		<br/>
+    		<h3>当前企业状况</h3>
+    		<p>这是一家典型的离散制造企业，创建也有3年，长期以来一直专注于某行业P系列产品的生产与运营。目前企业拥有自主厂房-大厂房，其手安装了三条手工生产线和一条半自动生产线，运营状况良好。所有生产设备暂时只生产P1产品，并且也只在本地市场进行销售，有一定的知名度。</p>
+    		<br/>
+    		<h3>经营小提示</h3>
+    		<p>企业的经营是按年度展开的，董事会希望你们管理层能够在每年(季)度开始经营之前，准确的获取市场预测资料，对每个市场每个产品的总体需求量、单价、发展趋势做出有效预测，在此基础上讨论企业战略和业务策略，形成自己的<a id="intro" href="javascript:void(0);">市场开拓规划，产品研发规划，ISO认证规划</a>，并根据这些规划进行融资贷款、产品生产、生产线管理、库存管理、财务管理等一系列经营措施，希望你能够采纳。</p>
+    		<br/>
+    		<!--提示信息的div-->
+    		<div id="intro-content" class="prompt-info">
+    			<img style="width:26px; height:21px;" src="../../images/trangle.gif" />
+    			<div>
+    				<a href="javascript:void(0);">市场开拓规划：</a>确定企业需要再开发那些市场，比如区域市场、国内市场、亚洲市场和国际市场，只有开发过后才能拥有该市场的销售准入权；该功能可在市场管理目录下找到。
+    				<br/>
+    				<a href="javascript:void(0);">产品研发规划：</a>确定企业需要研发那些产品，可供选择的有P2产品、P3产品和P4产品，只有进行产品的研发才能拥有该产品的生产权，该功能可在产品研发目录下找到。
+    				<br/>
+    				<a href="javascript:void(0);">ISO认证规划：</a>确定企业需要获取那些国际认证，包括ISO90000质量认证和ISO14000环境认证，如果客户的订单上标注了ISO90000质量认证或ISO14000环境认证，那么生产单位也必须取得相应认证并投放了广告费，该功能可在ISO认证目录下找到。
+    			</div>
+    		<!--提示信息的div结束-->
+    		</div>
+    		<h3>市场规划</h3>
+    		<ul class="pad-left35">
+    		   <li>(1)市场划分和市场</li>
+    		   <li>(2)销售会议与订单争取-订货会</li>
+    		   <li>(3)厂房购买、出售和租赁</li>
+    		   <li>(4)生产线购买、转产与维修、出售</li>
+    		   <li>(5)产品生产</li>
+    		   <li>(6)原材料采购</li>
+    		   <li>(7)产品研发与ISO认证</li>
+    		   <li>(8)融资贷款与贴现</li>
+    		</ul>
+    	</div>
+     <!--页面最大的div结束-->
+     </div>
+
+    <script>
+    var stime = 0;
+    $("#intro").mouseover(function () {
+        clearTimeout(stime);
+	    $("#intro-content").stop(true).animate({ height: "+272px" }, 500);
+    });
+
+    $('#intro').mouseout(function () {
+	    stime = setTimeout("delay()", 1000);
+    });
+
+    function delay() {
+	    $('#intro-content').stop().animate({ height: '+0px'}, 500);
+    }
+    </script>
+</body>
+</html>

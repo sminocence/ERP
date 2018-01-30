@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Plant management</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/factory.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--Contains white headers and gray bars-->
+	<div class="trabecula">
+		<!--White write part of the title-->
+		<div class="trabecula-white">
+			<span><h2>Plant management<span>&nbsp;&nbsp;Workshop Management</span></h2></span>
+		<!--The part of the white writing header ends-->
+		</div>
+		<!--Gray little bar-->
+		<div class="gray-trabecula">
+			<!--Small icon size30px,33px-->
+			<span><img src="../../images/factory/factory.jpg" /></span>
+			<span><h4>Production management</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>Plant management</h4></span>
+		<!--Gray little bar ends-->		
+		</div>
+	<!--Contains white title and gray small bar section ends-->
+	</div>
+	<!--Choose the market, select the state-->
+    <div class="choose font2">
+	    <div class="choose_status">
+        <span> status：</span>
+	   <select name="workshopStatus">
+		    <option class="haha" value="allStatus" selected="selected">all</option>
+		    <option class="haha" value="building">construction</option>
+		    <option class="haha" value="rent">Rented</option>
+		    <option class="haha" value="built">Built</option>
+	    </select>
+		</div>
+		<div class="choose_market">
+	    <span> market：</span>
+	    <select name="marketArea">
+	    	<option class="haha" value="allStatus" selected="selected">all</option>
+		    <option class="haha" value="local">Local market</option>
+		    <option class="haha" value="region">Regional market</option>
+		    <option class="haha" value="country">Domestic market</option>
+		    <option class="haha" value="asia">Asia market</option>
+		    <option class="haha" value="globe">international market</option>
+        </select>
+		</div>
+		<div class="btn">
+	    <input type="button" name="search" value="Inquire" class="search_btn bg1"/>
+		<input type="button" name="createWorkshop" value="New plant" class="create_btn space1 main_a table" />
+		<input type="button" name="rentWorkshop" value="Rent plant" class="rent_btn space2 main_a table1" />
+		</div>
+    </div>
+    <!--Plant-->
+    <div class="workshop">
+    	<!--Has been built plant-->
+	    <dl class="workshop_info" id="hidden1">
+	        <div class="bg3">
+	        <dt class="down"><img src="../../images/factory/down_btn2.gif" class="down_btn"/>
+		        <img src="../../images/factory/made.jpg" class="shop"/></dt>
+		    <dt class="status"><p>Status</p><span>Finished</span></dt>
+		    <dt class="workshop_id"><p>Plant number</p><span>MAK009</span></dt>
+		    <dt class="market_area"><p>Market</p><span class="market">Local market</span></dt>
+		    <dt class="workshop_type"><p>Plant type</p><span>Large plant</span></dt>
+		    <dt class="restvalue"><p>Scrap Value</p><span>0.0</span></dt>
+		    <dt class="buildtime"><p>StartTime</p><span>1</span></dt>
+		    <dt class="builttime"><p>ComTime</p><span class="finished">1</span></dt>
+		    <dt class="workline_num"><p>Number of lines</p>
+		        <div><span class="currentLine">4</span>/<span class="totalLine">6</span>
+			    <input type="button" name="add" class="add_line" /></div></dt>
+		    <dt class="operateFactory">
+				<input type="button" value="sell" class="bg1 sell" />
+			</dt>
+		    </div>
+		    <!--Production lines in the delivery room-->
+	        <dd class="workline" id="hiddenLine">
+	            <div class="lineType manuLine"><img src="../../images/factory/131765.jpg" /><span>Manual production line</span></div>
+		        <div class="lineStatus font2">state：<span>production</span></div>
+				<div class="finishedPeriod font2">Completed cycle：<span>1</span></div>
+		        <div class="workingPro font2">product：<span>P1</span></div>
+		        <div class="operateLine"><input type="button" name="examine" class="bg1" value="Status" />
+		        <input type="button" name="changePro" class="bg1" value="Conversion" disabled="disabled"/>
+		        <input type="button" name="configure" class="bg1" value="Configuration" />
+		        <input type="button" name="sell" class="bg1" value="sell" disabled="disabled"/>
+				<input type="hidden" name="hidden" value="" />
+				<input type="hidden" name="hiddenStatus" value="" />
+				</div>
+	        </dd>
+	    </dl>
+	    <!--Construction of the plant-->    
+	    <dl class="workshop_info" id="hidden2">
+	        <div class="bg3">
+	        <dt class="down"><img src="../../images/factory/down_btn2.gif" class="down_btn"/>
+		        <img src="../../images/factory/making.jpg" class="shop"/></dt>
+		    <dt class="status"><p>state</p><span>construction</span></dt>
+		    <dt class="workshop_id"><p>Plant number</p><span>MAK009</span></dt>
+		    <dt class="market_area"><p>market</p><span class="market">Local market</span></dt>
+		    <dt class="workshop_type"><p>Plant type</p><span>Large plant</span></dt>
+		    <dt class="paytype"><p>paymentMethod</p><span>Pay funds schedule</span></dt>
+		    <dt class="buildtime"><p>start time</p><span>1</span></dt>
+		    <dt class="builttime"><p>cycle completed</p><span class="finishedPeriod">3</span></dt>
+		    <dt class="workline_num">
+			    <div  class="buildPerioud"><p>TotalPeriod</p><span>4</span></div>
+				<div  class="lines"><p>lineSize</p><span class="totalLine">6</span></div></dt>
+		    <dt class="operateFactory"><input type="button" value="Suspension of construction" name="building" class="building bg1" /></dt>
+		    </div>
+		</dl>
+    </div>
+    <!--View, convert, configure the suspension box-->
+	<div class="line_common examine bg4">
+	    <div class="lineInfo1">
+		<p class="p1">The finished product has finished the production cycle：<span>1</span></p>
+		<p class="p2">Current value of the production line：<span>2.5</span></p>
+		<p class="p3">Amount of residual value：<span>1.0</span></p>
+	    </div>
+	    <div class="lineInfo2">
+		<p class="p1">Installation cycle：<span>1</span></p>
+		<p class="p2">Install the cost per installment：<span>5.0</span></p>
+		<p class="p3">Conversion cycle：<span>0</span></p>
+		<p class="p4">Conversion costs per period：<span>0.0</span></p>
+		<p class="p5">Productivity：<span>3</span></p>
+		<p class="p6">The maintenance costs are required for each period after the start of the production line：<span>0.25</span></p>
+		<p class="p7">The depreciation of each period after the start of the production line：<span>0.25</span></p>
+		<p class="p8">After the sale of the production line to the account of the account period：<span>1</span></p>
+	    </div>
+	</div>
+	<div class="line_common changePro bg4">
+		<div class="choosePro">
+		    <span>Converting products：</span>
+	        <select name="choosePro">
+	        </select>
+	    </div>
+	    <input type="button" name="confirmChange" value="Confirm" class="confirmChange bg2" />
+	</div>
+	<div class="line_common configure bg4">
+		<div class="btns">
+		<p><input type="button" name="stopInstall" value="Pause" class="bg2"/></p>
+	    <p><input type="button" name="restartInstall" value="installation" class="bg2"/></p>
+		<p><input type="button" name="stopWork" value="stop" class="bg2"/></p>
+	    <p><input type="button" name="restartWork" value="production" class="bg2"/></p>
+	    <p><input type="button" name="startWork" value="Ready" class="bg2"/></p>
+	    <p><input type="button" name="stopChange" value="Suspension" class="bg2"/></p>
+	    <p><input type="button" name="restartChange" value="conversion" class="bg2"/></p>
+	    </div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/factoryEg.js"></script>
+<script type="text/javascript" src="../../js/commonPopEg.js"></script>
+</body>
+</html>

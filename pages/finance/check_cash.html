@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>盘点现金</title>
+<link href="../../css/start_common.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../css/start_applyForLoan.css" />
+</head>
+
+<body>
+<!--页面最大的div-->
+ <div class="content">
+	<!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>盘点现金<span>&nbsp;&nbsp;Check Cash</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/pic_cash.jpg" /></span>
+			<span><h4>财务管理</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>盘点现金</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+    <!--ATM机展示-->
+	<div class="atm">
+	    <p><span id="money">16.5</span>万</p>
+	</div>
+ <!--页面最大的div结束-->
+ </div>
+ 
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+function loading(url,oData,jsonCallBack){
+    $.post(url,oData,jsonCallBack,"json");
+}
+function jsonCallBack(data){
+	var num = data.money.toFixed(2);
+	$("#money").text(num);
+}
+$(function(){
+	loading("cashAction!findCash.action?rnd="+Math.random(),null,jsonCallBack);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ERP virtual operation system</title>
+  <link rel="stylesheet" href="../../css/start_year_meeting.css">
+  <link rel="stylesheet" href="../../css/start_common.css">
+  <link rel="stylesheet" href="../../css/newFactory.css">
+  <!--[if IE 6]>
+    <style type="text/css">
+      html { overflow: scroll; }
+    </style>
+  <![endif]-->
+  <script src="../../js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="body_all">
+  <div class="header common_color">
+    <table cellspacing="0" class="common_float_right">
+      <tr>
+        <td class="tab_td1">
+<!-- <<<<<<< HEAD -->
+          <a id="refresh" href="flashviewEg.html" target="iframebody" title="Click refresh">
+<!-- ======= -->
+<!-- <<<<<<< HEAD -->
+          <!-- <a id="refresh" href="flashviewEg.html" target="iframebody" title="Click refresh"> -->
+<!-- ======= -->
+          <!-- <a id="refresh" href="flashview.html" target="iframebody" title="Click refresh"> -->
+<!-- >>>>>>> origin/erp01 -->
+<!-- >>>>>>> f43aff42123675570b35719bc0a06ae284306d3d -->
+            <img src="../../images/ico_refresh.png">
+          </a>
+        </td>
+        <td class="tab_td5">
+          <a href="javascript:logout()" title="drop out">
+            <img src="../../images/signout.png" alt="drop out">
+          </a>
+        </td>
+        <td class="tab_td3">
+          <img src="">
+          <div class="profile">
+            <p>Grouping：<span></span></p>
+            <p>cash：<span></span> Million</p>
+            <p>Tax：<span></span> Million</p>
+            <p>Plant：<span></span></p>
+          </div>
+        </td>
+        <td class="tab_td4">
+          <span id="userName"></span><br>
+          <span id="currentTime"></span>
+        </td>
+      </tr>
+		</table>
+	</div>
+  
+  <div class="year_content">
+    <div class="content_left common_float_left" id="mainLeft">
+      <div class="content_left_dl">
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="flashviewEg.html" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_1.png">
+              <span>Home page</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="annualplanningmeetingEg.html" target="iframebody">
+              <div></div><img src="../../images/ico_left_1.png">
+              <span>YearPlan meeting</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt>
+            <a href="javascript:void(0)" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_2.png">
+              <span>Market</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../market/marketmanagementEg.html" target="iframebody">
+              <span>Market</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../market/start_deliver_adsEg.html" target="iframebody">
+              <span>Ad serving&amp;Order</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../market/forecastEg.html" target="iframebody">
+              <span>Market forecast-info</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_3.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Product</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../factory/factorymanagerEg.html" target="iframebody">
+              <span>Plant</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../productresearch/compositionofproductEg.html" target="iframebody">
+              <span>Product-descri of materi</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_4.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Sales</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../order/startviewEg.html" target="iframebody">
+              <span>Check order</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../order/startdeliveryformEg.html" target="iframebody">
+              <span>Order delivery</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_5.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Purchase</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../materialpurchase/materialpurchaseEg.html" target="iframebody">
+              <span>Buy materials</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../materialpurchase/checkorderEg.html" target="iframebody">
+              <span>Materi purchas-order</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_6.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Inventory</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../inventorymanage/ProductinventoryEg.html" target="iframebody">
+              <span>Product inventory</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../inventorymanage/materialinventoryEg.html" target="iframebody">
+              <span>Material inventory</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_7.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>R&D</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../productresearch/productresearchEg.html" target="iframebody">
+              <span>Product-deve</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../iso/authenticationmanagementEg.html" target="iframebody">
+              <span>Certification</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_8.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Finance</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../finance/accountEg.html" target="iframebody">
+              <span>AccountEntries</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/balancesheetEg.html" target="iframebody">
+              <span>BalanceSheet</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/profit_sheetEg.html" target="iframebody">
+              <span>ProfitStatement</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/will_receiveEg.html" target="iframebody">
+              <span>Receiva-discount</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/check_cashEg.html" target="iframebody">
+              <span>Cash</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_9.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>Loans&amp;financing</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../bank/apply_for_loanEg.html" target="iframebody">
+              <span>Apply for loan</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../bank/loan_managementEg.html" target="iframebody">
+              <span>Loan manage</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../bank/long_loan_in_yearEg.html" target="iframebody">
+              <span>LongTerm liability within 1 year</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="../tax/taxmanagerEg.html" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_10.png">
+              <span>Tax</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="../forwardquarter/timemanagerEg.html" target="iframebody">     
+              <div></div>
+              <img src="../../images/ico_left_11.png">
+              <span>Time</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt id="exitLast" class="extra">
+            <a href="javascript:void(0)" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_12.png">
+              <span>End business</span>
+            </a>
+          </dt> 
+        </dl>
+      </div>
+    </div>
+    
+    <div class="content_right common_float_left">
+      <iframe name="iframebody" id="frame_content" frameborder="0"></iframe>
+    </div>
+  </div>
+  
+  <div class="year_footer common common_margin">
+    <p>Copyright © 2011 - 2016 Chongqing You Ni Weisi Technology Co., Ltd all rights reserved</p>
+  </div>
+  
+  <div class="fullbg"></div>
+  
+  <div class="dialog">
+    <div class="title">
+      <div class="center_title"></div>
+      <div class="close">
+        <input type="button" value="X" class="exit">
+      </div>
+    </div>
+    <div>
+      <div class="myDiv"></div>
+    </div>
+  </div>
+  
+  <div id="popupBox">
+    <p>
+      <img src="">
+      <span class="font_color common"></span>
+    </p>
+  </div>
+
+  <script src="../../js/commonEg.js"></script>
+  <script>
+    $(function () {
+      $('.content_left_dl a')[0].click();
+    });
+  </script>
+  <script>
+    // 使 iframe 高度自适应
+    function reinitIframe() {
+      var iframe = document.getElementById("frame_content");
+      
+      try {
+        var bHeight = iframe.contentWindow.document.body.scrollHeight;
+        var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+        var height = Math.min(bHeight, dHeight);
+        iframe.height =  height;
+      } catch (ex) { }
+    }
+    window.setInterval("reinitIframe()", 200);
+  </script>
+  <script>
+    javascript:window.history.forward(1);
+  </script>
+</body>
+</html>

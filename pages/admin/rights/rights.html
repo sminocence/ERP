@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ERP虚拟运营系统后台管理</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .form-div{
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .form-div label{
+            margin-right: 14px;
+        }
+        .form-div select option{
+            color: #000;
+        }
+        #chart{
+            margin-top: 10px;
+            width: 95%;
+        }
+        .toggle-mask{
+            width: 100%;
+            overflow: hidden;
+        }
+        .toggle-wrapper{
+            width: 200%;
+        }
+        .toggle-div{
+            width: 50%;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<div class="warn-brower">
+    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+    <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+        升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+    谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+<!--header-->
+<div class="header clear-fix">
+    <div class="logo-area">
+        <a class="logo" title="虚拟运营系统" href="#"></a>
+    </div>
+
+    <ul class="operate">
+        <li><a href="#" title="刷新" class="j_refresh"><span class="icon-cw"></span>刷新</a></li>
+        <li><a href="#" title="修改密码" class="j_modifypass"><span class="icon-lock"></span>修改密码</a></li>
+        <li><a href="#" title="退出登录" class="exit"><span class="icon-off"></span>退出登录</a></li>
+        <li class="user-info">
+            <img src="../common/img/pic_meb3.jpg" title="头像" class="photo"/>
+            <span class="username">你好!</span>
+        </li>
+    </ul>
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content">
+    <!--siderbar-->
+    <div class="siderbar">
+        <ul class="siderbar-ul">
+            <li class="has-more">
+                <a href="#"><span class="icon-users"></span>用户管理</a>
+                <ul class="hide">
+                    <li><a href="../user/user.html">用户列表</a></li>
+                    <li><a href="../user/approval.html">审批用户</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../group/grouplist.html"><span class="icon-gamepad"></span>管理游戏组</a>
+            </li>
+            <li>
+                <a href="../assess/assess.html"><span class="icon-pencil"></span>企业评价</a>
+            </li>
+            <li>
+                <a href="rights.html" class="active"><span class="icon-chart-bar"></span>所有者权益</a>
+            </li>
+             <li class="has-more">
+                <a href="#" ><span class="icon-users"></span>查看历史记录</a>
+                <ul  class="hide">
+                    <li><a href="../assess/his_assess.html">过往企业评价</a></li>
+                    <li><a href="../rights/his_rights.html">过往所有者权益</a></li>
+                </ul>
+            </li>
+
+            <li class="has-more">
+          		<a href="../user/output.html"><i class="iconfont">&#xe60a;</i>创建历史数据</a>
+        	</li>
+        </ul>
+    </div>
+    <!--siderbar end-->
+
+    <!--main-wrapper-->
+    <div class="main-wrapper">
+        <div class="main">
+            <ul class="tab clear-fix">
+                <li class="active"><span class="line" ></span>按企业查看</li>
+                <li ><span class="line"></span>按游戏组查看</li>
+            </ul>
+            <div class="toggle-mask">
+                <div class="toggle-wrapper clear-fix">
+                    <div class="toggle-div" id="wait">
+                        <form class="form-div" id="chooseItem"style="padding-left:20px;">
+                            <label>
+                                <select class="form-control selete-group" name="group">
+                                    <option value="null">请选择游戏组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-item" name="item">
+                                    <option value="null">请选择小组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-year" name="year">
+                                    <option value="null">请选择年份</option>
+                                </select>
+                            </label>
+
+                            <button type="button" class="form-control btn search1">
+                                查看所有者权益
+                            </button>
+                        </form>
+                        <div id="chart">
+
+                        </div>
+                    </div>
+                    <div class="toggle-div" id="refuse">
+                        <form class="form-div" id="chooseItem1" style="padding-left:20px;">
+                            <label>
+                                <select class="form-control selete-group1" name="group1">
+                                    <option value="null">请选择游戏组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-year1" name="year1">
+                                    <option value="null">请选择年份</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-period1" name="year1">
+                                    <option value="null">请选择周期</option>
+                                </select>
+                            </label>
+                            <button type="button" class="form-control btn search2">
+                                查看所有者权益
+                            </button>
+                        </form>
+                        <div id="chart1">
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--toggle-wrapper end-->
+            </div>
+            <!--toggle-mask end-->
+
+        </div>
+
+    </div>
+    <!--main-wrapper end-->
+</div>
+<!--content end-->
+<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../common/js/jquery.form-validator.js"></script>
+<script type="text/javascript" src="../common/js/common.js"></script>
+<script type="text/javascript" src="../common/js/jquery-table.js"></script>
+<script type="text/javascript" src="../common/js/echarts.js"></script>
+<script type="text/javascript" src="js/right.js"></script>
+</body>
+</html>

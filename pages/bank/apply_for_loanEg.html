@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Apply Loan</title>
+  <link rel="stylesheet" href="../../css/start_common.css">
+  <link rel="stylesheet" href="../../css/start_applyForLoan.css">
+</head>
+<body>
+  <div class="content">
+    <div class="trabecula">
+      <div class="trabecula-white">
+        <span><h2>Apply Loan<span>&nbsp;&nbsp;Apply Loan</span></h2></span>
+      </div>
+      
+      <div class="gray-trabecula">
+        <span><img src="../../images/pic_loan.jpg"></span>
+        <span><h4>Loans and financing</h4></span>
+        <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+        <span><h4>apply loan</h4></span>
+      </div>
+    </div>
+
+    <div class="applyForLoan common_margin">
+      <div class="chooseType common">
+        <span class="common_color2">Type of loan：</span>
+        <select class="selectCommon" id="loanType">
+          <option selected="selected">Long term loan</option>
+          <option>Short-term loans</option>
+          <option>usury</option>
+        </select>
+      </div>
+      
+      <div class="loanContent common_margin">
+        <div class="loanContent_left common_float_left">
+          <table>
+            <tr>
+              <td class="firstTd">Name of loan</td>
+              <td>:</td>
+              <td class="thirdTd">Long term loan</td>
+            </tr>
+            <tr>
+              <td class="firstTd">Annual interest rate</td>
+              <td>:</td>
+              <td class="thirdTd">10.0%</td>
+            </tr>
+            <tr>
+              <td class="firstTd">loan amount</td>
+              <td>:</td>
+              <td class="thirdTd"><input type="text" class="selectCommon" id="loanMoney"/><span>million</span></td>
+            </tr>
+            <tr>
+              <td class="firstTd">Loan term</td>
+              <td>:</td>
+              <td class="thirdTd">
+                <select class="selectCommon" id="selectPeriod"></select>
+                <span class="unit">period</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="loanContent_right common_float_left">
+          <p class="loanP1">Can not apply for long-term loans in the current period！</p>
+          <p class="loanP2"></p>
+          <p class="loanP3">Note: Only the beginning of the year to apply for long-term loans.<br/>Business operations are charged for each settlement.</p>
+        </div>
+
+        <p class="common bottomP"><input type="button" value="apply" id="applyBtn" class="common_1 btn"/></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.min.js"></script>
+  <script src="../../js/start_applyForLoanEg.js"></script>
+</body>
+</html>

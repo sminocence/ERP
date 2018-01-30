@@ -1,0 +1,79 @@
+/*成员信息表样式*/
+.memberInfo{
+	text-align: center;
+}
+.memberInfo table{
+	width: 99%;
+}
+.memberInfo table tr{
+	height: 30px;
+	text-align: center;
+}
+.memberInfo table tr input{
+	width: 100%;
+	height: 30px;
+	border: none;
+	text-align: center;
+}
+.memberDel,.memberChange{
+	cursor: pointer;
+}
+.memberDel{
+	margin-left: 5px;
+}
+.btn{
+	width: 100px;
+	height: 40px;
+	line-height: 30px;
+	color: #fff;
+	background: rgb(53, 90, 134);
+	border: none;
+	margin: 30px;
+}
+
+/*添加成员样式*/
+.addBox-all{
+	width: 400px;
+	border-radius: 5%;
+	background-color: #fff;
+	z-index: 9;
+	position: fixed;
+	left: 30%;
+	top: 25%;
+	color: #12385F;
+	border: 1px #12385F solid;
+	height: 330px;
+	text-align: center;
+}
+.addBox-title{
+	height: 50px;
+	background: rgb(53, 90, 134);
+	color: #fff;
+	line-height: 50px;
+	font-size: 24px;
+	font-weight: bolder;
+	text-align: center; 
+	border-radius: 10px 10px 0 0;
+}
+.addBox-close{
+	font-weight: 24px;
+	float: right;
+	font-weight: bolder;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.addBox-content p{
+	margin-top: 20px;
+}
+.addBox-content p input{
+	width: 180px;
+	height: 30px;
+	border-radius: 5px;
+}
+.addMember-sure,.changeMember-sure,.delMember-sure{
+	width: 80px;
+	height: 40px;
+	background: rgb(53, 90, 134);
+	color: #fff;
+	border: none;
+}

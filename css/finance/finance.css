@@ -1,0 +1,176 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+    margin:0px;padding:0px;
+}
+.content{
+    width:1135px;
+	font-size:14px;
+}
+.content .choose{
+	color:#999;
+	width:1110px;
+    height:33px;
+    margin-top:12px;
+    margin-bottom:12px;
+	padding-left:6px;
+	/*兼容IE6*/
+	*margin-top:16px;
+	*margin-bottom:16px;
+}
+/*财务管理*/
+.choose_common{
+    margin:0px auto;
+	text-align:center;
+}
+.choose_accounting{
+    width:936px;
+}
+.choose_balance{
+    width:536px;
+}
+.choose span{
+    padding-left:10px;
+	padding-right:6px;
+}
+.choose .start_year, .end_year{
+	width:390px;
+	height:32px;
+	vertical-align:middle;
+	display:block;
+	float:left;
+	margin:auto;
+}
+/*.start_year{
+    padding-left:110px;
+}*/
+.end_year{
+    padding-left:26px;
+}
+.explain{
+    color:#355a86;
+	line-height:33px;
+	vertical-align:middle;
+}
+.choose select{
+    width:123px;
+	height:29px;
+	color:#000;
+	padding-left:6px;
+	/*text-indent:6px*/
+}
+.choose option{
+    height:29px;
+	padding-left:6px;
+}
+.choose .search_btn{
+    color:#333;
+    border:none;
+    width:73px;
+	height:28px;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:middle;
+	margin-left:47px;
+	background:#dbdad6;
+}
+.choose .search_btn:hover{
+    font-size:16px;
+	background:#d1ba74;
+}
+.tab{
+    width:1121px;
+	height:466px;
+	color:#000;
+}
+.accounting_table, .balance_table, .profit_table{
+    text-align:center;
+}
+.accounting_table td, .balance_table td{
+    border:1px solid #ccc;
+	height:29px;
+	width:186px;
+}
+.profit_table  td{
+    width:558px;
+	border:1px solid #ccc;
+	height:29px;
+}
+.first_tr{
+    height:29px;
+	color:#666;
+	background:#f4f4f4;
+}
+.pages { 
+	color:#666;
+	text-align:center;
+}
+.pages p{
+    padding-top:21px;
+}
+.pages a{
+    color:#000;
+	border:1px solid #ccc;
+	text-align:center;
+	margin-left:13px;
+	padding:1px 8px;
+}
+.pages a:hover{
+    color:#36f;
+	background:#ccc;
+}
+.hide{
+    padding-left:10px;
+}
+.current_page{
+    background:#dbdad6;
+}
+/*贷款与融资*/
+.choose .loan_type, .loan_status{
+	width:230px;
+	height:32px;
+	vertical-align:middle;
+	display:block;
+	float:left;
+}
+.choose .choose_loan{
+    padding-left:15px;
+}
+.tab1{
+    width:1003px;
+	height:456px;
+	color:#000;
+	padding-left:21px;
+	text-align:center;
+}
+.loan_table td{
+    border:1px solid #ccc;
+	height:29px;
+	width:186px;
+}
+/*.loan_table:nth-child(even){
+    background:#f4f4f4;
+}*/
+.first{
+    color:#666;
+}
+.return{
+    padding:3px 22px;
+	background:#dbdad6;
+	color:#000;
+}
+.return:hover{
+    background:#d1ba74;
+}
+.longTerm_loan{
+    margin-top:16px;
+}
+.longTerm_loan td{
+    border:1px solid #ccc;
+	height:29px;
+	width:200px;
+}
+.longTerm_loan .no_record{
+    background:#f4f4f4;
+	color:#ff0000;
+}

@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+/*申请贷款*/
+.test{
+	background:red;
+}
+.applyForLoan{
+	width:617px;
+    height:356px;
+}
+#loanBtn,#applyBtn{
+	width:69px;
+	height:25px;
+	border:0px;
+}
+.btn{
+    background:#DBDAD6;
+}
+.chooseType{
+	margin-top:13px;
+	margin-bottom:17px;
+}
+.selectCommon{
+	height:30px;
+	border:1px solid #DBDAD6;
+	line-height:30px;
+	padding-left:8px;
+}
+.chooseType select{
+	margin-right:24px;
+	margin-left:10px;
+	width:120px;
+}
+.applyForLoan option{
+	padding-left:8px;
+}
+.applyForLoan .loanContent{
+	width:617px;
+	height:294px;
+	border:2px solid #C9C9C9;
+}
+.loanContent div{
+	width:306px;
+	height:203px;
+	margin-top:28px;
+}
+/*申请贷款左边内容*/
+.loanContent_left{
+	border-right:1px solid #999;	
+}
+.loanContent_left table tr{
+	height:50px;
+}
+.firstTd{
+	color:#8B8B8B;
+	width:88px;
+	text-align:right;
+	padding-right:5px;
+}
+.thirdTd{
+    padding-left:10px;	
+}
+.thirdTd select{
+	width:128px;
+}
+.thirdTd input{
+	width:116px;
+}
+.thirdTd span{
+	color:#8B8B8B;
+	margin-left:8px;
+}
+.bottomP{
+	clear:left;
+	margin-top:252px;
+	*margin-top:23px
+}
+/*申请贷款右边内容*/
+.loanContent_right p{
+	width:239px;
+	line-height:21px;
+	word-break:break-all;
+	padding-left:35px;
+}
+.loanP1,.loanP2{
+	color:#FF653F;
+	}
+.loanP3{
+	color:#41648C;
+	margin-top:31px;
+}
+/*盘点现金*/
+.atm{
+    width:400px;
+	height:500px;
+	margin-left:248px;
+	margin-top:24px;
+	background:url(../images/atm.jpg) no-repeat;
+}
+.atm span{
+    font-size:28px;
+}
+.atm p{
+    font-size:18px;
+	text-align:center;
+	padding-top:210px;
+}
+/*应交税金*/
+.taxPay{
+	width:839px;
+	height:379px;
+	margin-top:33px;
+	margin-left:97px;
+	background:url(../images/pic_TaxBureau.jpg) no-repeat;
+	overflow:hidden;
+}
+.taxPay p{
+	height:50px;
+	margin-top:148px;
+	line-height:50px;
+	font-size:18px;
+	
+}
+.pay{
+	font-size:29px;
+	font-weight:500;
+}
+/*时间管理*/
+.enterNext{
+	display:block;
+	border:0px;
+	background:url(../images/pic_next.jpg) no-repeat;
+	margin-left:342px;
+	margin-top:87px;
+	width:245px;
+	height:76px;
+	outline:none;
+}
+/*点击效果*/
+.click{
+    background:#d1ba74;
+}

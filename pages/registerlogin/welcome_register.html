@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ERP虚拟运营系统</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/content.css" />
+</head>
+
+<body>
+<!--header-->
+ <div class="header"></div>
+<!--middle-->
+ <div class="middle">
+   <div class="middle_center same same_2"><span class="middle_welcome">欢迎注册</span></div>
+   <div class="middle_content">
+   <form  action="registerInfoAction!addRegister.action" method="post" >
+          <table class="register_tab">
+            <tr>
+            	<td class="space" style="word-spacing:4px" width="70px">用 户 名</td>
+            	<td width="20px">：</td>
+            	<td><input type="text" name="userID" id="userID"/><span></span></td>
+            </tr>
+             <tr><td class="space">真实姓名</td><td>：</td><td><input type="text" name="name" /><span></span></td></tr>
+             <tr>
+               <td class="space">学 号</td><td>：</td>
+                <td><input type="text" name="studentID"  /><span></span></td>
+            </tr>
+             <tr>
+                 <td class="space">专 业</td><td>：</td>
+                 <td><input type="text" name="major" /><span></span></td>
+             </tr>
+            <tr>
+            <td class="space">班 级</td><td>：</td>
+             <td><input type="text" name="className"  /><span></span></td>
+            </tr>
+            <tr><td class="space">电子邮件</td><td>：</td><td><input type="text" name="email"  /><span></span></td></tr>
+            <tr><td class="space">联系方式</td><td>：</td>
+                <td><input type="text" name="tel" /><span></span></td>
+            </tr>
+           <tr>
+            <td class="space">密 码</td><td>：</td>
+            <td><input type="password" name="password"   /><span></span></td>
+           </tr>
+           <tr><td class="space">确认密码</td><td>：</td>
+               <td><input type="password" name="confirm" /><span></span></td>
+           </tr>
+  </table>
+ <p class="agree common"><input type="checkbox" name="agree" /><span>&nbsp;&nbsp;</span><a href="register_agreement.html">我已阅读相关协议</a></p>
+  <p class="agree_btn common"><input type="button" name="back" value="返回"  class="common_1 common_2 back_btn" onclick="javascript:window.history.back()"/><input type="button" name="register" value="注册" class="common_bg common_1 common_2 readyNo"/></p>
+   </div><!--具体高度根据图在自己的样式表里进行设置-->
+   <div class="bottom_shadow"></div><!--使底边框出现阴影效果-->
+ </div>
+<!--footer-->
+ <p class="footer_p1 same">Copyright © 2011 - 2016 重庆优霓维思科技有限公司 版权所有</p>
+ <hr class="footer_p2" />
+ <script language="javascript" src="../../js/jquery-1.9.1.min.js"></script>
+ <script language="javascript" src="../../js/registerCheck.js"></script>
+</body>
+</html>

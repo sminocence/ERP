@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>start_choseOrder</title>
+</head>
+<link href="../../css/start_common.css" rel="stylesheet"/>
+<link href="../../css/start_table.css" rel="stylesheet"/>
+<body>
+   <div class="ads_selectOrder ads_border"><!--ads_selectOrder为独有类名-->
+      <!--标题栏的开始-->
+      <p class="ads_left_p p_color common_color" id="top_search">Order selection<span>>></span>
+	  <input type="button" value="View all order information" id="btn5"/>
+	  <input type="button" value="End Order" id="btn4"/>
+	  </p>
+      <!--搜索栏div的开始-->
+      <div class="ads_selectOrder_top common">
+          <span class="common_color2">Please choose the market：</span>
+          <select name="select_market" class="common_select select_market">
+		     <option class="opt">All</option>
+             <!--option动态加载-->
+          </select>
+          <span class="common_color2 select_product_span">Please select product：</span>
+          <select name="select_product" class="common_select select_product">
+             <option>All</option>
+			 <!--option动态加载-->
+          </select>
+          <input type="button" value="Inquire" class="common_1" id="btn3" />
+       <!--搜索栏div的结束-->
+       </div>
+       <!--订单展示选取的开始-->
+       <div class="selectOrder_div">
+           <div class="order">
+              <table>
+                  <tr class="first_tr"><td colspan="2">Order number：<span></span><input type="button" value="Choose an order" name="check" class="choseOrder"/></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td colspan="2"></td></tr>
+              </table>
+              <p class="hidden_p">The order is being&nbsp;<span></span>&nbsp;select</p>
+            </div>
+		
+			<div class="order">
+              <table>
+                  <tr class="first_tr"><td colspan="2">Order number：<span></span><input type="button" value="Select" name="check" class="choseOrder"/></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td></td><td></td></tr>
+                  <tr><td colspan="2"></td></tr>
+              </table>
+              <p class="hidden_p">The order is being&nbsp;<span></span>&nbsp;select</p>
+            </div>
+
+        <!--订单展示选取的结束-->
+        </div>
+  </div>
+  <!-- 这里的所有js 都迁移了. -->
+</body>
+</html>

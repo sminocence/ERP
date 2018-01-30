@@ -1,0 +1,273 @@
+﻿@charset "utf-8";
+/* CSS Document */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+*{
+	margin:0px;
+	padding:0px;
+	
+	font-family:"微软雅黑","黑体",Arial, Helvetica, sans-serif;
+	font-size:14px;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	outline:none;
+}
+img{
+	border:0px;
+	vertical-align:middle;	
+	}
+table{
+	border-collapse:collapse;
+}
+
+.check-box{
+	border:solid #d0cfd4 1px;
+	float:left;
+	height:26px;
+	_padding:2px 0px;
+	}
+.check-box img{
+	margin-top:6px;
+	_margin-top:3px;
+	margin-right:6px;
+	}
+.check-box span{
+	display:block;
+	float:left;
+	height:21px;
+	margin-top:3px;
+	padding:0 41px 0 25px;
+	text-align:center;
+	}
+.checkIn{
+	background:#355a86;
+	border:none;
+	color:white;
+	font-size:13px;
+	height:27px;
+	_line-height:28px;
+	margin-left:14px;
+	margin-top:1px;
+	_margin-top:3px;
+	width:59px;
+}
+button{cursor:pointer;}
+.common{
+	text-align:center;
+}
+.common_1{
+	cursor:pointer;
+}
+.common_border{
+	border:0px;
+}
+.common_font{
+	font-size:14px;
+}
+.common_color{
+	color:#FFF;
+}
+.font_color{
+	color:#000;
+}
+/*-设置成灰色-*/
+.common_color2{color:#989898;}
+.common_bgcolor{
+ background:#355A86;
+}/*设置主色调的蓝颜色*/
+.common_float_left{
+	float:left;
+}
+.common_float_right{
+	float:right;
+}
+.common_margin{
+	margin:auto;}
+/*pc:包含在iframe中的div*/
+.content{
+	width:1135px;
+	margin:auto;
+	min-height:820px;
+	position:relative;
+}
+/*pc*/
+.gray-trabecula{
+	background-color:#dbdad6;
+	border:solid thin #e3e2df;
+	height:33px;
+	width:1119px;
+}
+/*pc*/
+.gray-trabecula span{
+	color:#535252;
+	float:left;
+	line-height:33px;
+}
+/*pc*/
+.gray-trabecula h4{
+	color:#333333;
+	font-weight:lighter;
+}
+
+.hr-bar{
+	margin-bottom:20px;
+	}	
+.hr-bar div{
+	padding-top:10px;
+	_padding-top:4px;
+}
+.hr-bar hr{
+	height:2px;
+	border:#989898;
+	background:#989898;
+	}
+.hr-bar span{	
+	float:left;
+	padding-right:20px;
+}
+.hr-bar img{
+	float:right;
+	_margin-top:-9px;
+	}
+.select-box{
+	font-size:14px;
+	float:left;
+	height:28px;
+}
+.select-option{
+	float:left;
+	cursor:pointer;
+}
+.select-option ul{
+	background:#FFF;
+	border:solid #d0cfd4 1px;
+	border-top:0px;
+	clear:both;
+	display:none;
+	padding:0px;
+	position:absolute;
+	margin-top:28px;
+	_margin-top:0px;
+	z-index:10px;
+	}
+.select-option li{
+	list-style:none;
+	line-height:26px;
+	margin:0 auto;
+	padding-left:25px;
+	}
+/*pc*/
+.trabecula h2{
+	color:#8C8C8C;
+	font-size:24px;
+	font-weight:lighter;
+	line-height:48px;
+}
+.trabecula font{
+	font-size:16px;
+}
+/*pc*/
+.trabecula-white{
+	padding-left:5px;
+	height:48px;
+}
+/*设置弹框属性*/
+.popupFont{
+	padding-top:26px;
+    font-size:16px;
+}
+
+/*弹出警告框及确认框的共同部分*/
+.same_1{
+    height:31px;	
+}
+.same_2{
+	float:right;
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	margin-top:5px;
+}
+/*设置弹窗内的内容部分*/
+.myDiv{
+	min-width:420px;
+	min-height:133px;
+	/*width:420px;
+	height:133px;*/
+	_height:133px;
+	_width:420px;
+	
+}
+#enter{
+	border:1px solid #A0AAB6;
+}
+.enter_top{
+	background:#12385F;
+}
+#enter #back{
+	background:#385A88;
+}
+.enter_p1{
+	line-height:17px;
+	margin-top:28px;
+	font-size:15px;
+	color:#000;
+}
+.enter_p2{
+	width:419px;
+	margin-top:38px;
+}
+.enter_p2 .sureBtn{
+	width:99px;
+	height:29px;
+	}
+/*退出竞赛*/
+.common_borderColor{
+            border:1px solid #EA6B76;
+}/*设置为红色*/
+.common_borderColor2{
+	border:1px solid #12385F;
+}/*设置为蓝色*/
+.exitGame{
+	border:1px solid #336600;
+}
+.exitBgcolor{
+	background:#E32D3C;
+}
+.exit{
+    background:#F4606C;	
+}
+
+/*阻止ie6下弹框随滚动条闪动*/
+*html{
+background-image:url(about:blank);
+background-attachment:fixed;
+}
+/*右下角弹框bottom_window*/
+#popupBox{
+   width:320px;
+   height:160px;
+   background:#fff url(../images/popbg.png) repeat-x;
+   position:fixed;
+   right:10px;
+   bottom:0px;
+   border:1px solid #E05E5E;
+   /*以下为兼容ie6下的fixed属性*/
+   _position:absolute;
+   display:none;
+   overflow:hidden;
+   _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+#popupBox p{
+	line-height:40px;
+	margin-top:65px;
+	margin-left:20px;
+}
+#popupBox span{
+	font-size:16px;
+	margin-left:30px;
+}

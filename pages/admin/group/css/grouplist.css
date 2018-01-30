@@ -1,0 +1,79 @@
+/*弹出框*/
+/* .box-table{
+	width: 500px;
+	position: fixed;
+	top: 20%;
+	left: 35%;
+	text-align: center;
+	z-index: 9;
+	background-color: #355A86;
+	color: #fff;
+} */
+
+/* 学生贡献度确认 */
+.box-table{
+	width: 100%;
+	text-align: center;
+}
+#box table{
+	width: 100%;
+	border: 1px solid #fff;
+	line-height: 30px;
+	text-align: center;
+}
+.table-contribute{
+	 width: 100%; 
+	border: none;
+	text-align: center;
+	background-color: #fff;
+}
+.table-td-contribute{
+	 width: 50px; 
+}
+/*.box-btn{
+	margin-top: 20px;
+	margin: 10px;
+	width: 70px;
+	height: 30px;
+	border: none;
+	background-color: #fff;
+	color: #355A86;
+	font-family: "微软雅黑";
+	line-height: 20px;
+}*/
+
+/*成绩比例设置*/
+.gameInfo{
+	float: left;
+	margin-top: 20px;
+}
+.setProp{
+	float: left;
+	margin-left: 50px;
+}
+.gameInfo p,.setProp p{
+	text-align: right;
+	margin-top: 10px;
+}
+.gameInfo p input,.setProp p input{
+	width: 120px;
+	text-align: center;
+}
+.setProp label{
+	margin-left: 60px;
+}
+/*清除浮动*/
+.clear{
+	clear:both
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	font-size:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{
+	zoom:1
+}

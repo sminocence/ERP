@@ -1,0 +1,103 @@
+@charset"utf-8";
+/*CSS Document*/
+.content{
+	height:720px;
+}
+.hasfourul li{
+	width:248px;
+	height:90px;
+	}
+.hassixli li{
+	width:150px;
+}
+.hr-bar{
+	margin-bottom:20px;
+	}	
+.hr-bar div{
+	padding-top:10px;
+	_padding-top:4px;
+}
+.hr-bar hr{
+	height:2px;
+	border:#989898;
+	background:#989898;
+	}
+.hr-bar span{	
+	float:left;
+	padding-right:20px;
+}
+.hr-bar img{
+	float:right;
+	_margin-top:-9px;
+	}
+.market{
+	clear:both;
+	margin-top:14px;
+}
+.market ul{
+	background:#f2f2f1;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:992px;
+}
+.market ul li{
+	float:left;
+}
+.market h2{
+	font-weight:lighter;
+	font-size:18px;
+}
+.market ul li h3{
+	color:#999999;
+	font-weight:lighter;
+	line-height:36px;
+}
+.market .state{
+	background:#dbdad6;
+	cursor:hand;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:123px;
+}
+.market .state h2{
+	line-height:90px;
+}
+.market-bar{
+	height:90px;
+	clear:both;
+	margin-top:12px;
+}
+.market-bar a{
+	color:#000;
+}
+.market-ul img{
+	float:left;
+}
+.page3_maincontent{
+	width:1115px;
+	}
+ .big_div{
+		width:833px;
+		height:190px; 
+		margin-left:70px;
+		}
+	.small_div{
+		width:206px;
+		height:190px;
+		float:left;
+		overflow:hidden;
+		}
+    .develop_P{
+		min-height:40px;
+		_height:expression((documentElement.clientHeight < 40) ? "40px" : "100%" );/*ie6*/
+		}
+		
+	.hassixli li{
+		width:145px;
+		}
+	ul img{
+		margin-left:10px;
+		margin-top:5px;
+		}		

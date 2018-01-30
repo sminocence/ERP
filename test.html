@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/erpm/memberDetailAction!updateMemberDetail.action" method="post">
+    userunique:<input name="memberDetailList[0].userUnique" type="text"><br/>
+    oldstudentno:<input name="memberDetailList[0].oldStudentNo" type="text"><br/>
+    title:<input name="memberDetailList[0].title" type="text"><br/>
+    userunique:<input name="memberDetailList[1].userUnique" type="text"><br/>
+    oldstudentno:<input name="memberDetailList[1].oldStudentNo" type="text"><br/>
+    title:<input name="memberDetailList[1].title" type="text"><br/>
+
+    <input type="submit" value="提交">
+</form>
+
+<button class="test"/>
+<script type="javascript">
+    $(".test").click(function(){
+        $.ajax({
+            type:"post",
+            url:"/erpm/memberDetailAction!updateMemberDetail.action",
+            asyn:true,
+            data: {
+                    "memberDetailList[0].userUnique":"12150374853949332",
+                    "memberDetailList[0].oldStudentNo":"3",
+                    "memberDetailList[0].title":"2334344545454",
+                    "memberDetailList[1].userUnique":"12150374853949332",
+                    "memberDetailList[1].oldStudentNo":"4",
+                    "memberDetailList[1].title":"2334344545454111111"
+                },
+                success:function(data){
+                console.log(data);
+                }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loan management</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/finance/finance.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--Contains white headers and gray bars-->
+	<div class="trabecula">
+		<!--White write part of the title-->
+		<div class="trabecula-white">
+			<span><h2>Loan management<span>&nbsp;&nbsp;Loan Management</span></h2></span>
+		<!--The part of the white writing header ends-->
+		</div>
+		<!--Gray little bar-->
+		<div class="gray-trabecula">
+			<!--Small icon size,30px,33px-->
+			<span><img src="../../images/loan.jpg" /></span>
+			<span><h4>Loans and financing</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>Loan management</h4></span>
+		<!--Gray little bar ends-->		
+		</div>
+	<!--Contains white title and gray small bar section ends-->
+	</div>
+	
+	<div class="tab1">
+	<table class="longTerm_loan">
+	<thead>
+	    <tr>
+		    <td>Loan number</td><td>Long term liabilities due within one year</td><td>Loan start time</td><td>Repayment time</td><td>loan amount</td>
+		</tr>
+	</thead>
+        <tr>
+            <!--<td colspan="5" class="no_record">There is no record you want to find!</td>-->
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+        </tr>		
+	</table>
+	</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.post("loanAction!findLongLoanEndInOneYear.action",null,function(data){
+		//Set the color of the single and double lines of the table differently
+		$(".longTerm_loan tr:odd").css("background","#f4f4f4");
+		
+		//If the data for data.loanList is greater than the number of rows in the table, add the number of rows
+	    var trLength=$(".longTerm_loan tbody tr").length;
+		var dataLength=data.loanList.length;
+		if(dataLength>trLength){
+		    var addTr=$("tbody tr:first").clone(true);
+			for(var i=trLength; i<dataLength; i++){
+			    $(addTr).clone(true).appendTo(".longTerm_loan tbody");
+			}
+		}
+		
+	    $(".longTerm_loan tbody td").empty();
+	    //To determine whether there is a record data, there is to load, otherwise it shows no record.
+	    if(data.loanList){
+	        $(data.loanList).each(function(index){
+	            var longLoanTr=$(".longTerm_loan tbody tr").eq(index);
+			    var startYear=parseInt(data.loanList[index].beginTime / data.periodOfYear) + 1;  //Starting year
+				var startPeriod=data.loanList[index].beginTime % data.periodOfYear;  //Start date
+			    var endYear=parseInt(data.loanList[index].endTime / data.periodOfYear) + 1;  //End year
+			    var endPeriod=data.loanList[index].endTime % data.periodOfYear;  //End period
+			    $(longLoanTr).find("td").eq(0).text(data.loanList[index].loanID);
+			    $(longLoanTr).find("td").eq(1).text(data.loanList[index].loanTypeName);
+			    $(longLoanTr).find("td").eq(2).text(startYear+"year"+startPeriod+"period");
+			    $(longLoanTr).find("td").eq(3).text(endYear+"year"+endPeriod+"beginning");
+			    $(longLoanTr).find("td").eq(4).text(data.loanList[index].money);
+		    });
+		}
+		else{
+		    $(".longTerm_loan tbody").empty();
+			var addNoRecord="<tr>";
+			addNoRecord+="<td colspan='5' class='no_record'>";
+			addNoRecord+="There is no record you want to find";
+			addNoRecord+="</td>";
+			addNoRecord+="</tr>";
+			$(".longTerm_loan tbody").append(addNoRecord);
+		}
+	    
+	},"json");
+});
+</script>
+</body>
+</html>

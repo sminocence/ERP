@@ -1,0 +1,101 @@
+﻿
+/*yl*/
+/*标题方框图标样式*/
+  .square_img{
+	margin-top:1px;  
+	}
+ 
+  /*中间大框的样式*/
+  .big_square{
+	 width:890px;
+	 height:154px;
+	 background-color:#355a86;
+	 float:left;
+	 left:85px;
+	 top:133px;
+	 position:absolute; 
+	  
+	  
+  }
+  
+  /*深色箭头的样式*/
+  .arrow_one{
+	  width:154px;
+	  height:154px;
+	  float:left;
+	  position:relative;
+  }
+  
+  .arrow_one_img{
+	  position:absolute;
+	  }
+  
+  
+  /*仓库字体样式*/
+ .storehouse{
+	float:left; 
+	position:absolute;
+	margin:77px auto auto 47px;
+    color:#FFF;
+	font-size:17px;
+	}
+
+  
+  /*p1、p2、p3、p4的样式*/
+
+  .p{
+	  width:104px;
+	  height:144px;
+	  background-color:#dbdad6;
+	  float:left;
+	  margin-top:7px;
+	  margin-left:47px;
+	  position:relative;
+   }  
+   
+   
+   /*p1、p2、p3、p4的top的样式*/
+   .p_top{
+	 width:98px;
+	 height:100px;
+	 margin-left:3px;
+	 margin-top:3px;
+	 background-color:#999999; 
+
+	 
+	}
+	
+	/*p1、p2、p3、p4的bottom的样式*/
+	.p_bottom{
+	 width:98px;
+	 height:40px;	
+	 margin-left:3px;
+		
+	}
+	
+	/*数字样式*/
+	.num{
+	  text-align:center;
+	  margin-top:12px;	
+		
+	}
+	/*P的图形样式*/
+	.p_img{
+	  margin-top:5px;
+	  margin-left:2px;	
+	 	
+	}
+   
+   
+   /*最后一个箭头的样式*/
+   .arrow_two{
+     width:79px;
+	 height:154px;
+	 background-color:#dbdad6;
+	 float:left;
+	 position:absolute;
+	 margin-left:52px;	
+    display:inline;	/*IE6兼容性问题*/
+	   	   
+	}
+

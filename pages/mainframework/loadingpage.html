@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>加载中...</title>
+	<link rel="stylesheet" type="text/css" href="../../css/component.css">
+	<!--[if IE 6]>
+		<style type="text/css">
+			html { overflow: scroll; }
+		</style>
+	<![endif]-->
+</head>
+<body class="pagewrap" id="pagewrap" onload="start()">
+	<div id="wait"></div>
+	
+  <script src="../../js/snap.svg-min.js"></script>
+	<script src="../../js/classie.js"></script>
+	<script src="../../js/svgLoader.js"></script>
+	<script src="../../js/jquery-1.9.1.min.js"></script>
+	<script src="../../js/dwr/util.js"></script>
+	<script src="../../js/dwr/engine.js"></script>
+  <script src="../../js/dwr/interface/gameGroupMemberService.js"></script>
+	<script>
+		function start() {
+			// 这个方法用来启动该页面的ReverseAjax功能  
+			dwr.engine.setActiveReverseAjax(true);
+			
+			// 设置在页面关闭时，通知服务端销毁会话  
+			dwr.engine.setNotifyServerOnPageUnload(true);
+
+      // 不弹窗
+      dwr.engine.setErrorHandler(function () {});
+
+			$('#loader, .container').remove();
+
+			var h = $(window).height();
+			var w = $(window).width();
+
+			var load = '<img src="' + '../../images/wait.gif"' + ' class="loadImg"><br><a href="javascript:void(0)" onclick="clickForward()">如果加载过慢，请手动跳转...</a>';
+			
+			$('#wait').append(load);
+			$('#wait').css({
+				'width': '220px',
+				'height': '250px',
+				'top': h / 2 - 150,
+				'left': w / 2 - 100,
+				'position': 'absolute'
+			});
+			
+			return;			 
+		}
+
+		function startGameForward() {
+			// 先将 userUnique 注册好，然后再跳转
+			$.get('loginAction!loginForward.action?rnd=' + Math.random(), function () {
+				window.parent.location.href = '../mainframework/main.html';
+			});
+		}
+
+		function clickForward(){
+			forward();
+		}
+		
+		function forward() {
+		  $.get('gameGroupAction!isGameGroupRunning.action?rnd=' + Math.random(), function (data) {
+		    if (data === true) {
+          startGameForward(); // 一定要先将 userUnique 注册好再进游戏界面
+		    } else {
+					window.parent.location.href = '../fail.html';
+				}
+	    }, 'json');
+		}
+
+		$(function() {
+			// 如果后端长时间没有响应，则自动调用 forward
+      setTimeout(forward, 10000);
+			
+			gameGroupMemberService.startGameFilter();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>贷款管理</title>
+<link rel="stylesheet" href="../../css/start_common.css" />
+<link rel="stylesheet" href="../../css/finance/finance.css" />
+</head>
+
+<body>
+<div class="content">
+    <!--包含白色标题和灰色小横条部分-->
+	<div class="trabecula">
+		<!--白色写标题的部分-->
+		<div class="trabecula-white">
+			<span><h2>贷款管理<span>&nbsp;&nbsp;Loan Management</span></h2></span>
+		<!--白色写标题的部分结束-->
+		</div>
+		<!--灰色的小横条-->
+		<div class="gray-trabecula">
+			<!--小图标大小30px,33px-->
+			<span><img src="../../images/loan.jpg" /></span>
+			<span><h4>贷款与融资</h4></span>
+			<span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			<span><h4>贷款管理</h4></span>
+		<!--灰色的小横条结束-->		
+		</div>
+	<!--包含白色标题和灰色小横条部分结束-->
+	</div>
+	
+	<div class="tab1">
+	<table class="longTerm_loan">
+	<thead>
+	    <tr>
+		    <td>贷款编号</td><td>一年内到期的长期负债</td><td>贷款开始时间</td><td>还款时间</td><td>贷款金额</td>
+		</tr>
+	</thead>
+        <tr>
+            <!--<td colspan="5" class="no_record">没有你要查找的记录!</td>-->
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+		    <td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td>
+        </tr>		
+	</table>
+	</div>
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.post("loanAction!findLongLoanEndInOneYear.action",null,function(data){
+		//设置表格的单双行的颜色不同
+		$(".longTerm_loan tr:odd").css("background","#f4f4f4");
+		
+		//如果data.loanList的数据大于表格行数，则补加行数
+	    var trLength=$(".longTerm_loan tbody tr").length;
+		var dataLength=data.loanList.length;
+		if(dataLength>trLength){
+		    var addTr=$("tbody tr:first").clone(true);
+			for(var i=trLength; i<dataLength; i++){
+			    $(addTr).clone(true).appendTo(".longTerm_loan tbody");
+			}
+		}
+		
+	    $(".longTerm_loan tbody td").empty();
+	    //判断data是否有记录，有就加载，否则就显示没有记录.
+	    if(data.loanList){
+	        $(data.loanList).each(function(index){
+	            var longLoanTr=$(".longTerm_loan tbody tr").eq(index);
+			    var startYear=parseInt(data.loanList[index].beginTime / data.periodOfYear) + 1;  //起始年
+				var startPeriod=data.loanList[index].beginTime % data.periodOfYear;  //起始期
+			    var endYear=parseInt(data.loanList[index].endTime / data.periodOfYear) + 1;  //结束年
+			    var endPeriod=data.loanList[index].endTime % data.periodOfYear;  //结束期
+			    $(longLoanTr).find("td").eq(0).text(data.loanList[index].loanID);
+			    $(longLoanTr).find("td").eq(1).text(data.loanList[index].loanTypeName);
+			    $(longLoanTr).find("td").eq(2).text(startYear+"年"+startPeriod+"期");
+			    $(longLoanTr).find("td").eq(3).text(endYear+"年"+endPeriod+"期初");
+			    $(longLoanTr).find("td").eq(4).text(data.loanList[index].money);
+		    });
+		}
+		else{
+		    $(".longTerm_loan tbody").empty();
+			var addNoRecord="<tr>";
+			addNoRecord+="<td colspan='5' class='no_record'>";
+			addNoRecord+="没有你要查找的记录";
+			addNoRecord+="</td>";
+			addNoRecord+="</tr>";
+			$(".longTerm_loan tbody").append(addNoRecord);
+		}
+	    
+	},"json");
+});
+</script>
+</body>
+</html>

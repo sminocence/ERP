@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ERP 虚拟运营系统</title>
+  <link rel="stylesheet" href="../../css/start_year_meeting.css">
+  <link rel="stylesheet" href="../../css/start_common.css">
+  <link rel="stylesheet" href="../../css/newFactory.css">
+  <!--[if IE 6]>
+    <style type="text/css">
+      html { overflow: scroll; }
+    </style>
+  <![endif]-->
+  <script src="../../js/jquery-1.9.1.min.js"></script>
+</head>
+<body class="body_all">
+  <div class="header common_color">
+    <table cellspacing="0" class="common_float_right">
+      <tr>
+        <td class="tab tab_td1">
+          <a id="refresh" href="flashview.html" target="iframebody" title="点击刷新">
+            <img src="../../images/ico_refresh.png">
+          </a>
+        </td>
+        <td class="tab tab_tab2">
+          <a href="memberchange.html" target="iframebody" title="职务设置">
+            <img src="../../images/ico_change.png">
+          </a>
+        </td>
+        <td class="tab tab_tab3" id="inIframe">
+          <!-- <a href="#" target="iframebody" title="导出实验报告"> -->
+            <img src="../../images/ico_word.png">
+            <div class="select">
+              <a class="preview">预览</a>
+              <a href="#" class="down">下载</a>
+            </div>
+          <!-- </a> -->
+        </td>
+        <td class="tab editor">
+          <a href="summary.html" target="iframebody" title="心得体会编写">
+            <img src="../../images/ico_summary.png">
+          </a>
+        </td>
+        <td class="tab tab_td5">
+          <a href="javascript:logout()" title="退出">
+            <img src="../../images/signout.png" alt="退出">
+          </a>
+        </td>
+        <td class="tab_td3">
+          <img src="">
+          <div class="profile">
+            <p>分组：<span></span></p>
+            <p>现金：<span></span> 万元</p>
+            <p>税金：<span></span> 万元</p>
+            <p>厂房：<span></span> 个</p>
+          </div>
+        </td>
+        <td class="tab_td4">
+          <span id="userName"></span><br>
+          <span id="currentTime"></span>
+        </td>
+      </tr>
+		</table>
+	</div>
+  
+  <div class="year_content">
+    <div class="content_left common_float_left" id="mainLeft">
+      <div class="content_left_dl">
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="flashview.html" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_1.png">
+              <span>主页</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="annualplanningmeeting.html" target="iframebody">
+              <div></div><img src="../../images/ico_left_1.png">
+              <span>年度规划会议</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt>
+            <a href="javascript:void(0)" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_2.png">
+              <span>市场管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../market/marketmanagement.html" target="iframebody">
+              <span>各类市场管理</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../market/start_deliver_ads.html" target="iframebody">
+              <span>广告投放&amp;订单</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../market/forecast.html" target="iframebody">
+              <span>市场预测信息</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_3.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>生产管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../factory/factorymanager.html" target="iframebody">
+              <span>厂房管理</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../productresearch/compositionofproduct.html" target="iframebody">
+              <span>产品原料构成说明</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_4.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>销售管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../order/startview.html" target="iframebody">
+              <span>查看订单</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../order/startdeliveryform.html" target="iframebody">
+              <span>按订单交货</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_5.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>采购管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../materialpurchase/materialpurchase.html" target="iframebody">
+              <span>购买原料</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../materialpurchase/checkorder.html" target="iframebody">
+              <span>查看原料采购单</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_6.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>库存管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../inventorymanage/Productinventory.html" target="iframebody">
+              <span>产品库存</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../inventorymanage/materialinventory.html" target="iframebody">
+              <span>原料库存</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_7.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>产品研发&amp;认证</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../productresearch/productresearch.html" target="iframebody">
+              <span>产品研发管理</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../iso/authenticationmanagement.html" target="iframebody">
+              <span>认证管理</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_8.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>财务管理</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../finance/account.html" target="iframebody">
+              <span>查看会计分录</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/balancesheet.html" target="iframebody">
+              <span>查看资产负债表</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/profit_sheet.html" target="iframebody">
+              <span>查看利润表</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/will_receive.html" target="iframebody">
+              <span>应收账款贴现</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../finance/check_cash.html" target="iframebody">
+              <span>盘点现金</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <div></div>
+            <img src="../../images/ico_left_9.png">
+            <a href="javascript:void(0)" target="iframebody">
+              <span>贷款与融资</span>
+            </a>
+          </dt>
+          <dd>
+            <a class="btn-frame" href="../bank/apply_for_loan.html" target="iframebody">
+              <span>申请贷款</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../bank/loan_management.html" target="iframebody">
+              <span>贷款管理</span>
+            </a>
+          </dd>
+          <dd>
+            <a class="btn-frame" href="../bank/long_loan_in_year.html" target="iframebody">
+              <span>一年内的长期负债</span>
+            </a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="../tax/taxmanager.html" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_10.png">
+              <span>税金管理</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt class="extra">
+            <a class="btn-frame" href="../forwardquarter/timemanager.html" target="iframebody">     
+              <div></div>
+              <img src="../../images/ico_left_11.png">
+              <span>时间管理</span>
+            </a>
+          </dt>
+        </dl>
+        <dl>
+          <dt id="exitLast" class="extra">
+            <a href="javascript:void(0)" target="iframebody">
+              <div></div>
+              <img src="../../images/ico_left_12.png">
+              <span>结束经营</span>
+            </a>
+          </dt> 
+        </dl>
+      </div>
+    </div>
+    
+    <div class="content_right common_float_left">
+      <iframe name="iframebody" id="frame_content" frameborder="0"></iframe>
+    </div>
+  </div>
+  
+  <div class="year_footer common common_margin">
+    <p>Copyright © 2011 - 2016 重庆优霓维思科技有限公司 版权所有</p>
+  </div>
+  
+  <div class="fullbg"></div>
+  
+  <div class="dialog">
+    <div class="title">
+      <div class="center_title"></div>
+      <div class="close">
+        <input type="button" value="X" class="exit">
+      </div>
+    </div>
+    <div>
+      <div class="myDiv"></div>
+    </div>
+  </div>
+  
+  <div id="popupBox">
+    <p>
+      <img src="">
+      <span class="font_color common"></span>
+    </p>
+  </div>
+  
+  <script src="../../js/common.js"></script>
+  <script>
+    $(function () {
+      $('.content_left_dl a')[0].click();
+    });
+  </script>
+  <script>
+    // 使 iframe 高度自适应
+    function reinitIframe() {
+      var iframe = document.getElementById("frame_content");
+      
+      try {
+        var bHeight = iframe.contentWindow.document.body.scrollHeight;
+        var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+        var height = Math.min(bHeight, dHeight);
+        iframe.height =  height;
+      } catch (ex) { }
+    }
+    window.setInterval("reinitIframe()", 200);
+  </script>
+  <script>
+    javascript:window.history.forward(1);
+  </script>
+</body>
+</html>

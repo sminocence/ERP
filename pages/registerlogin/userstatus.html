@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="../../css/base.css" />
+<link type="text/css" rel="stylesheet" href="../../css/content.css" />
+<title>1</title>
+</head>
+
+<body>
+<div class="container container_1 common_3">
+  <p class="container_1_p1"></p>
+  <p class="container_1_p2 common">你好！你现在的账号处于&nbsp;&nbsp;<b>待审批</b>&nbsp;&nbsp;状态！<br/>管理员通知后可以尝试刷新页面</p>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+	//获取到父页面的信息
+	var parent = $(window.parent.document).contents();
+	parent.find("#li3,#li4").css('display','none');
+	parent.find("#li1,#li2").css('display','block');
+	//这里需要去点击某个li
+    parent.find("#li1").attr('class','first_li');
+});
+</script>
+</html>

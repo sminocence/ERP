@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <title>分组界面——组员</title>
+  <link type="text/css" rel="stylesheet" href="../../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../../css/content.css">
+</head>
+<body onload="checkGameGroupRunning()">
+  <div class="container_5">
+    <table class="header_tab common_bg common_1">
+      <tr>
+        <td class="td_1"></td>
+        <td class="td_2"></td>
+        <td class="td_4"></td>
+        <td class="td_5"></td>
+      </tr>
+    </table>
+    
+    <div class="left" id="page_6">
+      <div class="left_tab">
+        <table class="unique" cellspacing="8">
+          <tr class="left_tr1">
+            <td><p></p></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr2">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr3">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr4">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr5">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr6">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr7">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr8">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr9">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="left_tr10">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="left_infor"></div>
+      
+      <div class="footer">
+        <input type="button" value="退出小组" name="exit" class="btn2">
+      </div>
+    </div>
+    
+    <div class="right">
+        <p class="right_p1 common common_1">聊&nbsp;&nbsp;天&nbsp;&nbsp;室</p>
+        <div class="right_div1 common_border"></div>
+        <p class="right_p2 common">
+          <input type="text" name="viewpoint" class="common_border p_btn1" value="">
+          <input type="button" name="send" class=" p_btn2">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.min.js"></script>
+  <script src="../../js/dwr/util.js"></script>
+  <script src="../../js/dwr/engine.js"></script>
+  <script src="../../js/dwr/interface/gameGroupMemberService.js"></script>
+  <script src="../../js/scrollChat.js"></script>
+  <script>
+    function startgame() {
+      window.parent.location.href = '../mainframework/loadingpage.html';
+    }
+    
+    function checkGameGroupRunning() {
+      $.get('gameGroupAction!isGameGroupRunning.action?rnd=' + Math.random(), function (data) {
+        if(data === true) {
+          startgame();
+        }
+      }, 'json');
+    }
+
+    function apendDialog(list) {
+      var _div2 = $('.right_div1'); // 聊天内容窗口
+      addDialog(_div2, list);
+    }
+
+    function refresh() {
+      $.get('gameGroupMemberAction!showGameGroupMemberListAJAX.action?rnd=' + Math.random(), displayGameGroupMemberList, 'json');
+    }
+
+    function deleteGameGroup() {
+      window.parent.location.assign('useroperate.html');
+    }
+
+    function exitGroup() {
+      window.parent.location.assign('useroperate.html');
+    }
+
+    function displayGameGroupMemberList(list) {
+      var size = 4;
+      var value;
+
+      // 上方分组信息展示
+      $.post('gameGroupAction!getGameGroupMessage.action?rnd=' + Math.random(), function (data) {
+        var total = data.userNumbers;
+        
+        for (var i = 0; i < total; i++) {
+          $('.left_tab td').eq(i).css('background', 'url(../../images/pic_wait.jpg) no-repeat');
+        }
+
+        $('.header_tab td').eq(0).text('组名：' + data.groupName);
+        $('.header_tab td').eq(1).text('创建人：' + data.groupCreaterId);
+        $('.header_tab td').eq(2).text('比赛持续年数：' + data.years);
+        $('.header_tab td').eq(3).text('每年包含周期数：' + data.periodsOfOneYear);
+      }, 'json');
+
+      var obj = list;
+      value = list;
+      
+      $('.left_tab td').empty();
+      
+      // 中间表格内容展示
+      $(value).each(function (indx) {
+        var targ1 = $('.left_tab td').eq(indx);
+        var sp1 = '<p></p>';
+        var userId = value[indx].userID;
+        var sum = 0;
+
+        for (i = 0; i < userId.length; i++) {
+          sum = sum + userId.charCodeAt(i);
+        }
+
+        var j = sum % 7 + 1; // 一共有 7 张头像的 logo
+
+        sp1 += '<img src="../../images/pic_meb' + j + '.jpg">';
+        sp1 += '<span></span>';
+        $(targ1).append(sp1);
+
+        $(targ1).find('p').append('<input type="checkbox" name="checkbox" class="left_check">');
+        $('.left_tab').find('input').eq(indx).attr('value', value[indx].userID);
+        $(targ1).find('span').text(value[indx].name);
+      });
+      
+      $('.left_tab td').eq(0).find('p input').hide();
+      
+      // 悬浮框资料卡显示
+      $('.unique td').find('p input').hide();
+      $(".container_5 .left .left_tab td img").mouseover(function () {
+        var x = 75;
+        var y = 50;
+        var _this = $(this);
+
+        $.each(obj, function (indx) {
+          $('.left_infor').remove();
+          
+          var s = '';
+          s += '<div class="left_infor"></div>';
+          $('.left_tab').after(s);
+
+          var w = $(_this).offset().left + x;
+          var h = $(_this).offset().top + y;
+          $('.left_infor').css({
+            'left': w + 'px',
+            'top': h + 'px',
+            'display': 'block'
+          });
+
+          var sp2 = '<p class="left_infor_p1"></p>';
+          
+          for (var i = 0; i < 5; i++) sp2 += '<p></p>';
+
+          $('.left_infor').append(sp2);
+          
+          if ($(_this).next().text() === obj[indx].name) {
+            var targ2 = $(_this).parents('.left_tab').next();
+          
+            $(targ2).find('p:eq(0)').text('用户名：' + obj[indx].userID);
+            $(targ2).find('p:eq(1)').text('真实姓名：' + obj[indx].name);
+            $(targ2).find('p:eq(2)').text('专业：' + obj[indx].major);
+            $(targ2).find('p:eq(3)').text('班级：' + obj[indx].className);
+            $(targ2).find('p:eq(4)').text('联系电话：' + obj[indx].tel);
+            $(targ2).find('p:eq(5)').text('邮箱：' + obj[indx].email);
+            
+            return false;
+          }
+        });
+      });
+      
+      $('.container_5 .left .left_tab td img').mouseout(function () {
+        $('.left_infor').css('display', 'none');
+      });
+    }
+
+    $(function () {
+      // 隐藏头像右上角的复选框
+      $('table').find('input[type="checkbox"]').hide();
+
+      // 启动页面的 ReverseAjax 功能
+      dwr.engine.setActiveReverseAjax(true);
+      
+      // 设置在页面关闭时，通知服务端销毁会话
+      dwr.engine.setNotifyServerOnPageUnload(true);
+      
+      // 不弹窗
+      dwr.engine.setErrorHandler(function () {});
+      
+      $.get('gameGroupMemberAction!showGameGroupMemberListAJAX.action?rnd=' + Math.random(), displayGameGroupMemberList, 'json');
+      
+      gameGroupMemberService.pageTagForGamegroupMember();
+
+      $('input[name="exit"]').click(function () {
+        $.post('gameGroupMemberAction!exitGroup.action?rnd=' + Math.random(), function () {
+          window.parent.location.assign('useroperate.html');
+        });
+      });
+        
+      // 加载聊天室窗口
+      var parent = $(window.parent.document).contents();
+      parent.find('#li1, #li2, #li3, #li4').css('display', 'none');
+      
+      var _div = $('.right_div1'); // 装聊天内容的 div ——分组管理页面
+      
+      loadDialog(_div);
+      
+      sendDialog();
+    });
+  </script>
+</body>
+</html>

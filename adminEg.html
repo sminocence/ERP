@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <title>Administrator login</title>
+  <link type="text/css" rel="stylesheet" href="css/base.css" />
+  <link type="text/css" rel="stylesheet" href="css/welcome_login.css" />
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script>
+    $.ajaxSetup({ cache: false });
+  </script>
+</head>
+<body >
+  <div class="header"></div>
+
+  <div class="middle">
+    <div class="middle_center same same_2"><span class="middle_welcome">Administrator login</span></div>
+    
+    <div class="middle_content login_content admin-login">
+      <div class="left" id="page_index">
+        <form >
+          <input type="text" name="superAdminid" class="left_username left_input" placeholder="Administrator account number"><br>
+          <input type="password" name="superAdminPassword" class="left_password left_input" placeholder="password"><br>      
+          <p class="errorInfo err"></p>
+          <input type="button" value="Log&nbsp;in" class="left_login same btn-admin">
+        </form>
+        <a class="way-back" href="indexeg.html"><< back to Index</a>
+      </div>
+    </div>
+    
+    <div class="bottom_shadow"></div>
+  </div>
+
+  <div class="blank_div">
+    <table>
+      <tr>
+        <td><img src="images/pic_user.png"></td>
+        <td><img src="images/pic_accurate.png"></td>
+        <td><img src="images/pic_fast.png"></td>
+      </tr>
+      <tr class="blank_tr2">
+        <td>competition</td>
+        <td>comprehensive</td>
+        <td>interesting</td>
+      </tr>
+      <tr class="blank_tr3">
+        <td>To the game group for the game unit<br>Enhance strength in competition</td>
+        <td>All-round show business management<br>Fully covering the operational process</td>
+        <td>Exposure to the complex environment of simulated reality<br>Fun and fun, fresh and interesting</td>
+      </tr>
+    </table>
+  </div>
+
+  <p class="footer_p1 same">Copyright © 2011 - 2016 Chongqing Youyi Weisi Technology Co., Ltd. All rights reserved</p>
+  <hr class="footer_p2">
+
+  <script src="js/indexCheckEg.js"></script>
+</body>
+</html>

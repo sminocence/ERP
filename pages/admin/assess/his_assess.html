@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ERP虚拟运营系统后台管理</title>
+    <link rel="stylesheet" href="../common/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .form-div{
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .form-div label{
+            margin-right: 14px;
+        }
+        .form-div select option{
+            color: #000;
+        }
+        #chart{
+            margin-top: 10px;
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<div class="warn-brower">
+    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+    <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+        升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+    谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+<!--header-->
+<div class="header clear-fix">
+    <div class="logo-area">
+        <a class="logo" title="虚拟运营系统" href="#"></a>
+    </div>
+
+    <ul class="operate">
+      <li><i class="iconfont">&#xe665;</i><a href="#" title="刷新" class="j_refresh">刷新</a></li>
+      <li><i class="iconfont">&#xe61b;</i><a href="#" title="修改密码" class="j_modifypass">修改密码</a></li>
+      <li><i class="iconfont">&#xe600;</i><a href="#" title="退出登录" class="exit">退出登录</a></li>
+      <li class="user-info">
+        <img src="../common/img/pic_meb3.jpg" title="头像" class="photo">
+        <span class="username">你好!</span>
+      </li>
+    </ul>
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content">
+    <div class="siderbar">
+      <ul class="siderbar-ul">
+        <li class="has-more">
+          <a href="#"><i class="iconfont">&#xe624;</i>用户管理</a>
+            <ul>
+              <li><a href="../user/user.html">用户列表</a></li>
+              <li><a href="../user/approval.html">审批用户</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="../group/grouplist.html"><i class="iconfont">&#xe832;</i>管理分组</a>
+        </li>
+        <li>
+          <a href="assess.html"><i class="iconfont">&#xe60b;</i>企业评价</a>
+        </li>
+        <li class="has-more">
+          <a href="his_assess.html" class="active"><i class="iconfont">&#xe60a;</i>查看历史数据</a>
+        </li>
+
+        <li class="has-more">
+          <a href="../user/output.html"><i class="iconfont">&#xe60a;</i>创建历史数据</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!--main-wrapper-->
+    <div class="main-wrapper">
+        <div class="main">
+            <h1 class="content-title-style1">
+                <span class="icons-header2"></span>
+                企业评价
+            </h1>
+            <form class="form-div" id="chooseItem">
+                <div style="display: inline-block" class="select-wrapper">
+                    <label>
+                        <select  class="form-control selete-item" name="item">
+                            <option value="null">请选择分析模块</option>
+                            <option value="1">广告投入产出分析</option>
+                            <option value="2">综合市场占有率分析</option>
+                            <option value="3">产品市场占有率分析</option>
+                            <option value="4">成本费用占销售比例分析</option>
+                            <option value="5">成本费用占销售比例变化分析</option>
+                            <option value="6">产品贡献利润分析</option>
+                            <option value="7">生产能力分析</option>
+                            <option value="8">所有者权益</option>
+                        </select>
+                    </label>
+                    <label>
+                      <select class="form-control search-type" name="searchType">
+                        <option value="null">请选择查看方式</option>
+                        <option value="按企业查看">按企业查看</option>
+                        <option value="按分组查看">按分组查看</option>
+                      </select>
+                    </label>
+                    <label>
+                        <select class="form-control selete-group" name="group">
+                            <option value="null">请选择分组</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-groupitem" name="year">
+                            <option value="null">请选择企业</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-year" name="year">
+                            <option value="null">请选择年份</option>
+                        </select>
+                    </label>
+                    <label>
+                      <select class="form-control search-period" name="period">
+                        <option value="null">请选择周期</option>
+                      </select>
+                    </label>
+                </div>
+                <button type="button" class="form-control btn search">查看</button>
+            </form>
+            <div id="chart"></div>
+        </div>
+    </div>
+    <!--main-wrapper end-->
+</div>
+<!--content end-->
+<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../common/js/jquery.form-validator.js"></script>
+<script type="text/javascript" src="../common/js/common.js"></script>
+<script type="text/javascript" src="../common/js/echarts.js"></script>
+<script type="text/javascript" src="js/his_assess.js"></script>
+</body>
+</html>

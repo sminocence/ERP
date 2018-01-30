@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="zh-CN">
+<![endif]-->
+<html class="no-js" lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ERP 虚拟运营系统后台管理</title>
+  <link rel="stylesheet" href="../common/iconfont/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/base.css">
+  <style type="text/css">
+    .tableStyle td a .icon-edit {
+      vertical-align: text-top;
+    }
+  </style>
+</head>
+<body>
+<!--[if lt IE 8]>
+<div class="warn-brower">
+  您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
+  <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
+  谷歌浏览器Chrome</a> 。
+</div>
+<![endif]-->
+
+  <div class="header clear-fix">
+    <div class="logo-area">
+      <a class="logo" title="虚拟运营系统" href="#"></a>
+    </div>
+
+    <ul class="operate">
+      <li><i class="iconfont">&#xe665;</i><a href="#" title="刷新" class="j_refresh">刷新</a></li>
+      <li><i class="iconfont">&#xe61b;</i><a href="#" title="修改密码" class="j_modifypass">修改密码</a></li>
+      <li><i class="iconfont">&#xe600;</i><a href="#" title="退出登录" class="exit">退出登录</a></li>
+      <li class="user-info">
+        <img src="../common/img/pic_meb3.jpg" title="头像" class="photo">
+        <span class="username">你好!</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="siderbar">
+      <ul class="siderbar-ul">
+        <li class="has-more">
+          <a href="#" class="active"><i class="iconfont">&#xe624;</i>用户管理</a>
+            <ul>
+              <li><a href="user.html" class="active">用户列表</a></li>
+              <li><a href="approval.html">审批用户</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="../group/grouplist.html"><i class="iconfont">&#xe832;</i>管理分组</a>
+        </li>
+        <li>
+          <a href="../assess/assess.html"><i class="iconfont">&#xe60b;</i>企业评价</a>
+        </li>
+        <li class="has-more">
+          <a href="../assess/his_assess.html"><i class="iconfont">&#xe60a;</i>查看历史数据</a>
+        </li>
+
+        <li class="has-more">
+          <a href="../user/output.html"><i class="iconfont">&#xe60a;</i>创建历史数据</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="main-wrapper">
+      <div class="main">
+        <h1 class="content-title-style1">
+          <span class="icons-header2"></span>&nbsp;用户列表
+          <form name="search_form" id="search_form">
+            <input type="text" id="search_user" placeholder="查找用户：按学号">
+          </form>
+        </h1>
+      
+      <div id="table-area" class="clear-fix">
+        <table class="tableStyle" id="table">
+          <tr id="theader">
+            <th><label><input type="checkbox" class="check-all"/>全选</label></th>
+            <th>用户名ID</th>
+            <th>姓名</th>
+            <th>专业</th>
+            <th>班级</th>
+            <th>学号</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td colspan="7"><span class="icon-spin5">请稍候，数据加载中...</span></td>
+          </tr>
+        </table>
+        
+        <div class="page-wrapper clear-fix"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="../common/js/jquery-1.9.1.min.js"></script>
+  <script src="../common/js/jquery.form-validator.js"></script>
+  <script src="../common/js/jquery-table.js"></script>
+  <script src="../common/js/common.js"></script>
+  <script src="js/user.js"></script>
+  <script src="../common/js/jquery.form.js"></script>
+</body>
+</html>

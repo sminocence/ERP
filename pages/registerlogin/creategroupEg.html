@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3</title>
+    <link type="text/css" rel="stylesheet" href="../../css/base.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/content.css" />
+</head>
+
+<body>
+<div class="container container_3 common_3 common">
+    <table>
+        <tr><td class="td1 space">Group name</td><td>：</td><td width="280px"><input type="text" name="groupName" maxlength="15"/><span></span></td></tr>
+        <tr><td class="td1">Number of members</td><td>：</td><td><input type="text" name="userNumbers" /><span></span></td></tr>
+        <!--<tr><td class="td1">Years&nbsp;of&nbsp;competition</td><td>：</td><td><input type="text" name="years" /><span></span></td></tr>-->
+        <!--<tr><td class="td1">Annual cycle</td><td>：</td><td><input type="text" name="periodsOfOneYear" /><span></span></td></tr>-->
+    </table>
+    <input type="button" value="Create" class="btn common_1 common_2 common_btn" name="create"/>
+    <p class="error"></p>
+</div>
+<script language="javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script language="javascript" src="../../js/indexCheckEg.js"></script>
+
+<script type="text/javascript">
+    $(function($) {
+        //判断session 是否过期/是否没有登录。
+        $.get("gameGroupAction!isLogin.action?rnd="+Math.random(),function(data){
+            if(data == false){
+                alert("Login too long no action, please re-login");
+                window.parent.location.href="../../indexeg.html";
+            }
+        },"json");
+
+        $.get("loginAction!showMenuList.action?rnd="+Math.random(),function(data){
+            displayMenuList(data);
+        },"json");
+    });
+
+    //这个函数是提供给后台推送的时候 调用的
+    displayMenuList=function(list){
+        var parent = $(window.parent.document).contents();
+        var state = jQuery.parseJSON(list);
+        //没有通过审批状态.
+        if(state==1) {
+            parent.find('#right_iframebody').attr('src','userstatusEg.html');
+        }
+        //通过审批没有加入分组状态.
+        else if(state==2){
+            //parent.find('#right_iframebody').attr('src','joingroup.html');
+        }
+        //创建房间主界面
+        else if(state==3){
+            parent.find('#right_iframebody').attr('src','admingamegroupEg.html');
+        }
+        //加入分组用户的界面.
+        else if(state==4){
+            parent.find('#right_iframebody').attr('src','membergamegroupEg.html');
+        }else {
+            alert(state);
+            alert(list);
+        }
+    }
+</script>
+</body>
+</html>

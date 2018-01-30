@@ -1,0 +1,87 @@
+@charset"utf-8";
+/*CSS Document*/
+.content{
+	height:720px;
+}
+.img-content{
+	padding-top:3px;
+}
+.img-content span{
+	display:inline-block; 
+	margin-top:15px;
+}
+.maincontent{
+	margin-top:15px;
+	width:1115px;
+}
+.positionab{
+	position:absolute;
+	left:144px;
+	top:73px;
+}
+.product-content{
+	background:#dbdad6;
+	float:left;
+	height:180px;
+	position:relative;
+	margin-left:44px;
+	margin-top:12px;
+	text-align:center;
+	width:300px;
+}
+.p-content span{
+	line-height:40px;
+	
+}
+.pro-sum-con{
+	height:400px;
+	margin-left:35px;
+	width:688px;
+	_width:732px;
+}
+.p-content{
+	height:174px;
+	float:left;
+	margin-top:3px;
+	width:118px;
+}
+.small-r{
+	background:#999999;
+	border:solid 2px #dbdad6;
+	float:left;
+	height:77px;
+	margin-left:8px;
+	_margin-left:5px;
+	margin-top:4px;
+	_margin-top:2px;
+	text-align:center;
+	width:57px;
+}
+.raw-sta{
+	height:185px;
+	width:1115px;
+}
+.r-content{
+	background:#999999;
+	float:left;
+	height:174px;
+	margin:3px;
+	_margin-left:2px;
+	width:171px;
+}
+.ul-content{
+	margin-left:74px;
+	margin-top:7px;
+}
+.ul-content li{
+	float:left;
+	height:143px;
+	width:151px;
+}
+.ul-content .img-content{
+	background:#dbdad6;
+	float:right;
+	height:144px;
+	text-align:center;
+	width:104px;
+}

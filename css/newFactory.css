@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.createWorkshop table, .rentWorkshop table, .add table{
+    margin:15px auto;
+	color:#000;
+}
+.createWorkshop td, .rentWorkshop td, .add td{
+    padding:3px 0px;
+}
+.createWorkshop input,.createWorkshop select,.rentWorkshop input,.rentWorkshop select,.add input,.add select{
+    width:224px;
+	height:29px;
+}
+.createWorkshop option, .rentWorkshop option, .add option{
+    line-height:29px;
+	color:#000;
+}
+.createWorkshop, .createWorkshop table{
+    width:423px;
+}
+.rentWorkshop, .rentWorkshop table{
+    width:549px;
+}
+.add, .add table{
+    width:440px;
+}
+
+.createWorkshop .label{
+    width:160px;
+}
+.rentWorkshop .label{
+    width:272px;
+}
+.add .label{
+    width:153px;
+}
+.commonInput{
+    text-align:right;
+	color:#000;
+} 
+.createWorkshop button, .rentWorkshop button, .add button{
+    width:103px;
+    height:29px;
+    background:#355a86;
+    color:#fff;
+    border:none;
+}
+.createWorkshop button:hover, .rentWorkshop button:hover, .add button:hover{
+    font-size:16px;
+	color:#000;
+}

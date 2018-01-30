@@ -1,0 +1,327 @@
+@charset "utf-8";
+/* CSS Document */
+/*--container_1 页面1--*/
+.container_1{
+	width:417px;
+	height:167px;
+	margin-top:80px;
+}
+.container_1_p1{
+	height:35px;
+	background:#336799;
+}
+.container_1_p2{
+   font-size:16px;
+   margin-top:48px; 	
+	}
+/*--container_2 页面2--*/
+.container_2{
+   width:660px;
+	height:508px;
+	border:1px solid #9C9C9C;
+	margin-top:27px;	
+	}
+.container_2 table,.container_3 table{
+   	margin:15px auto;
+	}
+.container_2 table{
+	width:520px;
+	margin-left:145px;	
+	} 
+.container_2 table td,.container_3 table td,.middle_content .register_tab tr td{
+    height:44px;	
+	color:#666;
+	font-size:16px;
+	vertical-align:middle;
+	}
+.container_2 tr .td_3{
+	text-align:left;
+}
+.container_2 tr td input,.container_3 tr td input,.middle_content .register_tab tr td input{
+    width:226px;
+	height:27px;
+	border:2px solid #DBDBDB;
+	padding-left:15px;	
+	color:#000;
+	font-size:15px;
+	line-height:26px;
+	vertical-align:middle;
+	}
+.container_2 .btn{
+	width:338px;
+	margin-top:5px;
+	margin-left:147px;
+}
+/*--welcome_registr--欢迎注册页面--*/
+.middle_content {
+	height: 554px;
+}
+.middle_content .register_tab{
+	width:520px;
+	margin-left:220px;
+	margin-top:15px;
+}
+.middle_content .agree{
+	margin-top:20px;
+}
+.middle_content .agree a{
+		color:#000;
+		text-decoration:underline;
+		}
+.middle_content .agree a:hover{
+	color:#00F;
+}
+.middle_content .agree_btn{
+	margin-top:22px;
+}
+.middle_content .back_btn{
+	background:#999;
+	margin-right:30px;
+	margin-left:220px;
+	cursor:pointer;
+}
+.middle_content .agree_btn input{
+	width:155px;
+	height:35px;
+	float:left;
+}
+.middle_content .agree_btn .common_bg{
+	width:155px;
+	height:35px;
+	cursor:pointer; /*这里修改过*/
+	background:#369; /*这里修改过*/
+}
+.middle_content .readyNo{
+    background:#999;
+}
+.middle_content .readyYes{
+    background:#369;
+	cursor:pointer;
+}
+.space1{
+
+	word-spacing:2px;
+}
+.space{
+	word-spacing:25px;}
+/*--container_3页面3--*/
+.container_3{
+	width:476px;
+	height:288px;
+	margin-top:25px;
+}
+.container_3 table{
+  margin-left:40px;
+}
+.container_3 table td{
+    height:43px;
+	}
+.container_3 .td1{
+	text-align:right;
+	font-size:15px;
+	}
+.container_3 .btn{
+	margin-top:15px;
+}
+
+/*--container_4 页面4--*/
+.container_4{
+	width:800px;
+	height:580px;
+	margin-top:45px;
+}
+.container_4 .tab{
+	height:555px;
+	font-size:14px;
+}
+.container_4 .tab tr img ,.tab_span1{
+	width:113px;
+	height:144px;
+	display:block;
+	margin-left:15px;
+	float:left;
+   
+}
+.container_4 .tab_span1{
+	 background:url(./../images/pic_no.jpg) center center;
+	}
+.container_4 .tab_span2{
+	background:#336799 url(./../images/pic_circle.jpg) no-repeat right center;
+}
+.container_4 .tab_p1{
+	margin-top:17px;
+	}
+.container_4 .tab_p3{margin-top:45px;}
+.container_4 .tab tr input{
+	width:33px;
+	height:34px;
+	background:url(./../images/ico_add.png);
+	border:0px;
+	display:block;
+	float:left;
+	margin-top:50px;
+	}
+.container_4 .tab td{
+	width:225px;
+	height:184px;
+}
+.container_4 .p_page{
+	width:800px;
+}
+.container_4 .p_page a{margin-left:10px;}
+.container_4 .p_page a:link{color:#30C;}
+.container_4 .p_page a:visited{color:#00C;}
+.container_4 .p_page a:hover{color:#F00;}
+/*--container_5页面5----*/
+.container_5{
+	/*width:922px;*/
+	width:930px;
+	/*height:625px;*/
+}
+/*--header_tab--*/
+.container_5 .header_tab{
+	/*width:912px; */
+	margin-left:10px; 
+	height:42px; 
+	padding-left:5px;
+    margin-top:6px;
+	}
+.container_5 .td_1{width:186px; _padding-left:5px;/*--兼容IE6--*/}
+.container_5 .td_2{width:385px;}
+.container_5 .td_4{width:160px;}
+.container_5 .td_5{width:165px;}
+/*--header_tab left --*/
+.container_5 .left{
+	width:647px;
+	float:left;
+}
+.container_5 .left .left_tab{
+	margin-top:10px;
+}
+.left_tab {
+	height: 494px;
+	overflow: auto;
+}
+.container_5 .left .left_tab td{
+	width:122px;
+	height: 154px;
+	background:url(../images/pic_no.jpg) no-repeat;
+}
+
+.container_5 .left .footer input,.footer_6 input{
+	width:164px;
+	height:38px;
+	border:0px;
+	border-radius:5px;
+	font-size:15px;
+	cursor:pointer;
+	color:#fff;
+	background:#336799;
+}
+.container_5 .left .left_infor{
+	width:184px;
+	height:162px;
+		background:url(../images/pic_infor.png) no-repeat;
+    position:absolute;	
+	display:none;
+	}
+.container_5 .left .left_infor p{
+	font-size:12px;
+	padding-left:20px;
+	line-height:23px;
+}
+.container_5 .left .left_infor_p1{
+	margin-top:10px;
+}
+.container_5 .left .footer .btn2{
+	margin-left:230px;
+	margin-top:15px;
+}
+/*--container_5 .right--*/
+.container_5 .right{
+	width:261px;
+	height:480px;
+	border:1px solid #ccc;
+	float:left;
+	margin-top:17px;
+	margin-left:12px;
+}
+.container_5 .right .right_p1{
+	width:261px;
+	height:37px;
+	line-height:37px;
+	background:url(../images/pic_chat.jpg);
+}
+.container_5 .right .right_div1{
+	height:366px;
+	margin:auto;
+	margin-top:10px;
+	width:249px;
+	background:#E5E5E5;
+	overflow-y:scroll;
+	word-wrap:break-word;
+	word-break:break-all;
+	padding-top:10px;
+}
+.container_5 .right_div1 p{
+	padding-left:15px;
+    line-height:25px;	
+	font-size:14px;
+	padding-right:5px;
+	}
+.container_5 .right_div1 .name1{
+	color:#FFCB00;
+}
+.container_5 .right_div1 .name2{
+	color:blue;
+}
+.container_5 .right .right_p2{
+		height:38px;
+		margin-top:10px;
+}
+.common_border{
+	border:2px solid #D9D9D9;
+	border-radius:10px;
+}
+.container_5 .right .p_btn1{
+	width:208px;
+	height:34px;
+	background:#ccc;
+	line-height:34px;
+	padding-left:10px;
+}
+.container_5 .right .p_btn2{
+	width:30px;
+	height:38px;
+	border:0px;
+	vertical-align:middle;
+	_margin-top:-15px;/*--兼容IE6--*/
+	cursor:pointer;
+	background:url(../images/ico_bg.jpg);
+	}
+	/*
+.container_5 .left .left_tr2 td,.left_tr1 td{background:url(../images/pic_wait.jpg) no-repeat;}*/
+/*--footer_6页面6--*/
+.container_5 .left .left_tab p{
+	height:16px;
+	text-align:right;
+	}
+.container_5 .left .left_tab span{
+	display:block;
+	height:43px;
+	line-height:43px;
+	color:#fff;
+	font-size:13px;
+}
+.container_5 .left .left_tab td{
+	text-align:center;
+}
+.container_5 .left .left_tab img{
+	width:90px;
+	height:90px;
+	cursor:pointer;
+	}
+.footer_6 input{
+	margin-left:35px;
+	margin-top:15px;
+}

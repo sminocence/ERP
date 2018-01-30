@@ -1,0 +1,60 @@
+@charset"utf-8";
+/*CSS Document*/
+.content{
+	height:720px;
+}
+.hasfourul li{
+	width:248px;
+	height:90px;
+	}
+.hassixli li{
+	width:150px;
+}
+.market{
+	clear:both;
+	margin-top:14px;
+}
+.market ul{
+	background:#f2f2f1;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:992px;
+}
+.market ul li{
+	float:left;
+}
+.market h2{
+	font-weight:400;
+	font-size:18px;
+}
+.market ul li h3{
+	color:#999999;
+	font-weight:lighter;
+	line-height:36px;
+}
+.market .state{
+	background:#dbdad6;
+	cursor:hand;
+	float:left;
+	height:90px;
+	text-align:center;
+	width:123px;
+}
+.market .state h2{
+	line-height:90px;
+}
+.market-bar{
+	height:90px;
+	clear:both;
+	margin-top:12px;
+}
+.market-bar a{
+	color:#000;
+}
+.market-ul img{
+	float:left;
+}
+.page3_maincontent{
+	width:1115px;
+	}

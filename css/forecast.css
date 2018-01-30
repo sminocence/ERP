@@ -1,0 +1,44 @@
+@charset="utf-8";
+/*CSS Document*/
+.img-content{
+	clear:both;
+	margin-left:15px;
+	padding-top:15px;
+}
+.img-content div{
+	height:400px;
+	width:500px;
+	/*background:#EDECEA;*/
+	float:left;
+}
+.marleft13{
+	margin-left:48px;
+}
+.marketChose {
+	height: 40px;
+    line-height: 35px;
+    margin-top: 10px;
+}
+.marketChose span{
+	 color: #666;
+	 margin-left:15px;
+	}
+.marketChose select{
+	  height: 30px;
+      text-indent: 13px;
+      width: 150px;
+	  border:1px solid #CCC;
+	  margin-left:10px;
+}
+.marketChose select option{
+	text-indent:27px;
+	height:20px;
+	line-height:20px;
+}
+.marketChose input{
+    border: 0px;
+    height: 30px;
+    margin-left: 15px;
+    width: 70px;
+	cursor:pointer;
+	}

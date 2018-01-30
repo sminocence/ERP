@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+body, .header, .year_content {
+	width: 100%;
+	/*min-width: 1366px;*/
+}
+
+body {
+	background: url(../images/12.jpg) top left repeat-y;
+}
+
+/* header */
+.header {
+	background: #12385F url(../images/startGame_logo.jpg) no-repeat left;
+}
+
+.header, .header table {
+	height: 50px;
+}
+
+.header .tab{
+  width: 45px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header .tab:hover {
+  background: #395988;
+}
+
+/*添加内容*/
+.header .tab_td1,
+.header .tab_td5 {
+	width: 45px;
+	text-align: center;
+}
+
+.header .tab_td1:hover,
+.header .tab_td5:hover {
+	background: #395988;
+}
+/*添加内容 到此结束*/
+
+
+.header .tab_td3 {
+  width: 70px;
+  cursor: pointer;
+}
+
+.header .tab_td3 img {
+	width: 38px;
+	height: 38px;
+}
+
+.header .tab_td3 img {
+  margin-left: 20px;
+}
+
+.header .tab_td3 .profile {
+  width: 170px;
+  height: 160px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  display: none;
+}
+
+.header .tab_td3 .profile p {
+  color: black;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 2em;
+}
+
+.header .tab_tab3 .select {
+  width: 70px;
+  height: 80px;
+  position: absolute;
+  right: 260px;
+  top: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  display: none;
+}
+
+.header .tab_tab3 .select a {
+  color: black;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.header .tab_tab3 .select a:hover{
+	color: #995888;
+}
+
+.header .tab_td4 {
+  width: 120px;
+}
+
+.content_left {
+	width: 179px;
+}
+
+.content_left a {
+	color:#fff;
+}
+
+.content_left_dl, dl {
+	 width: 179px;
+}
+.content_left_dl img{
+	width:20px;
+	height:20px;
+}
+.content_left_dl dl div{
+  width:21px;
+	height:23px;
+	position:absolute;
+	display:inline-block;
+	top:13px;
+	_top:13px;
+	left:18px;
+	background:#355A86;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+
+.content_left_dl dl dt,
+.content_left_dl dl dd {
+  cursor: pointer;
+}
+
+.left_div{background:#20466D;}
+dt,dd{
+	 height:45px;
+	 width:179px;
+	 line-height:45px;
+	  /*--兼容IE6--*/
+    _border-collapse:collapse;
+	_border:1px solid #8696AD;
+	_height:35px;
+	_padding-top:5px;
+	  }
+.extra a{
+	width:179px;
+	_width:177px;
+	height:45px;
+	_height:39px;
+	border:0px;
+	display:block;
+}
+dt{
+	 background:url(../images/11.jpg) no-repeat left center;
+	 position:relative;
+	 overflow:visible;
+	  }
+dt img{
+	margin-left:12px;
+	margin-right:10px;
+    _margin-top:8px;
+	}
+dt a{
+}
+dd{
+	 margin-left:0px;
+	 display:none;
+	 }
+dd a{
+	width:179px;
+	height:45px;
+	display:block;
+	_margin-top:-7px;
+}
+dl dd span{
+	 margin-left:20px;
+	 /*padding-top:5px; */
+	 }
+.dl_first{
+	 width:194px;
+	 _width:179px;
+	 background:url(../images/1.jpg) no-repeat left center;
+ }
+.dl_change{
+	 width:194px;
+	_width:179px;
+	 background:url(../images/4.jpg) no-repeat left center;
+ }/*当鼠标点击一级菜单时背景图片的改变*/
+.dl_change_2{
+	  background:url(../images/11.png) no-repeat left center;
+ }/*当鼠标移到一级菜单时背景图片改变，颜色加深*/
+ .dl_last{
+	 background:url(../images/pic_last.jpg) no-repeat left center;/*最后一个退出按钮鼠标移上时的颜色，暗红色*/
+ }
+.dd_bgcolor{
+	 background:#20466D;/*当鼠标移入二级菜单时的背景颜色变化，蓝色加深*/
+}
+.dd_bgcolor_2{
+	 background:#52809A;/*当鼠标点击二级菜单时的背景颜色，蓝色减弱*/
+ }
+/*--content_right--*/
+.content_right{
+	overflow:visible;
+}
+.content_right iframe{
+	width:1135px;
+	min-width:1135px;
+	min-height:720px;
+	border:none;
+	_float:left;
+	/*padding-left: 2em;*/
+  /*padding-bottom: 3em;*/
+}
+.year_footer p{
+	 height:25px;
+	font-size:12px;
+	 line-height:25px;
+    _float:none;
+    width:100%;
+    background:#355A86;
+    color:#fff;
+	/*_margin-top:140px;*/
+	margin-bottom:0px;
+}
+.year_footer{
+	clear:left;
+}
+/*设置遮罩层及对话框*/
+
+/*灰色大框*/
+.fullbg{
+		background-color:#000;
+    position:absolute;
+		left:0;
+		top:0;
+		z-index: 3000;
+		filter:alpha(opacity=50);  /* IE私有属性，仅适用于IE*/
+		-moz-opacity:0.5; /* 支持一些老版本的Mozilla浏览器(火狐)*/
+		-khtml-opacity:0.5;/*支持一些老版本的Safari浏览器*/
+		opacity:0.5; /* 支持CSS3的浏览器（主流）,支持Firefox, Safari和 Opera.*/
+		}
+/*弹框*/
+.dialog {
+		background-color:#fff;
+		border:1px solid #355a86;
+		position:fixed ;
+		z-index:5000;
+		display:none;
+		font-family:"微软雅黑";
+		font-size:14px;
+		_margin-left:50%;
+		min-width:420px;
+		min-height:164px;
+		_height:164px;
+		_width:expression((documentElement.clientWidth < 300) ? "300px" : "100%" );/*ie6*/
+		display:none;
+		}
+/*弹框标题栏*/
+.dialog .title{
+		height:30px;
+		line-height:24px;
+		/*background:#12385f;*/
+		position:relative;
+		width:100%;/*ie6*/
+		text-align:center;
+		float:left;
+		}
+/*关闭符号*/
+.dialog .title .close {
+		text-align:right;
+		padding-top:3px;
+		height:20px;
+		width:20px;
+		float:left;
+		position:absolute;
+		right:5px;
+		cursor:pointer;
+		}
+.close input {
+		   width:22px;
+		   border:0px;
+		   color:#fff;
+		   background:#325C86;
+	   }
+/*弹框标题*/
+.dialog .title .center_title{
+		height:27px;
+		color:#FFF;
+		/*padding-top:3px;*/
+		float:left;
+		left:0;/*ie6*/
+		margin-left:0;
+		position:absolute;
+		left: auto;
+		right: auto;
+		width:100%;
+		_width:auto;
+			}
+/*引入的table框*/
+.myDiv{
+	  float:left;
+	 /* margin-top:20px;*/
+	  _margin-top:0;
+	  }
+
+
+/*添加成员的弹出框*/
+.addBox{
+	/*display: none;*/
+	width: 500px;
+	border-radius: 5%;
+	background-color: #fff;
+	z-index: 9;
+	position: fixed;
+	left: 35%;
+	top: 25%;
+	color: #12385F;
+	border: 1px #12385F solid;
+	height: 330px;
+}
+.addBox_title{
+	width: 100%;
+	height: 50px;
+	background-color: #355A86;
+	color: #fff;
+	font-weight: bolder;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+}
+.addTitle{
+	margin-left: 30px;
+	font-size: 24px;
+	font-family: "微软雅黑";
+}
+.addCancel{
+	float: right;
+	font-size: 24px;
+	line-height: 50px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.addBox_content{
+	width: 50%;
+	margin:20px auto 0;
+	height: 250px;
+	overflow-y: auto;
+}
+.addBox_content p{
+	margin-top: 10px;
+	font-size: 18px;
+	font-family: "微软雅黑";
+	line-height: 30px;
+	text-align: right;
+}
+.addBox_content p input{
+	width: 150px;
+	height: 20px;
+	border-radius: 7px;
+	padding: 2px;
+}
+.addBox_button{
+	margin-left: 50px;
+}
+.btn{
+	margin-top: 25px;
+	width: 80px;
+	height: 30px;
+	background: #355A86;
+	color: #fff;
+	border: none;
+	padding: 6px 12px;
+}
+.btn_next{
+	margin-left: 50px;
+}
+.btn_remove{
+	margin-left: 100px;
+}
+.btn_keep{
+	margin-left: 30px;
+}
+.memberInfo_i{
+	display: block;
+	margin-top: 20px;
+	border-top: 1px #355A86 solid;
+}
